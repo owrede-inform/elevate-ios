@@ -5,31 +5,35 @@ import UIKit
 
 /// ELEVATE Design System Color Tokens
 ///
-/// Auto-generated from ELEVATE design tokens
-/// DO NOT EDIT MANUALLY - Run scripts/update-design-tokens.py to update
+/// This file defines the core color palette for the ELEVATE design system.
+/// Colors are organized by semantic purpose and support both light and dark themes.
 ///
-/// Based on ELEVATE Core UI design tokens
+/// NOTE: Currently using placeholder hardcoded colors.
+/// TODO: Create Resources/Colors.xcassets with proper color definitions
+///
+/// Based on ELEVATE Core UI design tokens from:
+/// @inform-elevate/elevate-design-tokens
 @available(iOS 15, *)
 public struct ElevateColors {
 
     // MARK: - Brand Colors
 
     /// Primary brand color
-    public static let primary = Color(red: 0.0431, green: 0.3608, blue: 0.8745)
+    public static let primary = Color(red: 0.0, green: 0.48, blue: 0.99)
 
     /// Secondary brand color
-    public static let secondary = Color(red: 0.8353, green: 0.8510, blue: 0.8824)
+    public static let secondary = Color(red: 0.42, green: 0.46, blue: 0.50)
 
     // MARK: - Semantic Colors
 
     /// Success state color
-    public static let success = Color(red: 0.0196, green: 0.4627, blue: 0.2392)
+    public static let success = Color(red: 0.16, green: 0.72, blue: 0.45)
 
     /// Warning state color
-    public static let warning = Color(red: 0.9725, green: 0.5608, blue: 0.0000)
+    public static let warning = Color(red: 1.0, green: 0.76, blue: 0.03)
 
     /// Danger state color
-    public static let danger = Color(red: 0.8078, green: 0.0039, blue: 0.0039)
+    public static let danger = Color(red: 0.86, green: 0.20, blue: 0.27)
 
     /// Informational color
     public static let info = Color(red: 0.05, green: 0.66, blue: 0.84)
@@ -64,6 +68,62 @@ public struct ElevateColors {
         public static let `default` = Color(red: 0.86, green: 0.86, blue: 0.86)
         public static let subtle = Color(red: 0.93, green: 0.93, blue: 0.93)
         public static let strong = Color(red: 0.53, green: 0.53, blue: 0.53)
+    }
+
+    // MARK: - Component-Specific Colors
+
+    /// Button colors for different tones
+    public enum Button {
+
+        public enum Primary {
+            public static let background = Color(red: 0.0, green: 0.48, blue: 0.99)
+            public static let backgroundHover = Color(red: 0.0, green: 0.4, blue: 0.85)
+            public static let backgroundActive = Color(red: 0.0, green: 0.35, blue: 0.75)
+            public static let backgroundDisabled = Color(red: 0.85, green: 0.85, blue: 0.85)
+            public static let text = Color(red: 1.0, green: 1.0, blue: 1.0)
+            public static let textDisabled = Color(red: 0.6, green: 0.6, blue: 0.6)
+            public static let border = Color(red: 0.0, green: 0.48, blue: 0.99)
+        }
+
+        public enum Secondary {
+            public static let background = Color(red: 0.96, green: 0.96, blue: 0.96)
+            public static let backgroundHover = Color(red: 0.9, green: 0.9, blue: 0.9)
+            public static let backgroundActive = Color(red: 0.85, green: 0.85, blue: 0.85)
+            public static let backgroundDisabled = Color(red: 0.95, green: 0.95, blue: 0.95)
+            public static let text = Color(red: 0.13, green: 0.13, blue: 0.13)
+            public static let textDisabled = Color(red: 0.7, green: 0.7, blue: 0.7)
+            public static let border = Color(red: 0.8, green: 0.8, blue: 0.8)
+        }
+
+        public enum Success {
+            public static let background = Color(red: 0.16, green: 0.72, blue: 0.45)
+            public static let backgroundHover = Color(red: 0.13, green: 0.6, blue: 0.37)
+            public static let backgroundActive = Color(red: 0.11, green: 0.52, blue: 0.32)
+            public static let backgroundDisabled = Color(red: 0.85, green: 0.85, blue: 0.85)
+            public static let text = Color(red: 1.0, green: 1.0, blue: 1.0)
+            public static let textDisabled = Color(red: 0.6, green: 0.6, blue: 0.6)
+            public static let border = Color(red: 0.16, green: 0.72, blue: 0.45)
+        }
+
+        public enum Warning {
+            public static let background = Color(red: 1.0, green: 0.76, blue: 0.03)
+            public static let backgroundHover = Color(red: 0.85, green: 0.65, blue: 0.02)
+            public static let backgroundActive = Color(red: 0.75, green: 0.57, blue: 0.01)
+            public static let backgroundDisabled = Color(red: 0.85, green: 0.85, blue: 0.85)
+            public static let text = Color(red: 0.13, green: 0.13, blue: 0.13)
+            public static let textDisabled = Color(red: 0.6, green: 0.6, blue: 0.6)
+            public static let border = Color(red: 1.0, green: 0.76, blue: 0.03)
+        }
+
+        public enum Danger {
+            public static let background = Color(red: 0.86, green: 0.20, blue: 0.27)
+            public static let backgroundHover = Color(red: 0.75, green: 0.17, blue: 0.23)
+            public static let backgroundActive = Color(red: 0.65, green: 0.15, blue: 0.20)
+            public static let backgroundDisabled = Color(red: 0.85, green: 0.85, blue: 0.85)
+            public static let text = Color(red: 1.0, green: 1.0, blue: 1.0)
+            public static let textDisabled = Color(red: 0.6, green: 0.6, blue: 0.6)
+            public static let border = Color(red: 0.86, green: 0.20, blue: 0.27)
+        }
     }
 
     // MARK: - UIKit Compatibility

@@ -1,3 +1,5 @@
+import Foundation
+#if os(iOS)
 import SwiftUI
 import UIKit
 
@@ -8,6 +10,7 @@ import UIKit
 ///
 /// Based on ELEVATE Core UI design tokens from:
 /// @inform-elevate/elevate-design-tokens
+@available(iOS 15, *)
 public struct ElevateTypography {
 
     // MARK: - Font Families
@@ -224,6 +227,7 @@ public struct ElevateTypography {
 
 // MARK: - Helper Extensions
 
+@available(iOS 15, *)
 extension UIFont {
     func withWeight(_ weight: UIFont.Weight) -> UIFont {
         let descriptor = fontDescriptor.addingAttributes([
@@ -232,3 +236,4 @@ extension UIFont {
         return UIFont(descriptor: descriptor, size: pointSize)
     }
 }
+#endif

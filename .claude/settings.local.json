@@ -1,12 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:github.com)",
-      "Bash(mkdir:*)",
-      "Bash(tree:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(mv:*)",
+      "Bash(swift build:*)",
+      "Bash(touch:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(ElevateUI/Sources/SwiftUI/Components/ElevateButton+SwiftUI.swift)",
+      "Bash(ElevateUI/Sources/UIKit/Components/ElevateButton+UIKit.swift)",
+      "Bash(chmod:*)",
+      "Bash(./fix_colors.sh)",
+      "Bash(open:*)",
+      "mcp__memory__create_entities",
+      "mcp__memory__create_relations",
+      "mcp__memory__add_observations",
+      "Bash(python3:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

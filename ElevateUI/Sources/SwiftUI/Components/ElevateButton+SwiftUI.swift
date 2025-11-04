@@ -1,3 +1,4 @@
+#if os(iOS)
 import SwiftUI
 
 /// ELEVATE Button Component (SwiftUI)
@@ -14,6 +15,7 @@ import SwiftUI
 ///     action: { print("Button tapped") }
 /// )
 /// ```
+@available(iOS 15, *)
 public struct ElevateButton: View {
 
     // MARK: - Properties
@@ -184,3 +186,4 @@ struct ElevateButton_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
+#endif

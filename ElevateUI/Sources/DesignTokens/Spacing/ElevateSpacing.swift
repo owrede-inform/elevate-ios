@@ -1,3 +1,4 @@
+#if os(iOS)
 import SwiftUI
 import CoreGraphics
 
@@ -8,6 +9,7 @@ import CoreGraphics
 ///
 /// Based on ELEVATE Core UI design tokens from:
 /// @inform-elevate/elevate-design-tokens
+@available(iOS 15, *)
 public struct ElevateSpacing {
 
     // MARK: - Base Spacing Scale
@@ -184,6 +186,7 @@ public struct ElevateSpacing {
 
 // MARK: - SwiftUI Extensions
 
+@available(iOS 15, *)
 extension View {
     /// Apply ELEVATE padding with the specified spacing value
     public func elevatePadding(_ spacing: CGFloat) -> some View {
@@ -218,3 +221,4 @@ extension View {
         self.cornerRadius(radius)
     }
 }
+#endif

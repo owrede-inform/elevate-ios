@@ -1,3 +1,4 @@
+#if canImport(UIKit) && !os(macOS)
 import UIKit
 
 /// ELEVATE Button Component (UIKit)
@@ -7,12 +8,16 @@ import UIKit
 ///
 /// Example usage:
 /// ```swift
-/// let button = ElevateButton(tone: .primary, size: .medium)
+/// let button = ElevateUIKitButton(tone: .primary, size: .medium)
 /// button.setTitle("Primary Button", for: .normal)
 /// button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 /// ```
+///
+/// Note: Use `ElevateButton` for SwiftUI. This UIKit version is named `ElevateUIKitButton`
+/// to avoid name conflicts in mixed SwiftUI/UIKit projects.
+@available(iOS 15.0, *)
 @IBDesignable
-open class ElevateButton: UIButton {
+open class ElevateUIKitButton: UIButton {
 
     // MARK: - Properties
 
@@ -204,3 +209,4 @@ open class ElevateButton: UIButton {
         )
     }
 }
+#endif
