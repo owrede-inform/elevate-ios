@@ -135,16 +135,26 @@ public struct ElevateSpacing {
 
     public enum IconSize {
         /// Small icon (16pt)
-        public static let small: CGFloat = 16
+        case small
 
         /// Medium icon (20pt)
-        public static let medium: CGFloat = 20
+        case medium
 
         /// Large icon (24pt)
-        public static let large: CGFloat = 24
+        case large
 
         /// Extra large icon (32pt)
-        public static let extraLarge: CGFloat = 32
+        case extraLarge
+
+        /// The CGFloat value for the icon size
+        public var value: CGFloat {
+            switch self {
+            case .small: return 16
+            case .medium: return 20
+            case .large: return 24
+            case .extraLarge: return 32
+            }
+        }
     }
 
     // MARK: - Elevation (Shadow)

@@ -19,7 +19,21 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(cat:*)",
-      "Bash(.gitignore)"
+      "Bash(.gitignore)",
+      "Bash(swift package clean:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(curl:*)",
+      "Bash(unzip:*)",
+      "Bash(ElevateUI/Sources/Resources/Fonts/Inter-LICENSE.txt)",
+      "Bash(tee:*)",
+      "Bash(for file in ElevateUI/Sources/DesignTokens/Generated/*.swift)",
+      "Bash(wc:*)",
+      "Bash(awk:*)",
+      "Bash(done)",
+      "Bash(while read file)",
+      "Bash(do echo \"$file:\")",
+      "Bash(./scripts/update-elevate-ui.sh:*)"
     ],
     "deny": [],
     "ask": []

@@ -10,6 +10,36 @@ import UIKit
 ///
 /// Based on ELEVATE Core UI design tokens from:
 /// @inform-elevate/elevate-design-tokens
+///
+/// ## Font Registration
+///
+/// Before using custom fonts, you must register them in your app:
+///
+/// ```swift
+/// import ElevateUI
+///
+/// @main
+/// struct MyApp: App {
+///     init() {
+///         ElevateFontRegistration.registerFonts()
+///     }
+///
+///     var body: some Scene {
+///         WindowGroup {
+///             ContentView()
+///         }
+///     }
+/// }
+/// ```
+///
+/// ## Using Inter Font
+///
+/// This package includes Inter font (SIL Open Font License) in multiple weights:
+/// - Variable fonts: InterVariable.ttf (recommended for iOS 13+)
+/// - Static fonts: Regular, Medium, SemiBold, Bold
+///
+/// All typography styles use Inter by default. If Inter fails to load,
+/// the system falls back to San Francisco (iOS system font).
 @available(iOS 15, *)
 public struct ElevateTypography {
 

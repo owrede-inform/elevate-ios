@@ -2,16 +2,16 @@
 import UIKit
 import SwiftUI
 
-/// ELEVATE Button Component (UIKit)
+/// ELEVATE Badge Component (UIKit)
 ///
-/// UIKit wrapper around SwiftUI Button implementation.
+/// UIKit wrapper around SwiftUI Badge implementation.
 /// Provides Interface Builder support and UIKit-friendly API.
 ///
-/// **Web Component:** `<elvt-button>`
-/// **API Reference:** `.claude/components/Navigation/button.md`
+/// **Web Component:** `<elvt-badge>`
+/// **API Reference:** `.claude/components/Display/badge.md`
 @available(iOS 15, *)
 @IBDesignable
-public class ElevateUIKitButton: UIControl {
+public class ElevateUIKitBadge: UIView {
 
     // MARK: - Properties
 
@@ -20,8 +20,8 @@ public class ElevateUIKitButton: UIControl {
         didSet { updateConfiguration() }
     }
 
-    /// The visual style of the button (not IBInspectable - use toneIndex)
-    public var tone: ButtonTokens.Tone = .neutral {
+    /// The visual style of the badge (not IBInspectable - use toneIndex)
+    public var tone: BadgeTokens.Tone = .neutral {
         didSet { updateConfiguration() }
     }
 
@@ -34,55 +34,40 @@ public class ElevateUIKitButton: UIControl {
             case .success: return 2
             case .warning: return 3
             case .danger: return 4
-            case .emphasized: return 5
-            case .subtle: return 6
-            case .neutral: return 7
+            case .neutral: return 5
             }
         }
         set {
-            tone = [.primary, .secondary, .success, .warning, .danger, .emphasized, .subtle, .neutral][
-                max(0, min(newValue, 7))
+            tone = [.primary, .secondary, .success, .warning, .danger, .neutral][
+                max(0, min(newValue, 5))
             ]
         }
     }
 
-    /// The size of the button (not IBInspectable - use sizeIndex)
-    public var size: ButtonTokens.Size = .medium {
+    /// The prominence level (not IBInspectable - use isMajor)
+    public var rank: BadgeTokens.Rank = .major {
         didSet { updateConfiguration() }
     }
 
     @IBInspectable
-    public var sizeIndex: Int {
-        get {
-            switch size {
-            case .small: return 0
-            case .medium: return 1
-            case .large: return 2
-            }
-        }
-        set {
-            size = [.small, .medium, .large][max(0, min(newValue, 2))]
-        }
+    public var isMajor: Bool {
+        get { rank == .major }
+        set { rank = newValue ? .major : .minor }
     }
 
-    /// The shape of the button (not IBInspectable - use isRounded)
-    public var shape: ButtonTokens.Shape = .default {
+    /// The shape of the badge (not IBInspectable - use isRounded)
+    public var shape: BadgeTokens.Shape = .box {
         didSet { updateConfiguration() }
     }
 
     @IBInspectable
     public var isRounded: Bool {
         get { shape == .pill }
-        set { shape = newValue ? .pill : .default }
+        set { shape = newValue ? .pill : .box }
     }
 
     @IBInspectable
-    public override var isSelected: Bool {
-        didSet { updateConfiguration() }
-    }
-
-    @IBInspectable
-    public override var isEnabled: Bool {
+    public var isPulsing: Bool = false {
         didSet { updateConfiguration() }
     }
 
@@ -101,14 +86,14 @@ public class ElevateUIKitButton: UIControl {
     // MARK: - Initialization
 
     public override init(frame: CGRect) {
-        let swiftUIView = ElevateButton("", tone: .neutral, size: .medium) {}
+        let swiftUIView = ElevateBadge("", tone: .neutral, rank: .major)
         self.hostingController = UIHostingController(rootView: AnyView(swiftUIView))
         super.init(frame: frame)
         setupHostingController()
     }
 
     required init?(coder: NSCoder) {
-        let swiftUIView = ElevateButton("", tone: .neutral, size: .medium) {}
+        let swiftUIView = ElevateBadge("", tone: .neutral, rank: .major)
         self.hostingController = UIHostingController(rootView: AnyView(swiftUIView))
         super.init(coder: coder)
         setupHostingController()
@@ -116,32 +101,17 @@ public class ElevateUIKitButton: UIControl {
 
     public convenience init(
         label: String,
-        tone: ButtonTokens.Tone = .neutral,
-        size: ButtonTokens.Size = .medium,
-        shape: ButtonTokens.Shape = .default,
-        isSelected: Bool = false,
-        isDisabled: Bool = false
+        tone: BadgeTokens.Tone = .neutral,
+        rank: BadgeTokens.Rank = .major,
+        shape: BadgeTokens.Shape = .box,
+        isPulsing: Bool = false
     ) {
         self.init(frame: .zero)
         self.label = label
         self.tone = tone
-        self.size = size
+        self.rank = rank
         self.shape = shape
-        self.isSelected = isSelected
-        self.isEnabled = !isDisabled
-        updateConfiguration()
-    }
-
-    /// Legacy initializer for compatibility
-    public convenience init(
-        tone: ButtonTokens.Tone = .primary,
-        size: ButtonTokens.Size = .medium,
-        shape: ButtonTokens.Shape = .default
-    ) {
-        self.init(frame: .zero)
-        self.tone = tone
-        self.size = size
-        self.shape = shape
+        self.isPulsing = isPulsing
         updateConfiguration()
     }
 
@@ -163,59 +133,46 @@ public class ElevateUIKitButton: UIControl {
     private func updateConfiguration() {
         let swiftUIView: AnyView
 
-        let handleAction: () -> Void = { [weak self] in
-            guard let self = self else { return }
-            self.sendActions(for: .touchUpInside)
-        }
-
         if let prefix = prefixView, let suffix = suffixView {
-            let button = ElevateButton(
+            let badge = ElevateBadge(
                 label: label,
                 tone: tone,
-                size: size,
+                rank: rank,
                 shape: shape,
-                isSelected: isSelected,
-                isDisabled: !isEnabled,
-                action: handleAction,
+                isPulsing: isPulsing,
                 prefix: { UIViewWrapper(view: prefix) },
                 suffix: { UIViewWrapper(view: suffix) }
             )
-            swiftUIView = AnyView(button)
+            swiftUIView = AnyView(badge)
         } else if let prefix = prefixView {
-            let button = ElevateButton(
+            let badge = ElevateBadge(
                 label: label,
                 tone: tone,
-                size: size,
+                rank: rank,
                 shape: shape,
-                isSelected: isSelected,
-                isDisabled: !isEnabled,
-                action: handleAction,
+                isPulsing: isPulsing,
                 prefix: { UIViewWrapper(view: prefix) }
             )
-            swiftUIView = AnyView(button)
+            swiftUIView = AnyView(badge)
         } else if let suffix = suffixView {
-            let button = ElevateButton(
+            let badge = ElevateBadge(
                 label: label,
                 tone: tone,
-                size: size,
+                rank: rank,
                 shape: shape,
-                isSelected: isSelected,
-                isDisabled: !isEnabled,
-                action: handleAction,
+                isPulsing: isPulsing,
                 suffix: { UIViewWrapper(view: suffix) }
             )
-            swiftUIView = AnyView(button)
+            swiftUIView = AnyView(badge)
         } else {
-            let button = ElevateButton(
+            let badge = ElevateBadge(
                 label,
                 tone: tone,
-                size: size,
+                rank: rank,
                 shape: shape,
-                isSelected: isSelected,
-                isDisabled: !isEnabled,
-                action: handleAction
+                isPulsing: isPulsing
             )
-            swiftUIView = AnyView(button)
+            swiftUIView = AnyView(badge)
         }
 
         hostingController.rootView = swiftUIView

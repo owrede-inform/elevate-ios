@@ -3,11 +3,11 @@ import SwiftUI
 
 /// ELEVATE Button Component Design Tokens
 ///
-/// Component-specific tokens that reference alias tokens.
-/// This maintains the proper token hierarchy: Component → Alias → Primitive
+/// Wrapper around generated component tokens for easier use in Button component.
+/// References ButtonComponentTokens which contains all ELEVATE button tokens.
 ///
-/// Auto-generated from ELEVATE design tokens
-/// DO NOT EDIT MANUALLY - Run scripts/update-design-tokens-v2.py to update
+/// Auto-generated component tokens maintain proper hierarchy:
+/// Component Tokens → Alias Tokens → Primitive Tokens
 @available(iOS 15, *)
 public struct ButtonTokens {
 
@@ -19,7 +19,7 @@ public struct ButtonTokens {
         public var colors: ToneColors {
             switch self {
             case .primary: return .primary
-            case .secondary: return .secondary
+            case .secondary: return .neutral  // Map secondary to neutral tokens
             case .success: return .success
             case .warning: return .warning
             case .danger: return .danger
@@ -30,14 +30,32 @@ public struct ButtonTokens {
         }
     }
 
-    // MARK: - Sizes, Shapes, States
+    // MARK: - Button Sizes
 
     public enum Size {
         case small, medium, large
+
+        public var componentSize: ElevateSpacing.ComponentSize {
+            switch self {
+            case .small: return .small
+            case .medium: return .medium
+            case .large: return .large
+            }
+        }
     }
 
+    // MARK: - Button Shapes
+
     public enum Shape {
-        case box, pill
+        case `default`  // Squared corners (box)
+        case pill       // Fully rounded
+
+        public var borderRadius: CGFloat {
+            switch self {
+            case .default: return ElevateSpacing.BorderRadius.small
+            case .pill: return ElevateSpacing.BorderRadius.full
+            }
+        }
     }
 
     public enum State {
@@ -51,88 +69,110 @@ public struct ButtonTokens {
         let backgroundHover: Color
         let backgroundActive: Color
         let backgroundDisabled: Color
+        let backgroundSelected: Color
+        let backgroundSelectedActive: Color
         let text: Color
         let textDisabled: Color
+        let textSelected: Color
         let border: Color
+        let borderSelected: Color
 
         static let primary = ToneColors(
-            background: Color(red: 0.0431, green: 0.3608, blue: 0.8745),
-            backgroundHover: Color(red: 0.1059, green: 0.3137, blue: 0.6510),
-            backgroundActive: Color(red: 0.1373, green: 0.2000, blue: 0.2941),
-            backgroundDisabled: Color(red: 0.5647, green: 0.7765, blue: 1.0000),
-            text: Color(red: 1.0000, green: 1.0000, blue: 1.0000),
-            textDisabled: Color(red: 0.9176, green: 0.9569, blue: 1.0000),
-            border: Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 0.0000)
-        )
-
-        static let secondary = ToneColors(
-            background: Color.gray,
-            backgroundHover: Color.gray,
-            backgroundActive: Color.gray,
-            backgroundDisabled: Color.gray,
-            text: Color.gray,
-            textDisabled: Color.gray,
-            border: Color.gray
+            background: ButtonComponentTokens.fill_primary_default,
+            backgroundHover: ButtonComponentTokens.fill_primary_hover,
+            backgroundActive: ButtonComponentTokens.fill_primary_active,
+            backgroundDisabled: ButtonComponentTokens.fill_primary_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_primary_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_primary_selected_active,
+            text: ButtonComponentTokens.label_primary_default,
+            textDisabled: ButtonComponentTokens.label_primary_disabled_default,
+            textSelected: ButtonComponentTokens.label_primary_selected_default,
+            border: Color.clear, // No border tokens for primary in ELEVATE
+            borderSelected: Color.clear
         )
 
         static let success = ToneColors(
-            background: Color(red: 0.0196, green: 0.4627, blue: 0.2392),
-            backgroundHover: Color(red: 0.0196, green: 0.3765, blue: 0.2118),
-            backgroundActive: Color(red: 0.0627, green: 0.2275, blue: 0.1490),
-            backgroundDisabled: Color(red: 0.6667, green: 0.9020, blue: 0.7373),
-            text: Color(red: 1.0000, green: 1.0000, blue: 1.0000),
-            textDisabled: Color(red: 0.9020, green: 0.9725, blue: 0.9255),
-            border: Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 0.0000)
+            background: ButtonComponentTokens.fill_success_default,
+            backgroundHover: ButtonComponentTokens.fill_success_hover,
+            backgroundActive: ButtonComponentTokens.fill_success_active,
+            backgroundDisabled: ButtonComponentTokens.fill_success_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_success_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_success_selected_active,
+            text: ButtonComponentTokens.label_success_default,
+            textDisabled: ButtonComponentTokens.label_success_disabled_default,
+            textSelected: ButtonComponentTokens.label_success_selected_default,
+            border: Color.clear, // No border tokens for success in ELEVATE
+            borderSelected: Color.clear
         )
 
         static let warning = ToneColors(
-            background: Color(red: 0.9725, green: 0.5608, blue: 0.0000),
-            backgroundHover: Color(red: 0.8471, green: 0.4706, blue: 0.0000),
-            backgroundActive: Color(red: 0.6431, green: 0.3020, blue: 0.0000),
-            backgroundDisabled: Color(red: 1.0000, green: 0.9529, blue: 0.8275),
-            text: Color(red: 0.3725, green: 0.1098, blue: 0.0000),
-            textDisabled: Color(red: 1.0000, green: 0.7020, blue: 0.2118),
-            border: Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 0.0000)
+            background: ButtonComponentTokens.fill_warning_default,
+            backgroundHover: ButtonComponentTokens.fill_warning_hover,
+            backgroundActive: ButtonComponentTokens.fill_warning_active,
+            backgroundDisabled: ButtonComponentTokens.fill_warning_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_warning_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_warning_selected_active,
+            text: ButtonComponentTokens.label_warning_default,
+            textDisabled: ButtonComponentTokens.label_warning_disabled_default,
+            textSelected: ButtonComponentTokens.label_warning_selected_default,
+            border: Color.clear, // No border tokens for warning in ELEVATE
+            borderSelected: Color.clear
         )
 
         static let danger = ToneColors(
-            background: Color(red: 0.8078, green: 0.0039, blue: 0.0039),
-            backgroundHover: Color(red: 0.6706, green: 0.0039, blue: 0.0039),
-            backgroundActive: Color(red: 0.4235, green: 0.0039, blue: 0.0039),
-            backgroundDisabled: Color(red: 1.0000, green: 0.6745, blue: 0.6745),
-            text: Color(red: 1.0000, green: 1.0000, blue: 1.0000),
-            textDisabled: Color(red: 1.0000, green: 0.9412, blue: 0.9412),
-            border: Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 0.0000)
+            background: ButtonComponentTokens.fill_danger_default,
+            backgroundHover: ButtonComponentTokens.fill_danger_hover,
+            backgroundActive: ButtonComponentTokens.fill_danger_active,
+            backgroundDisabled: ButtonComponentTokens.fill_danger_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_danger_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_danger_selected_active,
+            text: ButtonComponentTokens.label_danger_default,
+            textDisabled: ButtonComponentTokens.label_danger_disabled_default,
+            textSelected: ButtonComponentTokens.label_danger_selected_default,
+            border: Color.clear, // No border tokens for danger in ELEVATE
+            borderSelected: Color.clear
         )
 
         static let emphasized = ToneColors(
-            background: Color(red: 0.8353, green: 0.8510, blue: 0.8824),
-            backgroundHover: Color(red: 0.7451, green: 0.7647, blue: 0.8039),
-            backgroundActive: Color(red: 0.5333, green: 0.5686, blue: 0.6275),
-            backgroundDisabled: Color(red: 0.8353, green: 0.8510, blue: 0.8824),
-            text: Color(red: 0.1843, green: 0.1961, blue: 0.2510),
-            textDisabled: Color(red: 0.6392, green: 0.6667, blue: 0.7059),
-            border: Color(red: 0.4392, green: 0.4784, blue: 0.5608)
+            background: ButtonComponentTokens.fill_emphasized_default,
+            backgroundHover: ButtonComponentTokens.fill_emphasized_hover,
+            backgroundActive: ButtonComponentTokens.fill_emphasized_active,
+            backgroundDisabled: ButtonComponentTokens.fill_emphasized_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_emphasized_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_emphasized_selected_active,
+            text: ButtonComponentTokens.label_emphasized_default,
+            textDisabled: ButtonComponentTokens.label_emphasized_disabled_default,
+            textSelected: ButtonComponentTokens.label_emphasized_selected_default,
+            border: ButtonComponentTokens.border_emphasized_color_default,
+            borderSelected: ButtonComponentTokens.border_emphasized_color_selected_default
         )
 
         static let subtle = ToneColors(
-            background: Color(red: 0.9176, green: 0.9569, blue: 1.0000),
-            backgroundHover: Color(red: 0.7255, green: 0.8588, blue: 1.0000),
-            backgroundActive: Color(red: 0.3725, green: 0.6745, blue: 1.0000),
-            backgroundDisabled: Color(red: 0.7255, green: 0.8588, blue: 1.0000),
-            text: Color(red: 0.0431, green: 0.3608, blue: 0.8745),
-            textDisabled: Color(red: 0.9176, green: 0.9569, blue: 1.0000),
-            border: Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 0.0000)
+            background: ButtonComponentTokens.fill_subtle_default,
+            backgroundHover: ButtonComponentTokens.fill_subtle_hover,
+            backgroundActive: ButtonComponentTokens.fill_subtle_active,
+            backgroundDisabled: ButtonComponentTokens.fill_subtle_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_subtle_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_subtle_selected_active,
+            text: ButtonComponentTokens.label_subtle_default,
+            textDisabled: ButtonComponentTokens.label_subtle_disabled_default,
+            textSelected: ButtonComponentTokens.label_subtle_selected_default,
+            border: Color.clear, // No border tokens for subtle in ELEVATE
+            borderSelected: Color.clear
         )
 
         static let neutral = ToneColors(
-            background: Color(red: 1.0000, green: 1.0000, blue: 1.0000),
-            backgroundHover: Color(red: 0.9529, green: 0.9569, blue: 0.9686),
-            backgroundActive: Color(red: 0.7451, green: 0.7647, blue: 0.8039),
-            backgroundDisabled: Color(red: 0.9529, green: 0.9569, blue: 0.9686),
-            text: Color(red: 0.1843, green: 0.1961, blue: 0.2510),
-            textDisabled: Color(red: 0.6392, green: 0.6667, blue: 0.7059),
-            border: Color(red: 0.6392, green: 0.6667, blue: 0.7059)
+            background: ButtonComponentTokens.fill_neutral_default,
+            backgroundHover: ButtonComponentTokens.fill_neutral_hover,
+            backgroundActive: ButtonComponentTokens.fill_neutral_active,
+            backgroundDisabled: ButtonComponentTokens.fill_neutral_disabled_default,
+            backgroundSelected: ButtonComponentTokens.fill_neutral_selected_default,
+            backgroundSelectedActive: ButtonComponentTokens.fill_neutral_selected_active,
+            text: ButtonComponentTokens.label_neutral_default,
+            textDisabled: ButtonComponentTokens.label_neutral_disabled_default,
+            textSelected: ButtonComponentTokens.label_neutral_selected_default,
+            border: ButtonComponentTokens.border_neutral_color_default,
+            borderSelected: ButtonComponentTokens.border_neutral_color_selected_default
         )
 
     }

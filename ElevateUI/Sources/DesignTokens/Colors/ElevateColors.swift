@@ -103,6 +103,32 @@ public struct ElevateColors {
             public static var strong: UIColor { UIColor(ElevateColors.Border.strong) }
         }
     }
+
+    // MARK: - Flattened Convenience Access
+    // Provides easy autocomplete-friendly access to common colors
+    // while maintaining the organized nested structure above
+
+    // Background colors (flattened)
+    public static let backgroundPrimary = Background.primary
+    public static let backgroundSecondary = Background.secondary
+    public static let backgroundTertiary = Background.tertiary
+
+    // Surface colors (flattened)
+    public static let surfacePrimary = Surface.primary
+    public static let surfaceSecondary = Surface.secondary
+    public static let surfaceElevated = Surface.elevated
+
+    // Text colors (flattened)
+    public static let textPrimary = Text.primary
+    public static let textSecondary = Text.secondary
+    public static let textTertiary = Text.tertiary
+    public static let textInverse = Text.inverse
+    public static let textDisabled = Text.disabled
+
+    // Border colors (flattened)
+    public static let borderDefault = Border.default
+    public static let borderSubtle = Border.subtle
+    public static let borderStrong = Border.strong
 }
 
 // MARK: - Helper Extensions

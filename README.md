@@ -10,6 +10,7 @@ ELEVATE iOS UI Kit is a port of the [ELEVATE Core UI](https://github.com/inform-
 
 - **Dual Framework Support**: Components available for both SwiftUI and UIKit
 - **Design Token System**: Centralized design tokens for colors, typography, spacing, and more
+- **Inter Font Included**: Official ELEVATE typography with Inter font family bundled
 - **Theme Support**: Built-in light and dark theme support
 - **Native iOS**: Built with native iOS components and patterns
 - **Type-Safe**: Leverages Swift's type system for design token access
@@ -19,6 +20,31 @@ ELEVATE iOS UI Kit is a port of the [ELEVATE Core UI](https://github.com/inform-
 - iOS 15.0+
 - Xcode 14.0+
 - Swift 5.7+
+
+## Inter Font Included
+
+ElevateUI includes the **Inter font family** as specified by the ELEVATE Design System. The font is automatically bundled with the package and ready to use.
+
+**Important**: You must register fonts before using ElevateUI:
+
+```swift
+import ElevateUI
+
+@main
+struct MyApp: App {
+    init() {
+        ElevateFontRegistration.registerFonts()
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+```
+
+See [FONTS.md](ElevateUI/FONTS.md) for complete font documentation.
 
 ## Installation
 
