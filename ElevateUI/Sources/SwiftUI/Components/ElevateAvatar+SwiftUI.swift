@@ -80,8 +80,15 @@ public struct ElevateAvatar: View {
     public var body: some View {
         ZStack {
             // Background
-            backgroundShape
-                .fill(tokenFillColor)
+            Group {
+                if shape == .circle {
+                    Circle()
+                        .fill(tokenFillColor)
+                } else {
+                    RoundedRectangle(cornerRadius: tokenBorderRadius)
+                        .fill(tokenFillColor)
+                }
+            }
 
             // Content
             contentView
@@ -89,8 +96,15 @@ public struct ElevateAvatar: View {
         }
         .frame(width: tokenSize, height: tokenSize)
         .overlay(
-            backgroundShape
-                .strokeBorder(tokenBorderColor, lineWidth: tokenBorderWidth)
+            Group {
+                if shape == .circle {
+                    Circle()
+                        .strokeBorder(tokenBorderColor, lineWidth: tokenBorderWidth)
+                } else {
+                    RoundedRectangle(cornerRadius: tokenBorderRadius)
+                        .strokeBorder(tokenBorderColor, lineWidth: tokenBorderWidth)
+                }
+            }
         )
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityLabel)
@@ -102,11 +116,21 @@ public struct ElevateAvatar: View {
     @ViewBuilder
     private var contentView: some View {
         if let image = image {
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: tokenSize - tokenBorderWidth * 2, height: tokenSize - tokenBorderWidth * 2)
-                .clipShape(backgroundShape)
+            Group {
+                if shape == .circle {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: tokenSize - tokenBorderWidth * 2, height: tokenSize - tokenBorderWidth * 2)
+                        .clipShape(Circle())
+                } else {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: tokenSize - tokenBorderWidth * 2, height: tokenSize - tokenBorderWidth * 2)
+                        .clipShape(RoundedRectangle(cornerRadius: tokenBorderRadius))
+                }
+            }
         } else if let icon = icon {
             Image(systemName: icon)
                 .resizable()
@@ -125,16 +149,6 @@ public struct ElevateAvatar: View {
     }
 
     // MARK: - Helpers
-
-    @ViewBuilder
-    private var backgroundShape: some Shape {
-        switch shape {
-        case .circle:
-            Circle()
-        case .box:
-            RoundedRectangle(cornerRadius: tokenBorderRadius)
-        }
-    }
 
     private var computedInitials: String? {
         guard let label = label, !label.isEmpty else { return nil }

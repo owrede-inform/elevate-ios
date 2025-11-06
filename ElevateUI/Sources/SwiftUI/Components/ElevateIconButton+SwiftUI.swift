@@ -79,8 +79,15 @@ public struct ElevateIconButton: View {
             ZStack {
                 // Background (shown when selected)
                 if isSelected {
-                    backgroundShape
-                        .fill(tokenBackgroundColor)
+                    Group {
+                        if shape == .circle {
+                            Circle()
+                                .fill(tokenBackgroundColor)
+                        } else {
+                            RoundedRectangle(cornerRadius: IconButtonComponentTokens.border_radius_default)
+                                .fill(tokenBackgroundColor)
+                        }
+                    }
                 }
 
                 // Icon

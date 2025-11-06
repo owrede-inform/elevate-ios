@@ -37,7 +37,7 @@ public struct ElevateEmptyState<Action: View>: View {
         icon: String,
         title: String,
         description: String? = nil,
-        @ViewBuilder action: (() -> Action)? = nil
+        action: (() -> Action)? = nil
     ) {
         self.icon = icon
         self.title = title

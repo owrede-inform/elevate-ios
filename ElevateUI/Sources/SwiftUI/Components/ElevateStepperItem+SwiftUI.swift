@@ -68,7 +68,7 @@ public struct ElevateStepperItem<Content: View>: View {
         size: StepperItemSize = .medium,
         isFirst: Bool = false,
         action: (() -> Void)? = nil,
-        @ViewBuilder content: (() -> Content)? = nil
+        content: (() -> Content)? = nil
     ) {
         self.label = label
         self.helpText = helpText

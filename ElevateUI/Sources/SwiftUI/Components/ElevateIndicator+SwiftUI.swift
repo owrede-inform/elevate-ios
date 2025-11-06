@@ -90,7 +90,7 @@ extension ElevateIndicator where Indicator == ElevateBadge<EmptyView, EmptyView>
     ///   - content: The component to attach the indicator to
     public init(
         count: Int,
-        tone: BadgeTone = .primary,
+        tone: IndicatorTone = .primary,
         placement: IndicatorPlacement = .topTrailing,
         @ViewBuilder content: @escaping () -> Content
     ) {
@@ -100,7 +100,7 @@ extension ElevateIndicator where Indicator == ElevateBadge<EmptyView, EmptyView>
             indicator: {
                 ElevateBadge(
                     "\(count)",
-                    tone: tone,
+                    tone: Self.mapToBadgeTone(tone),
                     rank: .minor,
                     shape: .pill
                 )
@@ -108,6 +108,22 @@ extension ElevateIndicator where Indicator == ElevateBadge<EmptyView, EmptyView>
         )
     }
 
+    private static func mapToBadgeTone(_ tone: IndicatorTone) -> BadgeTokens.Tone {
+        switch tone {
+        case .primary: return .primary
+        case .success: return .success
+        case .warning: return .warning
+        case .danger: return .danger
+        case .neutral: return .neutral
+        case .emphasized: return .primary
+        }
+    }
+}
+
+// MARK: - Convenience Initializer with Dot
+
+@available(iOS 15, *)
+extension ElevateIndicator {
     /// Creates an indicator with a dot (no text)
     ///
     /// - Parameters:
@@ -118,18 +134,20 @@ extension ElevateIndicator where Indicator == ElevateBadge<EmptyView, EmptyView>
         tone: IndicatorTone = .danger,
         placement: IndicatorPlacement = .topTrailing,
         @ViewBuilder content: @escaping () -> Content
-    ) {
+    ) where Indicator == AnyView {
         self.init(
             placement: placement,
             content: content,
             indicator: {
-                Circle()
-                    .fill(tokenFillColor(for: tone))
-                    .frame(width: 12, height: 12)
-                    .overlay(
-                        Circle()
-                            .strokeBorder(Color.white, lineWidth: 2)
-                    )
+                AnyView(
+                    Circle()
+                        .fill(Self.tokenFillColor(for: tone))
+                        .frame(width: 12, height: 12)
+                        .overlay(
+                            Circle()
+                                .strokeBorder(Color.white, lineWidth: 2)
+                        )
+                )
             }
         )
     }

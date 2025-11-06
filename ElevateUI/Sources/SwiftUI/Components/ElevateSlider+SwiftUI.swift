@@ -139,10 +139,10 @@ public struct ElevateSlider: View {
             if !isDisabled {
                 switch direction {
                 case .increment:
-                    value = min(value + step, max)
+                    value = Swift.min(value + step, max)
                     onChange?(value)
                 case .decrement:
-                    value = max(value - step, min)
+                    value = Swift.max(value - step, min)
                     onChange?(value)
                 @unknown default:
                     break
@@ -158,12 +158,12 @@ public struct ElevateSlider: View {
     }
 
     private func updateValue(for locationX: CGFloat, in width: CGFloat) {
-        let percentage = max(0, min(1, locationX / width))
+        let percentage = Swift.max(0, Swift.min(1, locationX / width))
         let rawValue = min + (max - min) * Double(percentage)
 
         // Snap to step
         let steppedValue = round(rawValue / step) * step
-        let clampedValue = max(min, min(max, steppedValue))
+        let clampedValue = Swift.max(min, Swift.min(max, steppedValue))
 
         if clampedValue != value {
             value = clampedValue

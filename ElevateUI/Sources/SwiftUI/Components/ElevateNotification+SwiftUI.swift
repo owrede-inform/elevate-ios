@@ -135,7 +135,7 @@ public struct ElevateNotification: View {
             .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
             .transition(.opacity.combined(with: .scale(scale: 0.95)))
             .accessibilityElement(children: .combine)
-            .accessibilityAddTraits(.isAlert)
+            .accessibilityAddTraits(.isButton)
             .onAppear {
                 startCountdown()
             }

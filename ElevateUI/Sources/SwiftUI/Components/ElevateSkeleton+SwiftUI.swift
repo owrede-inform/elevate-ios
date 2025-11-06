@@ -86,8 +86,8 @@ public struct ElevateSkeleton: View {
                     .frame(height: tokenLineHeight)
                     .frame(maxWidth: index == lineCount - 1 ? .infinity : nil)
                     .frame(width: index == lineCount - 1 ? nil : .infinity)
-                    .modifier(widthModifier(for: index))
-                    .modifier(effectModifier)
+                    .background(widthModifier(for: index))
+                    .overlay(effectModifier)
             }
         }
     }
@@ -96,21 +96,21 @@ public struct ElevateSkeleton: View {
         RoundedRectangle(cornerRadius: SkeletonComponentTokens.radius)
             .fill(SkeletonComponentTokens.fill)
             .frame(height: tokenBlockHeight)
-            .modifier(effectModifier)
+            .overlay(effectModifier)
     }
 
     private var circleShape: some View {
         Circle()
             .fill(SkeletonComponentTokens.fill)
             .frame(width: tokenCircleSize, height: tokenCircleSize)
-            .modifier(effectModifier)
+            .overlay(effectModifier)
     }
 
     private var squareShape: some View {
         RoundedRectangle(cornerRadius: SkeletonComponentTokens.radius)
             .fill(SkeletonComponentTokens.fill)
             .frame(width: tokenSquareSize, height: tokenSquareSize)
-            .modifier(effectModifier)
+            .overlay(effectModifier)
     }
 
     // MARK: - Modifiers

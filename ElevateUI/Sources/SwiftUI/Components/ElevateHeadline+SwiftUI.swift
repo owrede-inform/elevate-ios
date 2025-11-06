@@ -48,7 +48,7 @@ public struct ElevateHeadline<EndContent: View>: View {
         subtitle: String? = nil,
         size: HeadlineSize = .medium,
         level: Int = 2,
-        @ViewBuilder endContent: (() -> EndContent)? = nil
+        endContent: (() -> EndContent)? = nil
     ) {
         self.title = title
         self.overline = overline
@@ -111,12 +111,12 @@ public struct ElevateHeadline<EndContent: View>: View {
 
     private var titleFont: Font {
         switch size {
-        case .extraExtraSmall: return ElevateTypography.headingXxs
-        case .extraSmall: return ElevateTypography.headingXs
-        case .small: return ElevateTypography.headingS
-        case .medium: return ElevateTypography.headingM
-        case .large: return ElevateTypography.headingL
-        case .extraLarge: return ElevateTypography.headingXl
+        case .extraExtraSmall: return ElevateTypography.labelLarge
+        case .extraSmall: return ElevateTypography.headingXSmall
+        case .small: return ElevateTypography.headingSmall
+        case .medium: return ElevateTypography.headingMedium
+        case .large: return ElevateTypography.headingLarge
+        case .extraLarge: return ElevateTypography.displaySmall
         }
     }
 

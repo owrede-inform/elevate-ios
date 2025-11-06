@@ -307,7 +307,6 @@ struct ElevateButton_Previews: PreviewProvider {
                 VStack(spacing: 12) {
                     Text("Button Tones").font(.headline)
                     ElevateButton("Primary", tone: .primary) {}
-                    ElevateButton("Secondary", tone: .secondary) {}
                     ElevateButton("Success", tone: .success) {}
                     ElevateButton("Warning", tone: .warning) {}
                     ElevateButton("Danger", tone: .danger) {}

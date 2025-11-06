@@ -21,7 +21,7 @@ import Foundation
 /// - ``ElevateButton``
 public struct ElevateUI {
     /// The current version of the ELEVATE UI framework
-    public static let version = "0.1.0"
+    public static let version = "0.0.41-alpha"
 
     /// The ELEVATE Design System version this framework is based on
     public static let designSystemVersion = "0.36.1"

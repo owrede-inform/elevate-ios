@@ -32,13 +32,22 @@ public struct ElevateVisuallyHidden<Content: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        content()
-            .opacity(isFocused ? 1.0 : 0.0)
-            .frame(width: isFocused ? nil : 0.01, height: isFocused ? nil : 0.01)
-            .clipped()
-            .accessibilityHidden(false)
-            .focusable()
-            .focused($isFocused)
+        if #available(iOS 17.0, *) {
+            content()
+                .opacity(isFocused ? 1.0 : 0.0)
+                .frame(width: isFocused ? nil : 0.01, height: isFocused ? nil : 0.01)
+                .clipped()
+                .accessibilityHidden(false)
+                .focusable()
+                .focused($isFocused)
+        } else {
+            content()
+                .opacity(isFocused ? 1.0 : 0.0)
+                .frame(width: isFocused ? nil : 0.01, height: isFocused ? nil : 0.01)
+                .clipped()
+                .accessibilityHidden(false)
+                .focused($isFocused)
+        }
     }
 }
 

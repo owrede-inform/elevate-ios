@@ -273,6 +273,30 @@ extension ElevateToolbar where Start == EmptyView, Center == EmptyView, End == E
     }
 }
 
+@available(iOS 15, *)
+extension ElevateToolbar where Start == EmptyView, Content == EmptyView {
+    /// Creates a toolbar with only center and end slots
+    public init(
+        layer: ToolbarLayer = .ground,
+        border: ToolbarBorder = .start,
+        direction: ToolbarDirection = .row,
+        gap: CGFloat? = nil,
+        padding: CGFloat? = nil,
+        @ViewBuilder center: @escaping () -> Center,
+        @ViewBuilder end: @escaping () -> End
+    ) {
+        self.layer = layer
+        self.border = border
+        self.direction = direction
+        self.gap = gap
+        self.padding = padding
+        self.start = nil
+        self.center = center
+        self.end = end
+        self.content = nil
+    }
+}
+
 // MARK: - Toolbar Layer
 
 @available(iOS 15, *)
