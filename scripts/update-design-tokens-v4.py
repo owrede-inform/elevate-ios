@@ -55,6 +55,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 THEME_PATH = PROJECT_ROOT / ".elevate-themes" / "ios"
 THEME_EXTEND_FILE = THEME_PATH / "extend.css"
 THEME_OVERWRITE_FILE = THEME_PATH / "overwrite.css"
+THEME_OVERWRITE_DARK_FILE = THEME_PATH / "overwrite-dark.css"
 
 # Output paths
 OUTPUT_BASE = PROJECT_ROOT / "ElevateUI" / "Sources" / "DesignTokens"
@@ -844,9 +845,13 @@ def main():
 
     # Merge iOS theme tokens
     print("\nMerging iOS theme tokens...")
-    if THEME_EXTEND_FILE.exists() or THEME_OVERWRITE_FILE.exists():
+    if THEME_EXTEND_FILE.exists() or THEME_OVERWRITE_FILE.exists() or THEME_OVERWRITE_DARK_FILE.exists():
+        # Light mode: use extend.css + overwrite.css
         light_tokens = merge_theme_tokens(light_tokens, THEME_EXTEND_FILE, THEME_OVERWRITE_FILE)
-        dark_tokens = merge_theme_tokens(dark_tokens, THEME_EXTEND_FILE, THEME_OVERWRITE_FILE)
+
+        # Dark mode: use extend.css + overwrite-dark.css (or overwrite.css if overwrite-dark.css doesn't exist)
+        dark_overwrite_file = THEME_OVERWRITE_DARK_FILE if THEME_OVERWRITE_DARK_FILE.exists() else THEME_OVERWRITE_FILE
+        dark_tokens = merge_theme_tokens(dark_tokens, THEME_EXTEND_FILE, dark_overwrite_file)
 
         extend_count = 0
         if THEME_EXTEND_FILE.exists():
@@ -874,6 +879,8 @@ def main():
         theme_source_files.append(THEME_EXTEND_FILE)
     if THEME_OVERWRITE_FILE.exists():
         theme_source_files.append(THEME_OVERWRITE_FILE)
+    if THEME_OVERWRITE_DARK_FILE.exists():
+        theme_source_files.append(THEME_OVERWRITE_DARK_FILE)
     all_source_files = base_source_files + theme_source_files
 
     # Generate Color.adaptive() extension

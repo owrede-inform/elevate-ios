@@ -22,16 +22,19 @@ public struct TextareaComponentTokens {
     public static let field_border_form_color_neutral_read_only_hover = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.border_hover, dark: ElevateAliases.Action.StrongNeutral.border_hover)
     public static let field_fill_default = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+            darkRGB: (red: 0.1098, green: 0.1098, blue: 0.1176, opacity: 1.0000)
         )
-    public static let field_fill_disabled = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_disabled_default, dark: ElevateAliases.Action.StrongEmphasized.fill_disabled_default)
+    public static let field_fill_disabled = Color.adaptive(
+            lightRGB: (red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000),
+            darkRGB: (red: 0.1725, green: 0.1725, blue: 0.1804, opacity: 1.0000)
+        )
     public static let field_fill_invalid = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+            darkRGB: (red: 0.1098, green: 0.1098, blue: 0.1176, opacity: 1.0000)
         )
     public static let field_fill_read_only = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+            darkRGB: (red: 0.1725, green: 0.1725, blue: 0.1804, opacity: 1.0000)
         )
     public static let field_placeholder_color_default = Color.adaptive(light: ElevateAliases.Content.General.text_understated, dark: ElevateAliases.Content.General.text_understated)
     public static let field_placeholder_color_disabled = Color.adaptive(light: ElevateAliases.Content.General.text_muted, dark: ElevateAliases.Content.General.text_muted)

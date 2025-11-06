@@ -1,0 +1,137 @@
+/**
+ * ELEVATE iOS Theme - Override Tokens
+ *
+ * This file OVERRIDES existing ELEVATE design tokens to adapt them
+ * for iOS-specific requirements, particularly touch UI optimizations.
+ *
+ * Only override tokens when iOS has different requirements than web:
+ * - Larger touch targets (44pt minimum vs web's smaller targets)
+ * - Different spacing for touch interactions
+ * - Platform-specific visual adaptations
+ *
+ * Version: 1.0.0
+ * Date: 2025-11-06
+ */
+
+/* ========================================================================
+   Touch Target Optimizations
+   ======================================================================== */
+
+/**
+ * iOS Human Interface Guidelines require minimum 44pt touch targets.
+ * Web components may use smaller targets that work with mouse precision.
+ *
+ * Uncomment and adjust these if ELEVATE's default sizes are too small
+ * for comfortable touch interaction on iOS.
+ */
+
+/* Example: Override button heights for better touch targets
+$elvt-component-button-height-s: 2.75rem;  // 44px instead of 32px
+$elvt-component-button-height-m: 2.75rem;  // 44px instead of 40px
+$elvt-component-button-height-l: 3rem;     // 48px (keep original)
+*/
+
+/* ========================================================================
+   Spacing Adaptations
+   ======================================================================== */
+
+/**
+ * Touch UIs may need more generous spacing than mouse-driven UIs.
+ * Override ELEVATE spacing tokens here if needed.
+ */
+
+/* Example: Increase padding for easier touch interaction
+$elvt-component-chip-padding-inline-s: 0.75rem;  // 12px instead of 8px
+$elvt-component-chip-padding-inline-m: 1rem;     // 16px instead of 8px
+*/
+
+/* ========================================================================
+   Visual Adaptations
+   ======================================================================== */
+
+/**
+ * iOS may have different visual requirements than web.
+ * Override border radius, shadows, or other visual tokens here.
+ */
+
+/* Example: Rounder corners for iOS aesthetic
+$elvt-component-button-border-radius-m: 0.5rem;  // 8px instead of 4px
+$elvt-component-chip-border-radius-m: 0.375rem;  // 6px instead of 2px
+*/
+
+/* ========================================================================
+   Typography Adaptations
+   ======================================================================== */
+
+/**
+ * iOS uses San Francisco font by default, which may have different
+ * optical characteristics than web fonts.
+ * Override font sizes if needed for better iOS legibility.
+ */
+
+/* Example: Adjust font sizes for iOS readability
+$elvt-component-button-font-size-m: 1rem;     // 16px instead of 14px
+$elvt-component-chip-font-size-s: 0.8125rem;  // 13px instead of 12px
+*/
+
+/* ========================================================================
+   Color Adaptations
+   ======================================================================== */
+
+/**
+ * iOS may need subtle color adjustments for different display characteristics
+ * (e.g., OLED displays on iPhones).
+ * Override color tokens here if needed.
+ */
+
+/* Example: Adjust colors for OLED displays
+// Use slightly different shades to prevent OLED burn-in
+// or improve contrast on iOS devices
+*/
+
+/* ========================================================================
+   Notes on Override Strategy
+   ======================================================================== */
+
+/**
+ * IMPORTANT: Override Philosophy
+ *
+ * 1. START EMPTY: Begin with no overrides. Only add when necessary.
+ *
+ * 2. DOCUMENT WHY: Every override must have a comment explaining:
+ *    - What iOS requirement it addresses
+ *    - Why ELEVATE's default doesn't work
+ *    - Reference to Apple HIG or iOS design principle
+ *
+ * 3. MEASURE IMPACT: Test overrides on real iOS devices:
+ *    - iPhone SE (smallest screen)
+ *    - iPhone Pro Max (largest screen)
+ *    - iPad (tablet experience)
+ *
+ * 4. PERIODIC REVIEW: Every ELEVATE update, review overrides:
+ *    - Can any be removed due to ELEVATE improvements?
+ *    - Are they still needed for iOS?
+ *
+ * 5. PREFER EXTEND: If adding new tokens, use extend.css.
+ *    Only use overwrite.css for changing existing ELEVATE tokens.
+ *
+ * Example of good override documentation:
+ *
+ * $elvt-component-button-height-m: 2.75rem;  // 44px
+ * // Reason: Apple HIG requires 44pt minimum touch target
+ * // ELEVATE default: 40px (too small for thumb tapping)
+ * // Tested on: iPhone SE, satisfactory thumb reach
+ */
+
+/* ========================================================================
+   Currently Active Overrides
+   ======================================================================== */
+
+/**
+ * NO OVERRIDES CURRENTLY ACTIVE FOR LIGHT MODE
+ *
+ * The iOS theme is currently using 100% stock ELEVATE tokens for light mode.
+ * Light mode overrides will be added here as iOS-specific needs are discovered.
+ *
+ * Note: Dark mode overrides are in overwrite-dark.css
+ */

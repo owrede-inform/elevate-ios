@@ -18,11 +18,11 @@ public struct InputComponentTokens {
     public static let border_color_selected = Color.adaptive(light: ElevateAliases.Action.Focus.border_color_default, dark: ElevateAliases.Action.Focus.border_color_default)
     public static let fill_default = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+            darkRGB: (red: 0.1098, green: 0.1098, blue: 0.1176, opacity: 1.0000)
         )
     public static let fill_disabled = Color.adaptive(
             lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
+            darkRGB: (red: 0.1725, green: 0.1725, blue: 0.1804, opacity: 1.0000)
         )
     public static let fill_hover = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
@@ -30,7 +30,7 @@ public struct InputComponentTokens {
         )
     public static let fill_invalid = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+            darkRGB: (red: 0.1098, green: 0.1098, blue: 0.1176, opacity: 1.0000)
         )
     public static let fill_selected = Color.adaptive(
             lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
