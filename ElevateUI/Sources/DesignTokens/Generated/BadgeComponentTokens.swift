@@ -11,31 +11,6 @@ public struct BadgeComponentTokens {
 
     // MARK: - Colors
 
-    public static let elvt_component_badge_major_fill_danger = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-    public static let elvt_component_badge_major_fill_neutral = Color(red: 0.3020, green: 0.3255, blue: 0.4000, opacity: 1.0000)
-    public static let elvt_component_badge_major_fill_primary = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
-    public static let elvt_component_badge_major_fill_success = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
-    public static let elvt_component_badge_major_fill_warning = Color(red: 1.0000, green: 0.7020, blue: 0.2118, opacity: 1.0000)
-    public static let elvt_component_badge_major_text_color_danger = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_major_text_color_neutral = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_major_text_color_primary = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_major_text_color_success = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_major_text_color_warning = Color(red: 0.0000, green: 0.0000, blue: 0.0000, opacity: 1.0000)
-    public static let elvt_component_badge_minor_border_color_danger = Color(red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-    public static let elvt_component_badge_minor_border_color_neutral = Color(red: 0.4392, green: 0.4784, blue: 0.5608, opacity: 1.0000)
-    public static let elvt_component_badge_minor_border_color_primary = Color(red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_minor_border_color_success = Color(red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000)
-    public static let elvt_component_badge_minor_border_color_warning = Color(red: 0.8471, green: 0.4706, blue: 0.0000, opacity: 1.0000)
-    public static let elvt_component_badge_minor_fill_danger = Color(red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000)
-    public static let elvt_component_badge_minor_fill_neutral = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-    public static let elvt_component_badge_minor_fill_primary = Color(red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_badge_minor_fill_success = Color(red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000)
-    public static let elvt_component_badge_minor_fill_warning = Color(red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000)
-    public static let elvt_component_badge_minor_text_color_danger = Color(red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-    public static let elvt_component_badge_minor_text_color_neutral = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
-    public static let elvt_component_badge_minor_text_color_primary = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
-    public static let elvt_component_badge_minor_text_color_success = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
-    public static let elvt_component_badge_minor_text_color_warning = Color(red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000)
     public static let major_fill_danger = Color.adaptive(light: ElevateAliases.Feedback.Strong.fill_danger, dark: ElevateAliases.Feedback.Strong.fill_danger)
     public static let major_fill_neutral = Color.adaptive(light: ElevateAliases.Feedback.Strong.fill_emphasized, dark: ElevateAliases.Feedback.Strong.fill_emphasized)
     public static let major_fill_primary = Color.adaptive(light: ElevateAliases.Feedback.Strong.fill_primary, dark: ElevateAliases.Feedback.Strong.fill_primary)
@@ -64,18 +39,10 @@ public struct BadgeComponentTokens {
 
     // MARK: - Dimensions
 
-    public static let elvt_component_badge_gap: CGFloat = 4.0
     public static let elvt_component_badge_icon_size_major: CGFloat = 16.0
     public static let elvt_component_badge_icon_size_minor: CGFloat = 12.0
-    public static let elvt_component_badge_major_border_radius_box: CGFloat = 4.0
-    public static let elvt_component_badge_major_border_width: CGFloat = 1.0
-    public static let elvt_component_badge_major_height: CGFloat = 24.0
-    public static let elvt_component_badge_minor_border_radius_box: CGFloat = 4.0
-    public static let elvt_component_badge_minor_border_width: CGFloat = 1.0
-    public static let elvt_component_badge_minor_height: CGFloat = 20.0
     public static let elvt_component_badge_padding_block_major: CGFloat = 2.0
     public static let elvt_component_badge_padding_block_minor: CGFloat = 1.0
-    public static let elvt_component_badge_padding_inline: CGFloat = 8.0
     public static let elvt_component_badge_padding_inline_minor: CGFloat = 6.0
     public static let gap: CGFloat = 4.0
     public static let major_border_radius_box: CGFloat = 4.0

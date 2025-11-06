@@ -293,7 +293,6 @@ public struct ElevatePrimitives {
     // MARK: Transparent Scale
 
     public enum Transparent {
-        public static let _color_transparent = Color.clear
     }
 
     // MARK: White Scale

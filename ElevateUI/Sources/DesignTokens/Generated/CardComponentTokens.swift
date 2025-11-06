@@ -20,31 +20,6 @@ public struct CardComponentTokens {
     public static let border_color_primary = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.border_default, dark: ElevateAliases.Action.UnderstatedPrimary.border_default)
     public static let border_color_success = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.border_default, dark: ElevateAliases.Action.UnderstatedSuccess.border_default)
     public static let border_color_warning = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.border_default, dark: ElevateAliases.Action.UnderstatedWarning.border_default)
-    public static let elvt_component_card_border_color_danger = Color(red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-    public static let elvt_component_card_border_color_emphasized = Color(red: 0.4392, green: 0.4784, blue: 0.5608, opacity: 1.0000)
-    public static let elvt_component_card_border_color_neutral_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-    public static let elvt_component_card_border_color_neutral_elevated = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-    public static let elvt_component_card_border_color_neutral_overlay = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-    public static let elvt_component_card_border_color_neutral_sunken = Color(red: 0.5333, green: 0.5686, blue: 0.6275, opacity: 1.0000)
-    public static let elvt_component_card_border_color_primary = Color(red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_border_color_success = Color(red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000)
-    public static let elvt_component_card_border_color_warning = Color(red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000)
-    public static let elvt_component_card_fill_elevated = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-    public static let elvt_component_card_fill_ground = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_fill_overlay = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_fill_popover = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_fill_raised = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_fill_sunken = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-    public static let elvt_component_card_footer_border_color = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_danger = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_emphasized = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_neutral = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_primary = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_success = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_footer_fill_warning = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-    public static let elvt_component_card_heading_border_color = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-    public static let elvt_component_card_heading_text_color = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
-    public static let elvt_component_card_text_color = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
     public static let fill_elevated = Color.adaptive(
             lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
             darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
@@ -102,14 +77,6 @@ public struct CardComponentTokens {
 
     public static let border_radius: CGFloat = 12.0
     public static let border_width: CGFloat = 1.0
-    public static let elvt_component_card_border_radius: CGFloat = 12.0
-    public static let elvt_component_card_border_width: CGFloat = 1.0
-    public static let elvt_component_card_footer_border_width: CGFloat = 1.0
-    public static let elvt_component_card_footer_gap: CGFloat = 12.0
-    public static let elvt_component_card_heading_border_width: CGFloat = 1.0
-    public static let elvt_component_card_heading_gap: CGFloat = 4.0
-    public static let elvt_component_card_padding_block: CGFloat = 12.0
-    public static let elvt_component_card_padding_inline: CGFloat = 16.0
     public static let footer_border_width: CGFloat = 1.0
     public static let footer_gap: CGFloat = 12.0
     public static let heading_border_width: CGFloat = 1.0
