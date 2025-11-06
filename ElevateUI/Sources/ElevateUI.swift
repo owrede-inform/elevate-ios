@@ -8,10 +8,11 @@ import Foundation
 /// ## Topics
 ///
 /// ### Design Tokens
-/// - ``ElevateColors``
 /// - ``ElevateTypography``
-/// - ``ElevateSpacing``
+/// - ``ElevateIconSize``
 /// - ``ButtonTokens``
+/// - ``ChipTokens``
+/// - ``BadgeTokens``
 ///
 /// ### SwiftUI Components
 /// - ``ElevateButton``

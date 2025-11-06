@@ -95,3 +95,4 @@ iOSInjectionProject/
 # macOS
 .DS_Store
 scripts/backups/
+.elevate-src/

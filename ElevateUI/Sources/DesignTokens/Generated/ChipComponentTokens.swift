@@ -3,801 +3,387 @@ import SwiftUI
 
 /// ELEVATE Chip Component Tokens
 ///
-/// Complete token set extracted from ELEVATE design system.
-/// These reference alias tokens which reference primitive tokens.
-///
+/// Complete token set including colors, spacing, and dimensions.
 /// Auto-generated from ELEVATE design tokens
-/// DO NOT EDIT MANUALLY - Run scripts/update-design-tokens-v3.py to update
+/// DO NOT EDIT MANUALLY - Run scripts/update-design-tokens-v4.py to update
 @available(iOS 15, *)
 public struct ChipComponentTokens {
 
-    // MARK: - Border
-
-    public static let border_color_danger_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_danger,
-                    dark: ElevateAliases.Feedback.General.border_danger
-                )
-
-    public static let border_color_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.border_disabled_default
-                )
-
-    public static let border_color_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_neutral,
-                    dark: ElevateAliases.Feedback.General.border_neutral
-                )
-
-    public static let border_color_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default
-                )
-
-    public static let border_color_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_emphasized,
-                    dark: ElevateAliases.Feedback.General.border_emphasized
-                )
-
-    public static let border_color_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_emphasized,
-                    dark: ElevateAliases.Feedback.General.border_emphasized
-                )
-
-    public static let border_color_primary_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_primary,
-                    dark: ElevateAliases.Feedback.General.border_primary
-                )
-
-    public static let border_color_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default
-                )
-
-    public static let border_color_success_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_success,
-                    dark: ElevateAliases.Feedback.General.border_success
-                )
-
-    public static let border_color_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default
-                )
-
-    public static let border_color_warning_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_warning,
-                    dark: ElevateAliases.Feedback.General.border_warning
-                )
-
-    public static let border_color_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.border_disabled_default
-                )
-
-    // MARK: - Control
-
-    public static let control_border_color_danger_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_danger,
-                    dark: ElevateAliases.Feedback.General.border_danger
-                )
-
-    public static let control_border_color_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.border_disabled_default
-                )
-
-    public static let control_border_color_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_neutral,
-                    dark: ElevateAliases.Feedback.General.border_neutral
-                )
-
-    public static let control_border_color_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default
-                )
-
-    public static let control_border_color_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_emphasized,
-                    dark: ElevateAliases.Feedback.General.border_emphasized
-                )
-
-    public static let control_border_color_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_emphasized,
-                    dark: ElevateAliases.Feedback.General.border_emphasized
-                )
-
-    public static let control_border_color_primary_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_primary,
-                    dark: ElevateAliases.Feedback.General.border_primary
-                )
-
-    public static let control_border_color_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default
-                )
-
-    public static let control_border_color_success_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_success,
-                    dark: ElevateAliases.Feedback.General.border_success
-                )
-
-    public static let control_border_color_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default
-                )
-
-    public static let control_border_color_warning_default = Color.adaptive(
-                    light: ElevateAliases.Feedback.General.border_warning,
-                    dark: ElevateAliases.Feedback.General.border_warning
-                )
-
-    public static let control_border_color_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.border_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.border_disabled_default
-                )
-
-    public static let control_fill_danger_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_active
-                )
-
-    public static let control_fill_danger_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_default
-                )
-
-    public static let control_fill_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_default
-                )
-
-    public static let control_fill_danger_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_hover
-                )
-
-    public static let control_fill_emphasized_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_active,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_active
-                )
-
-    public static let control_fill_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_default,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_default
-                )
-
-    public static let control_fill_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.fill_disabled_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.fill_disabled_default
-                )
-
-    public static let control_fill_emphasized_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_hover,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_hover
-                )
-
-    public static let control_fill_neutral_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_active
-                )
-
-    public static let control_fill_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default
-                )
-
-    public static let control_fill_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default
-                )
-
-    public static let control_fill_neutral_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_hover
-                )
-
-    public static let control_fill_primary_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_active
-                )
-
-    public static let control_fill_primary_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_default
-                )
-
-    public static let control_fill_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_default
-                )
-
-    public static let control_fill_primary_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_hover
-                )
-
-    public static let control_fill_success_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_active
-                )
-
-    public static let control_fill_success_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_default
-                )
-
-    public static let control_fill_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_default
-                )
-
-    public static let control_fill_success_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_hover
-                )
-
-    public static let control_fill_warning_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_active
-                )
-
-    public static let control_fill_warning_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_default
-                )
-
-    public static let control_fill_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_default
-                )
-
-    public static let control_fill_warning_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_hover
-                )
-
-    public static let control_icon_fill_danger_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.text_active,
-                    dark: ElevateAliases.Action.StrongDanger.text_active
-                )
-
-    public static let control_icon_fill_danger_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_default
-                )
-
-    public static let control_icon_fill_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_disabled_default
-                )
-
-    public static let control_icon_fill_danger_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_default
-                )
-
-    public static let control_icon_fill_emphasized_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_active,
-                    dark: ElevateAliases.Action.StrongPrimary.text_active
-                )
-
-    public static let control_icon_fill_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.text_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.text_default
-                )
-
-    public static let control_icon_fill_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult
-                )
-
-    public static let control_icon_fill_emphasized_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.text_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.text_default
-                )
-
-    public static let control_icon_fill_neutral_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_active,
-                    dark: ElevateAliases.Action.StrongPrimary.text_active
-                )
-
-    public static let control_icon_fill_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.text_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.text_default
-                )
-
-    public static let control_icon_fill_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.text_disabled_default,
-                    dark: ElevateAliases.Action.StrongNeutral.text_disabled_default
-                )
-
-    public static let control_icon_fill_neutral_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.text_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.text_default
-                )
-
-    public static let control_icon_fill_primary_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_active,
-                    dark: ElevateAliases.Action.StrongPrimary.text_active
-                )
-
-    public static let control_icon_fill_primary_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_default
-                )
-
-    public static let control_icon_fill_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default
-                )
-
-    public static let control_icon_fill_primary_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_default
-                )
-
-    public static let control_icon_fill_success_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.text_active,
-                    dark: ElevateAliases.Action.StrongSuccess.text_active
-                )
-
-    public static let control_icon_fill_success_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_default
-                )
-
-    public static let control_icon_fill_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default
-                )
-
-    public static let control_icon_fill_success_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_default
-                )
-
-    public static let control_icon_fill_warning_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_active,
-                    dark: ElevateAliases.Action.StrongWarning.text_active
-                )
-
-    public static let control_icon_fill_warning_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_default
-                )
-
-    public static let control_icon_fill_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_disabled_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_disabled_default
-                )
-
-    public static let control_icon_fill_warning_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_hover,
-                    dark: ElevateAliases.Action.StrongWarning.text_hover
-                )
-
-    // MARK: - Fill
-
-    public static let fill_danger_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_active
-                )
-
-    public static let fill_danger_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_default
-                )
-
-    public static let fill_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_default
-                )
-
-    public static let fill_danger_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedDanger.fill_hover
-                )
-
-    public static let fill_danger_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.fill_active,
-                    dark: ElevateAliases.Action.StrongDanger.fill_active
-                )
-
-    public static let fill_danger_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.fill_default,
-                    dark: ElevateAliases.Action.StrongDanger.fill_default
-                )
-
-    public static let fill_danger_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.fill_hover,
-                    dark: ElevateAliases.Action.StrongDanger.fill_hover
-                )
-
-    public static let fill_emphasized_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_active,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_active
-                )
-
-    public static let fill_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_default,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_default
-                )
-
-    public static let fill_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_default,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_default
-                )
-
-    public static let fill_emphasized_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.fill_hover,
-                    dark: ElevateAliases.Action.StrongNeutral.fill_hover
-                )
-
-    public static let fill_emphasized_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.fill_selected_active,
-                    dark: ElevateAliases.Action.StrongEmphasized.fill_selected_active
-                )
-
-    public static let fill_emphasized_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.fill_selected_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.fill_selected_default
-                )
-
-    public static let fill_emphasized_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.fill_selected_hover,
-                    dark: ElevateAliases.Action.StrongEmphasized.fill_selected_hover
-                )
-
-    public static let fill_neutral_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_active
-                )
-
-    public static let fill_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default
-                )
-
-    public static let fill_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default
-                )
-
-    public static let fill_neutral_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_hover
-                )
-
-    public static let fill_neutral_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_active,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_active
-                )
-
-    public static let fill_neutral_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_default,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_default
-                )
-
-    public static let fill_neutral_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_hover,
-                    dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_hover
-                )
-
-    public static let fill_primary_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_active
-                )
-
-    public static let fill_primary_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_default
-                )
-
-    public static let fill_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_default
-                )
-
-    public static let fill_primary_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.fill_hover
-                )
-
-    public static let fill_primary_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.fill_active,
-                    dark: ElevateAliases.Action.StrongPrimary.fill_active
-                )
-
-    public static let fill_primary_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.fill_default,
-                    dark: ElevateAliases.Action.StrongPrimary.fill_default
-                )
-
-    public static let fill_primary_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.fill_hover,
-                    dark: ElevateAliases.Action.StrongPrimary.fill_hover
-                )
-
-    public static let fill_success_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_active
-                )
-
-    public static let fill_success_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_default
-                )
-
-    public static let fill_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_default
-                )
-
-    public static let fill_success_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.fill_hover
-                )
-
-    public static let fill_success_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.fill_active,
-                    dark: ElevateAliases.Action.StrongSuccess.fill_active
-                )
-
-    public static let fill_success_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.fill_default,
-                    dark: ElevateAliases.Action.StrongSuccess.fill_default
-                )
-
-    public static let fill_success_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.fill_hover,
-                    dark: ElevateAliases.Action.StrongSuccess.fill_hover
-                )
-
-    public static let fill_warning_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_active,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_active
-                )
-
-    public static let fill_warning_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_default
-                )
-
-    public static let fill_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_default,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_default
-                )
-
-    public static let fill_warning_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedWarning.fill_hover,
-                    dark: ElevateAliases.Action.UnderstatedWarning.fill_hover
-                )
-
-    public static let fill_warning_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.fill_active,
-                    dark: ElevateAliases.Action.StrongWarning.fill_active
-                )
-
-    public static let fill_warning_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.fill_default,
-                    dark: ElevateAliases.Action.StrongWarning.fill_default
-                )
-
-    public static let fill_warning_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.fill_hover,
-                    dark: ElevateAliases.Action.StrongWarning.fill_hover
-                )
-
-    // MARK: - Text
-
-    public static let text_color_danger_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_default
-                )
-
-    public static let text_color_danger_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_default
-                )
-
-    public static let text_color_danger_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_disabled_default
-                )
-
-    public static let text_color_danger_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedDanger.text_default,
-                    dark: ElevateAliases.Action.UnderstatedDanger.text_default
-                )
-
-    public static let text_color_danger_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.text_selected_default,
-                    dark: ElevateAliases.Action.StrongDanger.text_selected_default
-                )
-
-    public static let text_color_danger_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.text_selected_default,
-                    dark: ElevateAliases.Action.StrongDanger.text_selected_default
-                )
-
-    public static let text_color_danger_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongDanger.text_selected_default,
-                    dark: ElevateAliases.Action.StrongDanger.text_selected_default
-                )
-
-    public static let text_color_emphasized_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_emphasized_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_emphasized_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult
-                )
-
-    public static let text_color_emphasized_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_emphasized_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_emphasized_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_emphasized_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_neutral_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_neutral_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_neutral_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongNeutral.text_disabled_default,
-                    dark: ElevateAliases.Action.StrongNeutral.text_disabled_default
-                )
-
-    public static let text_color_neutral_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_default
-                )
-
-    public static let text_color_neutral_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_selected_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_selected_default
-                )
-
-    public static let text_color_neutral_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_selected_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_selected_default
-                )
-
-    public static let text_color_neutral_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongEmphasized.text_selected_default,
-                    dark: ElevateAliases.Action.StrongEmphasized.text_selected_default
-                )
-
-    public static let text_color_primary_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_default
-                )
-
-    public static let text_color_primary_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_default
-                )
-
-    public static let text_color_primary_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default
-                )
-
-    public static let text_color_primary_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedPrimary.text_default,
-                    dark: ElevateAliases.Action.UnderstatedPrimary.text_default
-                )
-
-    public static let text_color_primary_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_primary_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_primary_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongPrimary.text_selected_default,
-                    dark: ElevateAliases.Action.StrongPrimary.text_selected_default
-                )
-
-    public static let text_color_success_active = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_default
-                )
-
-    public static let text_color_success_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_default
-                )
-
-    public static let text_color_success_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default
-                )
-
-    public static let text_color_success_hover = Color.adaptive(
-                    light: ElevateAliases.Action.UnderstatedSuccess.text_default,
-                    dark: ElevateAliases.Action.UnderstatedSuccess.text_default
-                )
-
-    public static let text_color_success_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.text_selected_default,
-                    dark: ElevateAliases.Action.StrongSuccess.text_selected_default
-                )
-
-    public static let text_color_success_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.text_selected_default,
-                    dark: ElevateAliases.Action.StrongSuccess.text_selected_default
-                )
-
-    public static let text_color_success_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongSuccess.text_selected_default,
-                    dark: ElevateAliases.Action.StrongSuccess.text_selected_default
-                )
-
-    public static let text_color_warning_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_active,
-                    dark: ElevateAliases.Action.StrongWarning.text_active
-                )
-
-    public static let text_color_warning_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_default
-                )
-
-    public static let text_color_warning_disabled_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_disabled_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_disabled_default
-                )
-
-    public static let text_color_warning_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_hover,
-                    dark: ElevateAliases.Action.StrongWarning.text_hover
-                )
-
-    public static let text_color_warning_selected_active = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_selected_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_selected_default
-                )
-
-    public static let text_color_warning_selected_default = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_selected_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_selected_default
-                )
-
-    public static let text_color_warning_selected_hover = Color.adaptive(
-                    light: ElevateAliases.Action.StrongWarning.text_selected_default,
-                    dark: ElevateAliases.Action.StrongWarning.text_selected_default
-                )
+    // MARK: - Colors
+
+    public static let border_color_danger_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_danger, dark: ElevateAliases.Feedback.General.border_danger)
+    public static let border_color_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.border_disabled_default, dark: ElevateAliases.Action.UnderstatedDanger.border_disabled_default)
+    public static let border_color_emphasized_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_neutral, dark: ElevateAliases.Feedback.General.border_neutral)
+    public static let border_color_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default, dark: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default)
+    public static let border_color_neutral_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_emphasized, dark: ElevateAliases.Feedback.General.border_emphasized)
+    public static let border_color_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_emphasized, dark: ElevateAliases.Feedback.General.border_emphasized)
+    public static let border_color_primary_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_primary, dark: ElevateAliases.Feedback.General.border_primary)
+    public static let border_color_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default, dark: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default)
+    public static let border_color_success_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_success, dark: ElevateAliases.Feedback.General.border_success)
+    public static let border_color_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default, dark: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default)
+    public static let border_color_warning_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_warning, dark: ElevateAliases.Feedback.General.border_warning)
+    public static let border_color_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.border_disabled_default, dark: ElevateAliases.Action.UnderstatedWarning.border_disabled_default)
+    public static let control_border_color_danger_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_danger, dark: ElevateAliases.Feedback.General.border_danger)
+    public static let control_border_color_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.border_disabled_default, dark: ElevateAliases.Action.UnderstatedDanger.border_disabled_default)
+    public static let control_border_color_emphasized_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_neutral, dark: ElevateAliases.Feedback.General.border_neutral)
+    public static let control_border_color_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default, dark: ElevateAliases.Action.UnderstatedEmphasized.border_disabled_default)
+    public static let control_border_color_neutral_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_emphasized, dark: ElevateAliases.Feedback.General.border_emphasized)
+    public static let control_border_color_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_emphasized, dark: ElevateAliases.Feedback.General.border_emphasized)
+    public static let control_border_color_primary_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_primary, dark: ElevateAliases.Feedback.General.border_primary)
+    public static let control_border_color_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default, dark: ElevateAliases.Action.UnderstatedPrimary.border_disabled_default)
+    public static let control_border_color_success_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_success, dark: ElevateAliases.Feedback.General.border_success)
+    public static let control_border_color_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default, dark: ElevateAliases.Action.UnderstatedSuccess.border_disabled_default)
+    public static let control_border_color_warning_default = Color.adaptive(light: ElevateAliases.Feedback.General.border_warning, dark: ElevateAliases.Feedback.General.border_warning)
+    public static let control_border_color_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.border_disabled_default, dark: ElevateAliases.Action.UnderstatedWarning.border_disabled_default)
+    public static let control_fill_danger_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_active, dark: ElevateAliases.Action.UnderstatedDanger.fill_active)
+    public static let control_fill_danger_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_default, dark: ElevateAliases.Action.UnderstatedDanger.fill_default)
+    public static let control_fill_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_default, dark: ElevateAliases.Action.UnderstatedDanger.fill_default)
+    public static let control_fill_danger_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_hover, dark: ElevateAliases.Action.UnderstatedDanger.fill_hover)
+    public static let control_fill_emphasized_active = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_active, dark: ElevateAliases.Action.StrongNeutral.fill_active)
+    public static let control_fill_emphasized_default = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_default, dark: ElevateAliases.Action.StrongNeutral.fill_default)
+    public static let control_fill_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_disabled_default, dark: ElevateAliases.Action.StrongEmphasized.fill_disabled_default)
+    public static let control_fill_emphasized_hover = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_hover, dark: ElevateAliases.Action.StrongNeutral.fill_hover)
+    public static let control_fill_neutral_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_active, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_active)
+    public static let control_fill_neutral_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
+    public static let control_fill_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
+    public static let control_fill_neutral_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_hover, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_hover)
+    public static let control_fill_primary_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_active, dark: ElevateAliases.Action.UnderstatedPrimary.fill_active)
+    public static let control_fill_primary_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_default, dark: ElevateAliases.Action.UnderstatedPrimary.fill_default)
+    public static let control_fill_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_default, dark: ElevateAliases.Action.UnderstatedPrimary.fill_default)
+    public static let control_fill_primary_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_hover, dark: ElevateAliases.Action.UnderstatedPrimary.fill_hover)
+    public static let control_fill_success_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_active, dark: ElevateAliases.Action.UnderstatedSuccess.fill_active)
+    public static let control_fill_success_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_default, dark: ElevateAliases.Action.UnderstatedSuccess.fill_default)
+    public static let control_fill_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_default, dark: ElevateAliases.Action.UnderstatedSuccess.fill_default)
+    public static let control_fill_success_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_hover, dark: ElevateAliases.Action.UnderstatedSuccess.fill_hover)
+    public static let control_fill_warning_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_active, dark: ElevateAliases.Action.UnderstatedWarning.fill_active)
+    public static let control_fill_warning_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_default, dark: ElevateAliases.Action.UnderstatedWarning.fill_default)
+    public static let control_fill_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_default, dark: ElevateAliases.Action.UnderstatedWarning.fill_default)
+    public static let control_fill_warning_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_hover, dark: ElevateAliases.Action.UnderstatedWarning.fill_hover)
+    public static let control_icon_fill_danger_active = Color.adaptive(light: ElevateAliases.Action.StrongDanger.text_active, dark: ElevateAliases.Action.StrongDanger.text_active)
+    public static let control_icon_fill_danger_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_default, dark: ElevateAliases.Action.UnderstatedDanger.text_default)
+    public static let control_icon_fill_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_disabled_default, dark: ElevateAliases.Action.UnderstatedDanger.text_disabled_default)
+    public static let control_icon_fill_danger_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_default, dark: ElevateAliases.Action.UnderstatedDanger.text_default)
+    public static let control_icon_fill_emphasized_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_active, dark: ElevateAliases.Action.StrongPrimary.text_active)
+    public static let control_icon_fill_emphasized_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.text_default, dark: ElevateAliases.Action.UnderstatedEmphasized.text_default)
+    public static let control_icon_fill_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult, dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult)
+    public static let control_icon_fill_emphasized_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.text_default, dark: ElevateAliases.Action.UnderstatedEmphasized.text_default)
+    public static let control_icon_fill_neutral_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_active, dark: ElevateAliases.Action.StrongPrimary.text_active)
+    public static let control_icon_fill_neutral_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.text_default, dark: ElevateAliases.Action.UnderstatedEmphasized.text_default)
+    public static let control_icon_fill_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_disabled_default, dark: ElevateAliases.Action.StrongNeutral.text_disabled_default)
+    public static let control_icon_fill_neutral_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.text_default, dark: ElevateAliases.Action.UnderstatedEmphasized.text_default)
+    public static let control_icon_fill_primary_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_active, dark: ElevateAliases.Action.StrongPrimary.text_active)
+    public static let control_icon_fill_primary_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_default)
+    public static let control_icon_fill_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default)
+    public static let control_icon_fill_primary_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_default)
+    public static let control_icon_fill_success_active = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.text_active, dark: ElevateAliases.Action.StrongSuccess.text_active)
+    public static let control_icon_fill_success_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_default)
+    public static let control_icon_fill_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default)
+    public static let control_icon_fill_success_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_default)
+    public static let control_icon_fill_warning_active = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_active, dark: ElevateAliases.Action.StrongWarning.text_active)
+    public static let control_icon_fill_warning_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_default, dark: ElevateAliases.Action.StrongWarning.text_default)
+    public static let control_icon_fill_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_disabled_default, dark: ElevateAliases.Action.StrongWarning.text_disabled_default)
+    public static let control_icon_fill_warning_hover = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_hover, dark: ElevateAliases.Action.StrongWarning.text_hover)
+    public static let elvt_component_chip_border_color_danger_default = Color(red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_danger_disabled_default = Color(red: 1.0000, green: 0.6745, blue: 0.6745, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_emphasized_default = Color(red: 0.3020, green: 0.3255, blue: 0.4000, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_emphasized_disabled_default = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_neutral_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_neutral_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_primary_default = Color(red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_primary_disabled_default = Color(red: 0.5647, green: 0.7765, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_success_default = Color(red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_success_disabled_default = Color(red: 0.4588, green: 0.8392, blue: 0.5725, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_warning_default = Color(red: 0.9725, green: 0.5608, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_border_color_warning_disabled_default = Color(red: 1.0000, green: 0.8275, blue: 0.4745, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_danger_default = Color(red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_danger_disabled_default = Color(red: 1.0000, green: 0.6745, blue: 0.6745, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_emphasized_default = Color(red: 0.3020, green: 0.3255, blue: 0.4000, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_emphasized_disabled_default = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_neutral_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_neutral_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_primary_default = Color(red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_primary_disabled_default = Color(red: 0.5647, green: 0.7765, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_success_default = Color(red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_success_disabled_default = Color(red: 0.4588, green: 0.8392, blue: 0.5725, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_warning_default = Color(red: 0.9725, green: 0.5608, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_border_color_warning_disabled_default = Color(red: 1.0000, green: 0.8275, blue: 0.4745, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_danger_active = Color(red: 1.0000, green: 0.5176, blue: 0.5176, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_danger_default = Color(red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_danger_disabled_default = Color(red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_danger_hover = Color(red: 1.0000, green: 0.8000, blue: 0.8000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_emphasized_active = Color(red: 0.5333, green: 0.5686, blue: 0.6275, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_emphasized_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_emphasized_disabled_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_emphasized_hover = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_neutral_active = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_neutral_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_neutral_disabled_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_neutral_hover = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_primary_active = Color(red: 0.3725, green: 0.6745, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_primary_default = Color(red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_primary_disabled_default = Color(red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_primary_hover = Color(red: 0.7255, green: 0.8588, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_success_active = Color(red: 0.2235, green: 0.7529, blue: 0.3843, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_success_default = Color(red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_success_disabled_default = Color(red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_success_hover = Color(red: 0.6667, green: 0.9020, blue: 0.7373, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_warning_active = Color(red: 0.9725, green: 0.5608, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_warning_default = Color(red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_warning_disabled_default = Color(red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000)
+    public static let elvt_component_chip_control_fill_warning_hover = Color(red: 1.0000, green: 0.8275, blue: 0.4745, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_danger_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_danger_default = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_danger_disabled_default = Color(red: 1.0000, green: 0.5176, blue: 0.5176, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_danger_hover = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_emphasized_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_emphasized_default = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_emphasized_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_emphasized_hover = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_neutral_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_neutral_default = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_neutral_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_neutral_hover = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_primary_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_primary_default = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_primary_disabled_default = Color(red: 0.3725, green: 0.6745, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_primary_hover = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_success_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_success_default = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_success_disabled_default = Color(red: 0.2235, green: 0.7529, blue: 0.3843, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_success_hover = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_warning_active = Color(red: 0.1412, green: 0.0431, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_warning_default = Color(red: 0.3725, green: 0.1098, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_warning_disabled_default = Color(red: 1.0000, green: 0.7020, blue: 0.2118, opacity: 1.0000)
+    public static let elvt_component_chip_control_icon_fill_warning_hover = Color(red: 0.2510, green: 0.0745, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_active = Color(red: 1.0000, green: 0.5176, blue: 0.5176, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_default = Color(red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_disabled_default = Color(red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_hover = Color(red: 1.0000, green: 0.8000, blue: 0.8000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_selected_active = Color(red: 0.4235, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_selected_default = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_fill_danger_selected_hover = Color(red: 0.6706, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_active = Color(red: 0.5333, green: 0.5686, blue: 0.6275, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_disabled_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_hover = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_selected_active = Color(red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_selected_default = Color(red: 0.3647, green: 0.4000, blue: 0.4745, opacity: 1.0000)
+    public static let elvt_component_chip_fill_emphasized_selected_hover = Color(red: 0.3020, green: 0.3255, blue: 0.4000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_active = Color(red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_disabled_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_hover = Color(red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_selected_active = Color(red: 0.5333, green: 0.5686, blue: 0.6275, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_selected_default = Color(red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
+    public static let elvt_component_chip_fill_neutral_selected_hover = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_active = Color(red: 0.3725, green: 0.6745, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_default = Color(red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_disabled_default = Color(red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_hover = Color(red: 0.7255, green: 0.8588, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_selected_active = Color(red: 0.1373, green: 0.2000, blue: 0.2941, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_selected_default = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_fill_primary_selected_hover = Color(red: 0.1059, green: 0.3137, blue: 0.6510, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_active = Color(red: 0.2235, green: 0.7529, blue: 0.3843, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_default = Color(red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_disabled_default = Color(red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_hover = Color(red: 0.6667, green: 0.9020, blue: 0.7373, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_selected_active = Color(red: 0.0627, green: 0.2275, blue: 0.1490, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_selected_default = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_fill_success_selected_hover = Color(red: 0.0196, green: 0.3765, blue: 0.2118, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_active = Color(red: 0.9725, green: 0.5608, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_default = Color(red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_disabled_default = Color(red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_hover = Color(red: 1.0000, green: 0.8275, blue: 0.4745, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_selected_active = Color(red: 0.6431, green: 0.3020, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_selected_default = Color(red: 0.9725, green: 0.5608, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_fill_warning_selected_hover = Color(red: 0.8471, green: 0.4706, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_active = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_default = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_disabled_default = Color(red: 1.0000, green: 0.5176, blue: 0.5176, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_hover = Color(red: 0.8078, green: 0.0039, blue: 0.0039, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_selected_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_selected_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_danger_selected_hover = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_active = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_default = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_hover = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_selected_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_selected_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_emphasized_selected_hover = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_active = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_default = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_disabled_default = Color(red: 0.6392, green: 0.6667, blue: 0.7059, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_hover = Color(red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_selected_active = Color(red: 0.0667, green: 0.0706, blue: 0.0902, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_selected_default = Color(red: 0.0667, green: 0.0706, blue: 0.0902, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_neutral_selected_hover = Color(red: 0.0667, green: 0.0706, blue: 0.0902, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_active = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_default = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_disabled_default = Color(red: 0.3725, green: 0.6745, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_hover = Color(red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_selected_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_selected_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_primary_selected_hover = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_active = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_default = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_disabled_default = Color(red: 0.2235, green: 0.7529, blue: 0.3843, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_hover = Color(red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_selected_active = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_selected_default = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_success_selected_hover = Color(red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_active = Color(red: 0.1412, green: 0.0431, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_default = Color(red: 0.3725, green: 0.1098, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_disabled_default = Color(red: 1.0000, green: 0.7020, blue: 0.2118, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_hover = Color(red: 0.2510, green: 0.0745, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_selected_active = Color(red: 0.1412, green: 0.0431, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_selected_default = Color(red: 0.1412, green: 0.0431, blue: 0.0000, opacity: 1.0000)
+    public static let elvt_component_chip_text_color_warning_selected_hover = Color(red: 0.1412, green: 0.0431, blue: 0.0000, opacity: 1.0000)
+    public static let fill_danger_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_active, dark: ElevateAliases.Action.UnderstatedDanger.fill_active)
+    public static let fill_danger_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_default, dark: ElevateAliases.Action.UnderstatedDanger.fill_default)
+    public static let fill_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_default, dark: ElevateAliases.Action.UnderstatedDanger.fill_default)
+    public static let fill_danger_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_hover, dark: ElevateAliases.Action.UnderstatedDanger.fill_hover)
+    public static let fill_danger_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongDanger.fill_active, dark: ElevateAliases.Action.StrongDanger.fill_active)
+    public static let fill_danger_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongDanger.fill_default, dark: ElevateAliases.Action.StrongDanger.fill_default)
+    public static let fill_danger_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongDanger.fill_hover, dark: ElevateAliases.Action.StrongDanger.fill_hover)
+    public static let fill_emphasized_active = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_active, dark: ElevateAliases.Action.StrongNeutral.fill_active)
+    public static let fill_emphasized_default = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_default, dark: ElevateAliases.Action.StrongNeutral.fill_default)
+    public static let fill_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_default, dark: ElevateAliases.Action.StrongNeutral.fill_default)
+    public static let fill_emphasized_hover = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_hover, dark: ElevateAliases.Action.StrongNeutral.fill_hover)
+    public static let fill_emphasized_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_selected_active, dark: ElevateAliases.Action.StrongEmphasized.fill_selected_active)
+    public static let fill_emphasized_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_selected_default, dark: ElevateAliases.Action.StrongEmphasized.fill_selected_default)
+    public static let fill_emphasized_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_selected_hover, dark: ElevateAliases.Action.StrongEmphasized.fill_selected_hover)
+    public static let fill_neutral_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_active, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_active)
+    public static let fill_neutral_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
+    public static let fill_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
+    public static let fill_neutral_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_hover, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_hover)
+    public static let fill_neutral_selected_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_active, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_active)
+    public static let fill_neutral_selected_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_default)
+    public static let fill_neutral_selected_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_hover, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_selected_hover)
+    public static let fill_primary_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_active, dark: ElevateAliases.Action.UnderstatedPrimary.fill_active)
+    public static let fill_primary_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_default, dark: ElevateAliases.Action.UnderstatedPrimary.fill_default)
+    public static let fill_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_default, dark: ElevateAliases.Action.UnderstatedPrimary.fill_default)
+    public static let fill_primary_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_hover, dark: ElevateAliases.Action.UnderstatedPrimary.fill_hover)
+    public static let fill_primary_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.fill_active, dark: ElevateAliases.Action.StrongPrimary.fill_active)
+    public static let fill_primary_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.fill_default, dark: ElevateAliases.Action.StrongPrimary.fill_default)
+    public static let fill_primary_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.fill_hover, dark: ElevateAliases.Action.StrongPrimary.fill_hover)
+    public static let fill_success_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_active, dark: ElevateAliases.Action.UnderstatedSuccess.fill_active)
+    public static let fill_success_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_default, dark: ElevateAliases.Action.UnderstatedSuccess.fill_default)
+    public static let fill_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_default, dark: ElevateAliases.Action.UnderstatedSuccess.fill_default)
+    public static let fill_success_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_hover, dark: ElevateAliases.Action.UnderstatedSuccess.fill_hover)
+    public static let fill_success_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.fill_active, dark: ElevateAliases.Action.StrongSuccess.fill_active)
+    public static let fill_success_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.fill_default, dark: ElevateAliases.Action.StrongSuccess.fill_default)
+    public static let fill_success_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.fill_hover, dark: ElevateAliases.Action.StrongSuccess.fill_hover)
+    public static let fill_warning_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_active, dark: ElevateAliases.Action.UnderstatedWarning.fill_active)
+    public static let fill_warning_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_default, dark: ElevateAliases.Action.UnderstatedWarning.fill_default)
+    public static let fill_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_default, dark: ElevateAliases.Action.UnderstatedWarning.fill_default)
+    public static let fill_warning_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_hover, dark: ElevateAliases.Action.UnderstatedWarning.fill_hover)
+    public static let fill_warning_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongWarning.fill_active, dark: ElevateAliases.Action.StrongWarning.fill_active)
+    public static let fill_warning_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.fill_default, dark: ElevateAliases.Action.StrongWarning.fill_default)
+    public static let fill_warning_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongWarning.fill_hover, dark: ElevateAliases.Action.StrongWarning.fill_hover)
+    public static let text_color_danger_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_default, dark: ElevateAliases.Action.UnderstatedDanger.text_default)
+    public static let text_color_danger_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_default, dark: ElevateAliases.Action.UnderstatedDanger.text_default)
+    public static let text_color_danger_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_disabled_default, dark: ElevateAliases.Action.UnderstatedDanger.text_disabled_default)
+    public static let text_color_danger_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.text_default, dark: ElevateAliases.Action.UnderstatedDanger.text_default)
+    public static let text_color_danger_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongDanger.text_selected_default, dark: ElevateAliases.Action.StrongDanger.text_selected_default)
+    public static let text_color_danger_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongDanger.text_selected_default, dark: ElevateAliases.Action.StrongDanger.text_selected_default)
+    public static let text_color_danger_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongDanger.text_selected_default, dark: ElevateAliases.Action.StrongDanger.text_selected_default)
+    public static let text_color_emphasized_active = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_emphasized_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_emphasized_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult, dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult)
+    public static let text_color_emphasized_hover = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_emphasized_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_emphasized_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_emphasized_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_neutral_active = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_neutral_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_neutral_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_disabled_default, dark: ElevateAliases.Action.StrongNeutral.text_disabled_default)
+    public static let text_color_neutral_hover = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
+    public static let text_color_neutral_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_selected_default, dark: ElevateAliases.Action.StrongEmphasized.text_selected_default)
+    public static let text_color_neutral_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_selected_default, dark: ElevateAliases.Action.StrongEmphasized.text_selected_default)
+    public static let text_color_neutral_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_selected_default, dark: ElevateAliases.Action.StrongEmphasized.text_selected_default)
+    public static let text_color_primary_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_default)
+    public static let text_color_primary_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_default)
+    public static let text_color_primary_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_disabled_default)
+    public static let text_color_primary_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.text_default, dark: ElevateAliases.Action.UnderstatedPrimary.text_default)
+    public static let text_color_primary_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_primary_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_primary_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_selected_default, dark: ElevateAliases.Action.StrongPrimary.text_selected_default)
+    public static let text_color_success_active = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_default)
+    public static let text_color_success_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_default)
+    public static let text_color_success_disabled_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_disabled_default)
+    public static let text_color_success_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.text_default, dark: ElevateAliases.Action.UnderstatedSuccess.text_default)
+    public static let text_color_success_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.text_selected_default, dark: ElevateAliases.Action.StrongSuccess.text_selected_default)
+    public static let text_color_success_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.text_selected_default, dark: ElevateAliases.Action.StrongSuccess.text_selected_default)
+    public static let text_color_success_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.text_selected_default, dark: ElevateAliases.Action.StrongSuccess.text_selected_default)
+    public static let text_color_warning_active = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_active, dark: ElevateAliases.Action.StrongWarning.text_active)
+    public static let text_color_warning_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_default, dark: ElevateAliases.Action.StrongWarning.text_default)
+    public static let text_color_warning_disabled_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_disabled_default, dark: ElevateAliases.Action.StrongWarning.text_disabled_default)
+    public static let text_color_warning_hover = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_hover, dark: ElevateAliases.Action.StrongWarning.text_hover)
+    public static let text_color_warning_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_selected_default, dark: ElevateAliases.Action.StrongWarning.text_selected_default)
+    public static let text_color_warning_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_selected_default, dark: ElevateAliases.Action.StrongWarning.text_selected_default)
+    public static let text_color_warning_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongWarning.text_selected_default, dark: ElevateAliases.Action.StrongWarning.text_selected_default)
+
+    // MARK: - Dimensions
+
+    public static let border_radius_l: CGFloat = 4.0
+    public static let border_radius_m: CGFloat = 2.0
+    public static let border_radius_s: CGFloat = 2.0
+    public static let border_width_l: CGFloat = 1.0
+    public static let border_width_m: CGFloat = 1.0
+    public static let border_width_s: CGFloat = 1.0
+    public static let control_border_width_l: CGFloat = 1.0
+    public static let control_border_width_m: CGFloat = 1.0
+    public static let control_border_width_s: CGFloat = 1.0
+    public static let control_height_l: CGFloat = 40.0
+    public static let control_height_m: CGFloat = 32.0
+    public static let control_height_s: CGFloat = 24.0
+    public static let control_width_l: CGFloat = 40.0
+    public static let control_width_m: CGFloat = 32.0
+    public static let control_width_s: CGFloat = 24.0
+    public static let elvt_component_chip_border_radius_l: CGFloat = 4.0
+    public static let elvt_component_chip_border_radius_m: CGFloat = 6.0
+    public static let elvt_component_chip_border_radius_s: CGFloat = 2.0
+    public static let elvt_component_chip_border_width_l: CGFloat = 1.0
+    public static let elvt_component_chip_border_width_m: CGFloat = 1.0
+    public static let elvt_component_chip_border_width_s: CGFloat = 1.0
+    public static let elvt_component_chip_control_border_width_l: CGFloat = 1.0
+    public static let elvt_component_chip_control_border_width_m: CGFloat = 1.0
+    public static let elvt_component_chip_control_border_width_s: CGFloat = 1.0
+    public static let elvt_component_chip_control_height_l: CGFloat = 40.0
+    public static let elvt_component_chip_control_height_m: CGFloat = 32.0
+    public static let elvt_component_chip_control_height_s: CGFloat = 24.0
+    public static let elvt_component_chip_control_width_l: CGFloat = 40.0
+    public static let elvt_component_chip_control_width_m: CGFloat = 32.0
+    public static let elvt_component_chip_control_width_s: CGFloat = 24.0
+    public static let elvt_component_chip_font_size_s: CGFloat = 13.0
+    public static let elvt_component_chip_gap_l: CGFloat = 12.0
+    public static let elvt_component_chip_gap_m: CGFloat = 8.0
+    public static let elvt_component_chip_gap_s: CGFloat = 4.0
+    public static let elvt_component_chip_height_l: CGFloat = 40.0
+    public static let elvt_component_chip_height_m: CGFloat = 32.0
+    public static let elvt_component_chip_height_s: CGFloat = 24.0
+    public static let elvt_component_chip_icon_size_l: CGFloat = 20.0
+    public static let elvt_component_chip_icon_size_m: CGFloat = 16.0
+    public static let elvt_component_chip_icon_size_s: CGFloat = 14.0
+    public static let elvt_component_chip_padding_block_l: CGFloat = 8.0
+    public static let elvt_component_chip_padding_block_m: CGFloat = 6.0
+    public static let elvt_component_chip_padding_block_s: CGFloat = 2.0
+    public static let elvt_component_chip_padding_inline_l: CGFloat = 12.0
+    public static let elvt_component_chip_padding_inline_m: CGFloat = 16.0
+    public static let elvt_component_chip_padding_inline_s: CGFloat = 12.0
+    public static let elvt_component_chip_remove_button_size_l: CGFloat = 20.0
+    public static let elvt_component_chip_remove_button_size_m: CGFloat = 16.0
+    public static let elvt_component_chip_remove_button_size_s: CGFloat = 14.0
+    public static let gap_l: CGFloat = 12.0
+    public static let gap_m: CGFloat = 8.0
+    public static let gap_s: CGFloat = 4.0
+    public static let height_l: CGFloat = 40.0
+    public static let height_m: CGFloat = 32.0
+    public static let height_s: CGFloat = 24.0
+    public static let padding_inline_l: CGFloat = 12.0
+    public static let padding_inline_m: CGFloat = 8.0
+    public static let padding_inline_s: CGFloat = 8.0
 
 }
 #endif

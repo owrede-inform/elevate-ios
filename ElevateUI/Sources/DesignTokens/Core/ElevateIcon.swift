@@ -1,6 +1,27 @@
 #if os(iOS)
 import SwiftUI
 
+/// ELEVATE Icon Size
+///
+/// Standard icon sizes for the ELEVATE design system.
+@available(iOS 15, *)
+public enum ElevateIconSize {
+    case small
+    case medium
+    case large
+    case custom(CGFloat)
+
+    /// The CGFloat value for the icon size
+    public var value: CGFloat {
+        switch self {
+        case .small: return 16.0
+        case .medium: return 20.0
+        case .large: return 24.0
+        case .custom(let size): return size
+        }
+    }
+}
+
 /// ELEVATE Icon System
 ///
 /// Provides semantic icon names mapped to SF Symbols with automatic sizing.
@@ -104,7 +125,7 @@ public enum ElevateIcon: String, CaseIterable {
     ///   - renderingMode: The rendering mode (defaults to .template for tinting)
     /// - Returns: A sized Image view ready to use in SwiftUI
     public func image(
-        size: ElevateSpacing.IconSize = .medium,
+        size: ElevateIconSize = .medium,
         renderingMode: Image.TemplateRenderingMode = .template
     ) -> some View {
         Image(systemName: rawValue)
@@ -141,7 +162,7 @@ public enum ElevateIcon: String, CaseIterable {
 // MARK: - Icon Size Extension
 
 @available(iOS 15, *)
-extension ElevateSpacing.IconSize {
+extension ElevateIconSize {
     /// Convenience for creating sized icon views
     public func frame(for image: Image) -> some View {
         image
@@ -155,14 +176,14 @@ extension ElevateSpacing.IconSize {
 
 @available(iOS 15, *)
 extension View {
-    /// Apply icon sizing from ELEVATE spacing tokens
+    /// Apply icon sizing from ELEVATE design tokens
     ///
     /// Usage:
     /// ```swift
     /// Image(systemName: "star.fill")
     ///     .iconSize(.medium)
     /// ```
-    public func iconSize(_ size: ElevateSpacing.IconSize) -> some View {
+    public func iconSize(_ size: ElevateIconSize) -> some View {
         self
             .frame(width: size.value, height: size.value)
     }

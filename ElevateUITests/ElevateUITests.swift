@@ -1,4 +1,5 @@
 import XCTest
+import SwiftUI
 @testable import ElevateUI
 
 final class ElevateUITests: XCTestCase {
