@@ -52,7 +52,12 @@ public struct ChipTokens {
         public func cornerRadius(for size: Size) -> CGFloat {
             switch self {
             case .box:
-                return size == .small ? ElevateSpacing.xxs : ElevateSpacing.BorderRadius.small
+                // Use extracted border radius tokens
+                switch size {
+                case .small: return ChipComponentTokens.border_radius_s
+                case .medium: return ChipComponentTokens.border_radius_m
+                case .large: return ChipComponentTokens.border_radius_l
+                }
             case .pill:
                 return size.config.height / 2
             }
@@ -170,43 +175,47 @@ public struct ChipTokens {
         let removeButtonSize: CGFloat
 
         static let small = SizeConfig(
-            height: 24.0,
-            horizontalPadding: ElevateSpacing.s,
-            verticalPadding: ElevateSpacing.xs,
+            height: ChipComponentTokens.height_s,
+            horizontalPadding: ChipComponentTokens.padding_inline_s,
+            verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_s,
             fontSize: 12.0,
             fontWeight: .medium,
-            iconSize: 14.0,
-            gap: ElevateSpacing.xs,
-            removeButtonSize: ElevateSpacing.IconSize.small.value
+            iconSize: ChipComponentTokens.elvt_component_chip_icon_size_s,
+            gap: ChipComponentTokens.gap_s,
+            removeButtonSize: ChipComponentTokens.elvt_component_chip_remove_button_size_s
         )
 
         static let medium = SizeConfig(
-            height: 32.0,
-            horizontalPadding: ElevateSpacing.m,
-            verticalPadding: 6.0,
+            height: ChipComponentTokens.height_m,
+            horizontalPadding: ChipComponentTokens.padding_inline_m,
+            verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_m,
             fontSize: 14.0,
             fontWeight: .medium,
-            iconSize: ElevateSpacing.IconSize.small.value,
-            gap: 6.0,
-            removeButtonSize: ElevateSpacing.IconSize.medium.value
+            iconSize: ChipComponentTokens.elvt_component_chip_icon_size_m,
+            gap: ChipComponentTokens.gap_m,
+            removeButtonSize: ChipComponentTokens.elvt_component_chip_remove_button_size_m
         )
 
         static let large = SizeConfig(
-            height: 40.0,
-            horizontalPadding: ElevateSpacing.l,
-            verticalPadding: ElevateSpacing.s,
+            height: ChipComponentTokens.height_l,
+            horizontalPadding: ChipComponentTokens.padding_inline_l,
+            verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_l,
             fontSize: 16.0,
             fontWeight: .medium,
-            iconSize: ElevateSpacing.IconSize.medium.value,
-            gap: ElevateSpacing.s,
-            removeButtonSize: ElevateSpacing.IconSize.large.value
+            iconSize: ChipComponentTokens.elvt_component_chip_icon_size_l,
+            gap: ChipComponentTokens.gap_l,
+            removeButtonSize: ChipComponentTokens.elvt_component_chip_remove_button_size_l
         )
     }
 
     // MARK: - Border Width
 
     public static func borderWidth(for size: Size) -> CGFloat {
-        return ElevateSpacing.BorderWidth.thin
+        switch size {
+        case .small: return ChipComponentTokens.border_width_s
+        case .medium: return ChipComponentTokens.border_width_m
+        case .large: return ChipComponentTokens.border_width_l
+        }
     }
 
     // MARK: - Convenience Methods

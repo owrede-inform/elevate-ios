@@ -75,48 +75,47 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        Button(action: {
-            if !isDisabled {
-                action()
-            }
-        }) {
-            HStack(spacing: tokenGap) {
-                prefix()
+        HStack(spacing: tokenGap) {
+            prefix()
 
-                Text(label)
-                    .font(tokenFont)
-                    .lineLimit(1)
+            Text(label)
+                .font(tokenFont)
+                .lineLimit(1)
 
-                suffix()
-            }
-            .foregroundColor(tokenTextColor)
-            .padding(effectivePadding)
-            .frame(height: tokenHeight)
-            .frame(maxWidth: .infinity)
+            suffix()
         }
+        .foregroundColor(tokenTextColor)
+        .padding(effectivePadding)
+        .frame(height: tokenHeight)
+        .frame(maxWidth: .infinity)
         .background(tokenBackgroundColor)
         .cornerRadius(tokenCornerRadius)
         .overlay(
             RoundedRectangle(cornerRadius: tokenCornerRadius)
                 .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
         )
-        .disabled(isDisabled)
-        .scaleEffect(isPressed ? 0.98 : 1.0)
-        .animation(.easeInOut(duration: 0.1), value: isPressed)
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { _ in
-                    if !isPressed && !isDisabled {
-                        isPressed = true
+        .scrollFriendlyTap(
+            onPressedChanged: { pressed in
+                if !isDisabled {
+                    // Force immediate update with no animation delay
+                    var transaction = Transaction()
+                    transaction.disablesAnimations = true
+                    withTransaction(transaction) {
+                        isPressed = pressed
                     }
                 }
-                .onEnded { _ in
-                    isPressed = false
+            },
+            action: {
+                if !isDisabled {
+                    action()
                 }
+            }
         )
+        .allowsHitTesting(!isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+        .accessibilityAddTraits(.isButton)
     }
 
     // MARK: - Token Accessors
@@ -141,7 +140,9 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
         if isDisabled {
             return toneColors.textDisabled
         } else if isSelected {
-            return toneColors.textSelected
+            return isPressed ? toneColors.textSelectedActive : toneColors.textSelected
+        } else if isPressed {
+            return toneColors.textActive
         } else {
             return toneColors.text
         }
@@ -156,7 +157,7 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
     }
 
     private var tokenBorderWidth: CGFloat {
-        ElevateSpacing.BorderWidth.thin
+        ButtonComponentTokens.border_width
     }
 
     private var tokenHeight: CGFloat {
@@ -185,9 +186,9 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
 
     private var tokenGap: CGFloat {
         switch size {
-        case .small: return 4.0
-        case .medium: return 6.0
-        case .large: return 8.0
+        case .small: return ButtonComponentTokens.gap_s
+        case .medium: return ButtonComponentTokens.gap_m
+        case .large: return ButtonComponentTokens.gap_l
         }
     }
 

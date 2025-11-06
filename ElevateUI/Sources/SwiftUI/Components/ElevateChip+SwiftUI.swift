@@ -47,6 +47,10 @@ public struct ElevateChip<Prefix: View, Suffix: View>: View {
 
     @Environment(\.colorScheme) var colorScheme
 
+    // MARK: - State
+
+    @State private var isPressed = false
+
     // MARK: - Initializers
 
     /// Create chip with all options
@@ -81,36 +85,47 @@ public struct ElevateChip<Prefix: View, Suffix: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        Button(action: {
-            if !isDisabled {
-                action?()
+        HStack(spacing: tokenGap) {
+            prefix()
+
+            Text(label)
+                .font(tokenFont)
+                .lineLimit(1)
+
+            suffix()
+
+            if removable {
+                removeButton
             }
-        }) {
-            HStack(spacing: tokenGap) {
-                prefix()
-
-                Text(label)
-                    .font(tokenFont)
-                    .lineLimit(1)
-
-                suffix()
-
-                if removable {
-                    removeButton
+        }
+        .foregroundColor(tokenTextColor)
+        .padding(.horizontal, tokenHorizontalPadding)
+        .padding(.vertical, tokenVerticalPadding)
+        .frame(height: tokenHeight)
+        .background(tokenFillColor)
+        .overlay(
+            RoundedRectangle(cornerRadius: tokenCornerRadius)
+                .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
+        )
+        .cornerRadius(tokenCornerRadius)
+        .scrollFriendlyTap(
+            onPressedChanged: { pressed in
+                if !isDisabled && action != nil {
+                    // Force immediate update with no animation delay
+                    var transaction = Transaction()
+                    transaction.disablesAnimations = true
+                    withTransaction(transaction) {
+                        isPressed = pressed
+                    }
+                }
+            },
+            action: {
+                if !isDisabled {
+                    action?()
                 }
             }
-            .foregroundColor(tokenTextColor)
-            .padding(.horizontal, tokenHorizontalPadding)
-            .padding(.vertical, tokenVerticalPadding)
-            .frame(height: tokenHeight)
-        }
-        .buttonStyle(ChipButtonStyle(
-            fillColor: tokenFillColor,
-            borderColor: tokenBorderColor,
-            borderWidth: tokenBorderWidth,
-            cornerRadius: tokenCornerRadius
-        ))
-        .disabled(isDisabled)
+        )
+        .allowsHitTesting(!isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityHint(removable ? "Double tap to remove" : "")
@@ -118,19 +133,17 @@ public struct ElevateChip<Prefix: View, Suffix: View>: View {
     }
 
     private var removeButton: some View {
-        Button(action: {
-            if !isDisabled {
-                onRemove?()
+        Image(systemName: "xmark")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: tokenRemoveButtonSize, height: tokenRemoveButtonSize)
+            .foregroundColor(tokenControlIconColor)
+            .scrollFriendlyTap {
+                if !isDisabled {
+                    onRemove?()
+                }
             }
-        }) {
-            Image(systemName: "xmark")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: tokenRemoveButtonSize, height: tokenRemoveButtonSize)
-                .foregroundColor(tokenControlIconColor)
-        }
-        .buttonStyle(PlainButtonStyle())
-        .accessibilityLabel("Remove")
+            .accessibilityLabel("Remove")
     }
 
     // MARK: - Token Accessors
@@ -188,27 +201,6 @@ public struct ElevateChip<Prefix: View, Suffix: View>: View {
 
     private var tokenCornerRadius: CGFloat {
         shape.cornerRadius(for: size)
-    }
-}
-
-// MARK: - Chip Button Style
-
-@available(iOS 15, *)
-private struct ChipButtonStyle: ButtonStyle {
-    let fillColor: Color
-    let borderColor: Color
-    let borderWidth: CGFloat
-    let cornerRadius: CGFloat
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .background(fillColor)
-            .overlay(
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(borderColor, lineWidth: borderWidth)
-            )
-            .cornerRadius(cornerRadius)
-            .opacity(configuration.isPressed ? 0.8 : 1.0)
     }
 }
 

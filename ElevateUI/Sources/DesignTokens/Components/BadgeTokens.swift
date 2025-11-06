@@ -51,9 +51,15 @@ public struct BadgeTokens {
         public func cornerRadius(for rank: Rank) -> CGFloat {
             switch self {
             case .box:
-                return ElevateSpacing.BorderRadius.small
+                // Use extracted border radius tokens
+                return rank == .major
+                    ? BadgeComponentTokens.major_border_radius_box
+                    : BadgeComponentTokens.minor_border_radius_box
             case .pill:
-                return rank == .major ? 12.0 : 9.0  // Half of height
+                // Pill shape: half of height for perfect rounding
+                return rank == .major
+                    ? BadgeComponentTokens.major_height / 2
+                    : BadgeComponentTokens.minor_height / 2
             }
         }
     }
@@ -123,23 +129,23 @@ public struct BadgeTokens {
         let gap: CGFloat
 
         static let major = RankConfig(
-            height: 24.0,
-            horizontalPadding: ElevateSpacing.s,
-            verticalPadding: ElevateSpacing.xs,
+            height: BadgeComponentTokens.major_height,
+            horizontalPadding: BadgeComponentTokens.padding_inline,
+            verticalPadding: BadgeComponentTokens.elvt_component_badge_padding_block_major,
             fontSize: 14.0,
             fontWeight: .semibold,
-            iconSize: ElevateSpacing.IconSize.small.value,
-            gap: ElevateSpacing.xs
+            iconSize: BadgeComponentTokens.elvt_component_badge_icon_size_major,
+            gap: BadgeComponentTokens.gap
         )
 
         static let minor = RankConfig(
-            height: 18.0,
-            horizontalPadding: 6.0,
-            verticalPadding: ElevateSpacing.xxs,
+            height: BadgeComponentTokens.minor_height,
+            horizontalPadding: BadgeComponentTokens.elvt_component_badge_padding_inline_minor,
+            verticalPadding: BadgeComponentTokens.elvt_component_badge_padding_block_minor,
             fontSize: 12.0,
             fontWeight: .medium,
-            iconSize: 12.0,
-            gap: ElevateSpacing.xxs
+            iconSize: BadgeComponentTokens.elvt_component_badge_icon_size_minor,
+            gap: BadgeComponentTokens.gap
         )
     }
 

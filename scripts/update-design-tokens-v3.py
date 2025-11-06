@@ -603,7 +603,7 @@ def main():
         print(f"  ✅ No incomplete references found")
 
     # Generate Component Tokens
-    components = ['button', 'badge', 'chip']
+    components = ['button', 'badge', 'chip', 'switch', 'checkbox', 'radio', 'input', 'field', 'textarea', 'breadcrumb', 'breadcrumb-item', 'menu', 'menu-item', 'tab', 'tab-group']
     for component in components:
         print(f"\nGenerating {component.capitalize()} Component Tokens...")
         component_gen = ComponentTokensGenerator(light_tokens, dark_tokens, component)
