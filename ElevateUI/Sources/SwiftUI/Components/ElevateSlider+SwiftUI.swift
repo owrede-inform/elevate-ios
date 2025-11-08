@@ -84,7 +84,7 @@ public struct ElevateSlider: View {
             if let label = label {
                 Text(label)
                     .font(tokenLabelFont)
-                    .foregroundColor(isDisabled ? Color.gray : Color.primary)
+                    .foregroundColor(isDisabled ? ElevateAliases.Content.General.text_muted : ElevateAliases.Content.General.text_default)
             }
 
             // Custom styled slider
@@ -129,7 +129,7 @@ public struct ElevateSlider: View {
             if label != nil {
                 Text(formatValue(value))
                     .font(ElevateTypography.bodySmall)
-                    .foregroundColor(Color.secondary)
+                    .foregroundColor(ElevateAliases.Content.General.text_understated)
             }
         }
         .accessibilityElement(children: .ignore)

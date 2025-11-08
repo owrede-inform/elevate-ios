@@ -55,7 +55,7 @@ public struct ElevateLightbox: View {
     public var body: some View {
         ZStack {
             // Backdrop
-            Color.black
+            LightboxComponentTokens.backdrop_color
                 .ignoresSafeArea()
 
             // Image viewer with gestures
@@ -85,7 +85,7 @@ public struct ElevateLightbox: View {
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.title2)
-                            .foregroundColor(.white)
+                            .foregroundColor(ElevateAliases.Feedback.Strong.text_inverted)
                             .shadow(radius: 2)
                     }
 
@@ -98,7 +98,7 @@ public struct ElevateLightbox: View {
                     } label: {
                         Image(systemName: "square.and.arrow.up.circle.fill")
                             .font(.title2)
-                            .foregroundColor(.white)
+                            .foregroundColor(ElevateAliases.Feedback.Strong.text_inverted)
                             .shadow(radius: 2)
                     }
                 }
@@ -109,10 +109,10 @@ public struct ElevateLightbox: View {
                 // Image counter
                 Text("\(currentIndex + 1) / \(images.count)")
                     .font(.caption)
-                    .foregroundColor(.white)
+                    .foregroundColor(ElevateAliases.Feedback.Strong.text_inverted)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 6)
-                    .background(Color.black.opacity(0.6))
+                    .background(LightboxComponentTokens.backdrop_color)
                     .cornerRadius(16)
                     .padding(.bottom, 8)
             }

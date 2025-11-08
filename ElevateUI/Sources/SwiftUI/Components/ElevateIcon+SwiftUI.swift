@@ -89,7 +89,7 @@ public struct ElevateIcon: View {
 
     private var iconColor: Color {
         if !isEnabled {
-            return Color.secondary
+            return ElevateAliases.Content.General.text_muted
         }
 
         switch color {

@@ -75,7 +75,7 @@ public struct ElevateDropdown<Content: View>: View {
             Image(systemName: "chevron.down")
                 .font(.system(size: 12))
         }
-        .foregroundColor(isDestructive ? .red : .primary)
+        .foregroundColor(isDestructive ? ElevateAliases.Action.StrongDanger.text_default : ElevateAliases.Content.General.text_default)
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .background(DropdownComponentTokens.fill)

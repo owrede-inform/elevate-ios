@@ -117,7 +117,7 @@ public struct ElevateLink: View {
             .padding(.vertical, 2)
             .background(
                 RoundedRectangle(cornerRadius: LinkComponentTokens.radius)
-                    .fill(isPressed ? Color.black.opacity(0.05) : Color.clear)
+                    .fill(isPressed ? ElevateAliases.Layout.General.backdrop.opacity(0.1) : Color.clear)
             )
         }
         .buttonStyle(PlainButtonStyle())

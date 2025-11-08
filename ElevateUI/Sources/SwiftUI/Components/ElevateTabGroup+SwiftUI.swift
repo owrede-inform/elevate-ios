@@ -263,10 +263,10 @@ private struct TabButton: View {
                     if let badge = item.badge {
                         Text(badge)
                             .font(.caption2)
-                            .foregroundColor(.white)
+                            .foregroundColor(IndicatorComponentTokens.text_danger)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
-                            .background(Color.red)
+                            .background(IndicatorComponentTokens.fill_danger)
                             .cornerRadius(10)
                     }
                 }

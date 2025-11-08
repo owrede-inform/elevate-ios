@@ -134,20 +134,20 @@ public struct ElevateRadioGroup<Value: Hashable, Content: View>: View {
 
     private var tokenLabelColor: Color {
         if isDisabled {
-            return Color.gray
+            return ElevateAliases.Content.General.text_muted
         }
-        return Color.primary
+        return ElevateAliases.Content.General.text_default
     }
 
     private var tokenHelpTextColor: Color {
         if isInvalid {
-            return Color.red
+            return ElevateAliases.Feedback.Strong.text_danger
         }
-        return Color.secondary
+        return ElevateAliases.Content.General.text_understated
     }
 
     private var tokenRequiredColor: Color {
-        Color.red
+        ElevateAliases.Feedback.Strong.fill_danger
     }
 }
 

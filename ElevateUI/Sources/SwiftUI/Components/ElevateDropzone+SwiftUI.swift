@@ -76,10 +76,10 @@ public struct ElevateDropzone: View {
                 Text(buttonText)
                     .font(.subheadline)
                     .fontWeight(.medium)
-                    .foregroundColor(.white)
+                    .foregroundColor(ButtonComponentTokens.label_primary_default)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
-                    .background(Color.blue)
+                    .background(ButtonComponentTokens.fill_primary_default)
                     .cornerRadius(8)
             }
             .frame(maxWidth: .infinity)
@@ -196,7 +196,7 @@ public struct ElevateImageDropzone: View {
             VStack(spacing: DropzoneComponentTokens.gap_m) {
                 Image(systemName: "photo.on.rectangle.angled")
                     .font(.system(size: 40))
-                    .foregroundColor(.blue)
+                    .foregroundColor(ButtonComponentTokens.label_primary_default)
 
                 Text(message)
                     .font(.body)
@@ -205,10 +205,10 @@ public struct ElevateImageDropzone: View {
                 Text("Choose Photos")
                     .font(.subheadline)
                     .fontWeight(.medium)
-                    .foregroundColor(.white)
+                    .foregroundColor(ButtonComponentTokens.label_primary_default)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
-                    .background(Color.blue)
+                    .background(ButtonComponentTokens.fill_primary_default)
                     .cornerRadius(8)
             }
             .frame(maxWidth: .infinity)
