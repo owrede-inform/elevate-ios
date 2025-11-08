@@ -11,10 +11,7 @@ public struct ApplicationComponentTokens {
 
     // MARK: - Colors
 
-    public static let fill = Color.adaptive(
-            lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-        )
+    public static let fill = Color.adaptive(light: ElevateAliases.Layout.Layer.appBackground, dark: ElevateAliases.Layout.Layer.appBackground)
     public static let text = Color.adaptive(light: ElevateAliases.Content.General.text_default, dark: ElevateAliases.Content.General.text_default)
 
 }

@@ -15,10 +15,7 @@ public struct ProgressComponentTokens {
     public static let bar_text_on_track = Color.adaptive(light: ElevateAliases.Feedback.Strong.text_inverted, dark: ElevateAliases.Feedback.Strong.text_inverted)
     public static let fill_empty = Color.adaptive(light: ElevateAliases.Feedback.Strong.fill_neutral, dark: ElevateAliases.Feedback.Strong.fill_neutral)
     public static let fill_filled = Color.adaptive(light: ElevateAliases.Feedback.Strong.fill_primary, dark: ElevateAliases.Feedback.Strong.fill_primary)
-    public static let icon_color = Color.adaptive(
-            lightRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000),
-            darkRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
-        )
+    public static let icon_color = Color.adaptive(light: ElevateAliases.Feedback.Icon.neutral, dark: ElevateAliases.Feedback.Icon.neutral)
 
     // MARK: - Dimensions
 

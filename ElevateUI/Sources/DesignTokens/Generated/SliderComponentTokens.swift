@@ -26,10 +26,7 @@ public struct SliderComponentTokens {
     public static let thumb_border_color_success_default = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.border_default, dark: ElevateAliases.Action.StrongSuccess.border_default)
     public static let thumb_border_color_success_hover = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.border_default, dark: ElevateAliases.Action.StrongSuccess.border_default)
     public static let thumb_fill_active_active = Color.adaptive(light: ElevateAliases.Action.StrongSuccess.fill_default, dark: ElevateAliases.Action.StrongSuccess.fill_default)
-    public static let thumb_fill_active_hover = Color.adaptive(
-            lightRGB: (red: 0.6667, green: 0.9020, blue: 0.7373, opacity: 1.0000),
-            darkRGB: (red: 0.6667, green: 0.9020, blue: 0.7373, opacity: 1.0000)
-        )
+    public static let thumb_fill_active_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.hover, dark: ElevateAliases.Action.UnderstatedSuccess.hover)
     public static let thumb_fill_danger_active = Color.adaptive(light: ElevateAliases.Action.StrongDanger.fill_default, dark: ElevateAliases.Action.StrongDanger.fill_default)
     public static let thumb_fill_danger_hover = Color.adaptive(light: ElevateAliases.Action.UnderstatedDanger.fill_hover, dark: ElevateAliases.Action.UnderstatedDanger.fill_hover)
     public static let thumb_fill_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)

@@ -205,50 +205,6 @@ private struct AvatarIcon: View {
     }
 }
 
-// MARK: - Icon Button
-
-/// Icon button with tap gesture and haptic feedback
-///
-/// **iOS Adaptation**: Combines icon with button behavior and haptic feedback.
-@available(iOS 15, *)
-public struct ElevateIconButton: View {
-    private let systemName: String
-    private let color: IconColor
-    private let size: IconSize
-    private let action: () -> Void
-
-    @Environment(\.isEnabled) private var isEnabled
-
-    public init(
-        _ systemName: String,
-        color: IconColor = .neutral,
-        size: IconSize = .medium,
-        action: @escaping () -> Void
-    ) {
-        self.systemName = systemName
-        self.color = color
-        self.size = size
-        self.action = action
-    }
-
-    public var body: some View {
-        Button {
-            performHaptic()
-            action()
-        } label: {
-            ElevateIcon(systemName, color: color, size: size)
-                .frame(minWidth: 44, minHeight: 44) // iOS minimum touch target
-        }
-        .buttonStyle(.plain)
-        .disabled(!isEnabled)
-    }
-
-    private func performHaptic() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
-    }
-}
-
 // MARK: - Previews
 
 #if DEBUG
@@ -391,19 +347,19 @@ struct ElevateIcon_Previews: PreviewProvider {
                         .font(.headline)
 
                     HStack(spacing: 16) {
-                        ElevateIconButton("heart.fill", color: .danger) {
+                        ElevateIconButton(icon: "heart.fill", label: "Favorite") {
                             print("Favorite tapped")
                         }
 
-                        ElevateIconButton("star.fill", color: .warning) {
+                        ElevateIconButton(icon: "star.fill", label: "Star") {
                             print("Star tapped")
                         }
 
-                        ElevateIconButton("trash.fill", color: .danger) {
+                        ElevateIconButton(icon: "trash.fill", label: "Delete") {
                             print("Delete tapped")
                         }
 
-                        ElevateIconButton("gear", color: .neutral) {
+                        ElevateIconButton(icon: "gear", label: "Settings") {
                             print("Settings tapped")
                         }
                     }
@@ -420,7 +376,7 @@ struct ElevateIcon_Previews: PreviewProvider {
                         ElevateIcon("heart.fill", color: .danger)
                             .disabled(true)
 
-                        ElevateIconButton("star.fill", color: .warning) {
+                        ElevateIconButton(icon: "star.fill", label: "Star") {
                             print("Won't fire")
                         }
                         .disabled(true)

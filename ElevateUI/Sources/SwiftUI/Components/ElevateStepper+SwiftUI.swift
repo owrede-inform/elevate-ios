@@ -1,6 +1,21 @@
 #if os(iOS)
 import SwiftUI
 
+// MARK: - Environment Key for Stepper Direction
+
+@available(iOS 15, *)
+private struct StepperDirectionKey: EnvironmentKey {
+    static let defaultValue: StepperDirection = .row
+}
+
+@available(iOS 15, *)
+extension EnvironmentValues {
+    var stepperDirection: StepperDirection {
+        get { self[StepperDirectionKey.self] }
+        set { self[StepperDirectionKey.self] = newValue }
+    }
+}
+
 /// ELEVATE Stepper Component
 ///
 /// Container for stepper items that allows users to navigate through a sequence of steps.
@@ -58,6 +73,7 @@ public struct ElevateStepper<Content: View>: View {
                 .padding(.vertical, tokenPaddingBlock)
             }
         }
+        .environment(\.stepperDirection, direction)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Progress stepper")
     }

@@ -11,7 +11,7 @@ public struct LightboxComponentTokens {
 
     // MARK: - Colors
 
-    public static let backdrop_color = Color.clear
+    public static let backdrop_color = Color.adaptive(light: ElevateAliases.Layout.General.backdrop, dark: ElevateAliases.Layout.General.backdrop)
 
 }
 #endif

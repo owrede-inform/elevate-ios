@@ -1,0 +1,139 @@
+/**
+ * ELEVATE iOS Theme - Extension Tokens
+ *
+ * This file defines additional design tokens that are NOT in the ELEVATE
+ * design system but are needed for iOS-specific implementations.
+ *
+ * These tokens follow ELEVATE naming conventions and will be extracted
+ * to Swift alongside the base ELEVATE tokens.
+ *
+ * When ELEVATE adds these tokens officially, they can be removed from
+ * this file and the iOS app will automatically use the official tokens.
+ *
+ * Version: 1.0.0
+ * Date: 2025-11-06
+ */
+
+/* ========================================================================
+   Component: Button
+   Missing tokens for iOS implementation
+   ======================================================================== */
+
+/**
+ * Button pill border radius
+ * ELEVATE doesn't define a pill-specific radius token.
+ * iOS uses a very large value to create perfect pill shape.
+ */
+$elvt-component-button-border-radius-pill: 9999px;
+
+/* ========================================================================
+   Component: Chip
+   Missing tokens for iOS implementation
+   ======================================================================== */
+
+/**
+ * Chip vertical padding (block padding)
+ * ELEVATE defines horizontal (inline) padding but not vertical.
+ * iOS needs vertical padding for proper touch targets.
+ */
+$elvt-component-chip-padding-block-s: 0.125rem;  /* 2px */
+$elvt-component-chip-padding-block-m: 0.375rem;  /* 6px */
+$elvt-component-chip-padding-block-l: 0.5rem;    /* 8px */
+
+/**
+ * Chip icon sizes
+ * ELEVATE doesn't define component-specific icon sizes.
+ * iOS needs specific sizes for visual balance.
+ */
+$elvt-component-chip-icon-size-s: 0.875rem;  /* 14px */
+$elvt-component-chip-icon-size-m: 1rem;      /* 16px */
+$elvt-component-chip-icon-size-l: 1.25rem;   /* 20px */
+
+/**
+ * Chip remove button sizes
+ * ELEVATE doesn't define remove button sizing.
+ * iOS uses specific sizes for touch-friendly close buttons.
+ */
+$elvt-component-chip-remove-button-size-s: 0.875rem;  /* 14px */
+$elvt-component-chip-remove-button-size-m: 1rem;      /* 16px */
+$elvt-component-chip-remove-button-size-l: 1.25rem;   /* 20px */
+
+/* ========================================================================
+   Component: Badge
+   Missing tokens for iOS implementation
+   ======================================================================== */
+
+/**
+ * Badge vertical padding (block padding)
+ * ELEVATE defines horizontal padding but not vertical.
+ * iOS needs vertical padding for proper visual balance.
+ */
+$elvt-component-badge-padding-block-major: 0.125rem;  /* 2px */
+$elvt-component-badge-padding-block-minor: 0.0625rem; /* 1px */
+
+/**
+ * Badge icon sizes
+ * ELEVATE doesn't define badge-specific icon sizes.
+ * iOS uses these for consistent icon display in badges.
+ */
+$elvt-component-badge-icon-size-major: 1rem;      /* 16px */
+$elvt-component-badge-icon-size-minor: 0.75rem;   /* 12px */
+
+/**
+ * Badge minor horizontal padding
+ * ELEVATE defines padding-inline but only as single value.
+ * iOS needs different padding for minor rank badges.
+ */
+$elvt-component-badge-padding-inline-minor: 0.375rem;  /* 6px */
+
+/* ========================================================================
+   Global: Icon Sizes
+   Missing tokens for consistent icon sizing
+   ======================================================================== */
+
+/**
+ * Global icon sizes
+ * ELEVATE doesn't define a global icon size scale.
+ * iOS uses these for consistent icon sizing across components.
+ * Note: These may not be extracted as they're not component-specific.
+ */
+$elvt-icon-size-s: 1rem;      /* 16px */
+$elvt-icon-size-m: 1.25rem;   /* 20px */
+$elvt-icon-size-l: 1.5rem;    /* 24px */
+
+/* ========================================================================
+   Component: Menu
+   Missing tokens for iOS implementation
+   ======================================================================== */
+
+/**
+ * Menu shadow
+ * ELEVATE may not define shadow tokens for menus.
+ * iOS uses this for elevated menu appearance.
+ *
+ * Note: This is a placeholder. If ELEVATE defines shadow tokens,
+ * this should be removed and the official tokens used.
+ */
+$elvt-component-menu-shadow-color: rgba(0, 0, 0, 0.1);
+$elvt-component-menu-shadow-radius: 0.5rem;  /* 8px */
+$elvt-component-menu-shadow-offset-x: 0;
+$elvt-component-menu-shadow-offset-y: 0.25rem;  /* 4px */
+
+/* ========================================================================
+   Notes on Token Lifecycle
+   ======================================================================== */
+
+/**
+ * IMPORTANT: Token Removal Strategy
+ *
+ * When ELEVATE adds any of these tokens to their official design system:
+ *
+ * 1. Remove the token definition from this file
+ * 2. Regenerate Swift tokens: python3 scripts/update-design-tokens-v4.py --force
+ * 3. The iOS app will automatically use the official ELEVATE token
+ * 4. Verify visually that the official token looks correct
+ * 5. If official token needs adjustment, move to overwrite.css instead
+ *
+ * This ensures the iOS app stays in sync with ELEVATE while maintaining
+ * iOS-specific adaptations only where necessary.
+ */

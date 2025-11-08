@@ -71,7 +71,16 @@
       "Bash(ElevateUI/Sources/SwiftUI/Components/ElevateTextField+SwiftUI.swift )",
       "Bash(ElevateUI/Sources/DesignTokens/Generated/TabComponentTokens.swift )",
       "Bash(ElevateUI/Sources/DesignTokens/Generated/TextareaComponentTokens.swift )",
-      "Bash(ElevateUI/Sources/DesignTokens/Components/TextFieldTokens.swift)"
+      "Bash(ElevateUI/Sources/DesignTokens/Components/TextFieldTokens.swift)",
+      "SlashCommand(/ultrathink:ultrathink Analyze the current state of the ELEVATE Core UI port to SwiftUI. Identify issues and optimization potential. Make the code lean, simple and straightforward. The scripts need to be able to update the ElevateUI Swift library everytime an updated ELEVATE Core UI library or new Design Tokens are released.)",
+      "Bash(tree:*)",
+      "WebFetch(domain:design-tokens.github.io)",
+      "WebFetch(domain:tr.designtokens.org)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.avanderlee.com)",
+      "Bash(git ls-tree:*)",
+      "Bash(PYTHONPATH=scripts:$PYTHONPATH python3:*)",
+      "Bash(git diff:*)"
     ],
     "deny": [],
     "ask": []

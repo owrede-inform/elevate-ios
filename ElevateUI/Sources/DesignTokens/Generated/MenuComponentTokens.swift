@@ -13,10 +13,7 @@ public struct MenuComponentTokens {
 
     public static let border = Color.adaptive(light: ElevateAliases.Action.UnderstatedNeutral.fill_selected_default, dark: ElevateAliases.Action.UnderstatedNeutral.fill_selected_default)
     public static let elvt_component_menu_shadow_color = Color.clear
-    public static let fill = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let fill = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
     public static let groupLabel_fill = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
     public static let groupLabel_text = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_default, dark: ElevateAliases.Action.StrongNeutral.text_default)
 

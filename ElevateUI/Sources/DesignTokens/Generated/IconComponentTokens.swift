@@ -12,10 +12,7 @@ public struct IconComponentTokens {
     // MARK: - Colors
 
     public static let avatar_border_color_active = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_active, dark: ElevateAliases.Action.StrongNeutral.fill_active)
-    public static let avatar_border_color_default = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let avatar_border_color_default = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
     public static let avatar_border_color_hover = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_hover, dark: ElevateAliases.Action.StrongNeutral.fill_hover)
     public static let avatar_border_color_selected_active = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.border_active, dark: ElevateAliases.Action.StrongPrimary.border_active)
     public static let avatar_border_color_selected_default = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.border_default, dark: ElevateAliases.Action.StrongPrimary.border_default)
@@ -28,30 +25,12 @@ public struct IconComponentTokens {
     public static let avatar_fill_selected_hover = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.fill_default, dark: ElevateAliases.Action.StrongNeutral.fill_default)
     public static let avatar_text_color_onDark = Color.adaptive(light: ElevateAliases.Action.StrongPrimary.text_default, dark: ElevateAliases.Action.StrongPrimary.text_default)
     public static let avatar_text_color_onLight = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_default, dark: ElevateAliases.Action.StrongNeutral.text_default)
-    public static let color_danger = Color.adaptive(
-            lightRGB: (red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000),
-            darkRGB: (red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-        )
-    public static let color_emphasized = Color.adaptive(
-            lightRGB: (red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000),
-            darkRGB: (red: 0.1843, green: 0.1961, blue: 0.2510, opacity: 1.0000)
-        )
-    public static let color_neutral = Color.adaptive(
-            lightRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000),
-            darkRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
-        )
-    public static let color_primary = Color.adaptive(
-            lightRGB: (red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 0.0000, green: 0.4471, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let color_success = Color.adaptive(
-            lightRGB: (red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000),
-            darkRGB: (red: 0.0706, green: 0.5490, blue: 0.2745, opacity: 1.0000)
-        )
-    public static let color_warning = Color.adaptive(
-            lightRGB: (red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000),
-            darkRGB: (red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000)
-        )
+    public static let color_danger = Color.adaptive(light: ElevateAliases.Content.Icon.danger, dark: ElevateAliases.Content.Icon.danger)
+    public static let color_emphasized = Color.adaptive(light: ElevateAliases.Content.Icon.emphasized, dark: ElevateAliases.Content.Icon.emphasized)
+    public static let color_neutral = Color.adaptive(light: ElevateAliases.Content.Icon.neutral, dark: ElevateAliases.Content.Icon.neutral)
+    public static let color_primary = Color.adaptive(light: ElevateAliases.Content.Icon.primary, dark: ElevateAliases.Content.Icon.primary)
+    public static let color_success = Color.adaptive(light: ElevateAliases.Content.Icon.success, dark: ElevateAliases.Content.Icon.success)
+    public static let color_warning = Color.adaptive(light: ElevateAliases.Content.Icon.warning, dark: ElevateAliases.Content.Icon.warning)
 
     // MARK: - Dimensions
 

@@ -283,7 +283,7 @@ public struct ElevateExpandableNavigationItem<Content: View>: View {
 // MARK: - Previews
 
 #if DEBUG
-@available(iOS 15, *)
+@available(iOS 16.0, *)
 struct ElevateNavigationItem_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

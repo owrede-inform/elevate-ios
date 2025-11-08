@@ -11,10 +11,7 @@ public struct DropdownComponentTokens {
 
     // MARK: - Colors
 
-    public static let fill = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let fill = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
 
     // MARK: - Dimensions
 

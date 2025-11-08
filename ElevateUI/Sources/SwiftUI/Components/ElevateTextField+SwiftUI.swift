@@ -161,7 +161,7 @@ public struct ElevateTextField: View {
                 // Prefix icon
                 if let prefixIcon = prefixIcon {
                     prefixIcon
-                        .image(size: .custom(sizeConfig.iconSize))
+                        .frame(width: sizeConfig.iconSize, height: sizeConfig.iconSize)
                         .foregroundColor(TextFieldTokens.iconColor(isDisabled: isDisabled))
                 }
 
@@ -197,7 +197,7 @@ public struct ElevateTextField: View {
                 // Suffix icon
                 if let suffixIcon = suffixIcon {
                     suffixIcon
-                        .image(size: .custom(sizeConfig.iconSize))
+                        .frame(width: sizeConfig.iconSize, height: sizeConfig.iconSize)
                         .foregroundColor(TextFieldTokens.iconColor(isDisabled: isDisabled))
                 }
             }

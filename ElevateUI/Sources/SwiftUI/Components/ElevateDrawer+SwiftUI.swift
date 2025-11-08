@@ -143,7 +143,7 @@ private struct DrawerModifier<DrawerContent: View>: ViewModifier {
     func body(content: Content) -> some View {
         content
             .sheet(isPresented: $isPresented, onDismiss: onDismiss) {
-                NavigationView {
+                let drawerView = NavigationView {
                     ElevateDrawer(edge: edge, content: drawerContent)
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
@@ -154,12 +154,19 @@ private struct DrawerModifier<DrawerContent: View>: ViewModifier {
                             }
                         }
                 }
-                // Size adaptation per DIVERSIONS.md
-                .presentationDetents(presentationDetents)
-                .presentationDragIndicator(.visible)
+
+                // Size adaptation per DIVERSIONS.md (iOS 16+)
+                if #available(iOS 16.0, *) {
+                    drawerView
+                        .presentationDetents(presentationDetents)
+                        .presentationDragIndicator(.visible)
+                } else {
+                    drawerView
+                }
             }
     }
 
+    @available(iOS 16.0, *)
     private var presentationDetents: Set<PresentationDetent> {
         if horizontalSizeClass == .regular {
             // iPad: Large sheet (can be resized)

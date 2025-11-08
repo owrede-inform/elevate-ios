@@ -94,22 +94,24 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
             RoundedRectangle(cornerRadius: tokenCornerRadius)
                 .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
         )
-        .scrollFriendlyTap(
-            onPressedChanged: { pressed in
-                if !isDisabled {
-                    // Force immediate update with no animation delay
-                    var transaction = Transaction()
-                    transaction.disablesAnimations = true
-                    withTransaction(transaction) {
-                        isPressed = pressed
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in
+                    if !isDisabled && !isPressed {
+                        withAnimation(.none) {
+                            isPressed = true
+                        }
                     }
                 }
-            },
-            action: {
-                if !isDisabled {
-                    action()
+                .onEnded { _ in
+                    if !isDisabled {
+                        withAnimation(.none) {
+                            isPressed = false
+                        }
+                        action()
+                    }
                 }
-            }
         )
         .allowsHitTesting(!isDisabled)
         .accessibilityElement(children: .combine)

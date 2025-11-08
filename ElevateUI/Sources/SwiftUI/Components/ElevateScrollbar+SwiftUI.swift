@@ -47,6 +47,7 @@ extension View {
     /// }
     /// .elevateScrollIndicators(.visible)
     /// ```
+    @available(iOS 16.0, *)
     public func elevateScrollIndicators(_ visibility: ElevateScrollbar.IndicatorVisibility) -> some View {
         switch visibility {
         case .automatic:

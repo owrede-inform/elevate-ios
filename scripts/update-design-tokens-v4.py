@@ -331,10 +331,15 @@ class SwiftTokenMapper:
                 else:
                     property_parts.append(part)
 
+            # If no property keyword found, use last part as property
+            # This handles tokens like: layout-layer-ground → Layout.Layer.ground
+            if not property_parts and subcategory_parts:
+                property_parts = [subcategory_parts.pop().lower()]
+
             subcategory = ''.join(subcategory_parts) if subcategory_parts else 'General'
             property_name = '_'.join(property_parts) if property_parts else 'value'
 
-            # Return None if property name is incomplete (ends with just category)
+            # Return None if property name is still incomplete
             if not property_parts:
                 return None
 
@@ -725,8 +730,13 @@ public struct ElevateAliases {
                     property_start_idx = i
                     break
 
+            # If no property keyword found, use last part as property
+            # This handles tokens like: layout-layer-ground
             if property_start_idx is None:
-                continue
+                if len(parts) >= 2:
+                    property_start_idx = len(parts) - 1
+                else:
+                    continue
 
             # Build subcategory
             subcategory_parts = [p.capitalize() for p in parts[1:property_start_idx]]

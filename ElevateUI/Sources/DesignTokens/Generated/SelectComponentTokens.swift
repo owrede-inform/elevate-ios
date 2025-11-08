@@ -18,20 +18,11 @@ public struct SelectComponentTokens {
     public static let border_color_selected = Color.adaptive(light: ElevateAliases.Action.Focus.border_color_default, dark: ElevateAliases.Action.Focus.border_color_default)
     public static let chevron_color_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
     public static let chevron_color_disabled = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult, dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult)
-    public static let fill_default = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_disabled = Color.adaptive(
-            lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-        )
+    public static let fill_default = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let fill_disabled = Color.adaptive(light: ElevateAliases.Layout.Layer.appBackground, dark: ElevateAliases.Layout.Layer.appBackground)
     public static let fill_hover = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_hover, dark: ElevateAliases.Action.StrongEmphasized.fill_hover)
     public static let fill_invalid = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.fill_default, dark: ElevateAliases.Action.StrongEmphasized.fill_default)
-    public static let fill_selected = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let fill_selected = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
     public static let initialValue_color_default = Color.adaptive(light: ElevateAliases.Content.General.text_default, dark: ElevateAliases.Content.General.text_default)
     public static let initialValue_color_disabled = Color.adaptive(light: ElevateAliases.Content.General.text_muted, dark: ElevateAliases.Content.General.text_muted)
     public static let placeholder_color_default = Color.adaptive(light: ElevateAliases.Content.General.text_understated, dark: ElevateAliases.Content.General.text_understated)
@@ -39,10 +30,7 @@ public struct SelectComponentTokens {
     public static let prefix_color_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)
     public static let prefix_color_disabled = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult, dark: ElevateAliases.Action.StrongEmphasized.text_disabled_deafult)
     public static let selectList_border = Color.adaptive(light: ElevateAliases.Action.UnderstatedNeutral.fill_selected_default, dark: ElevateAliases.Action.UnderstatedNeutral.fill_selected_default)
-    public static let selectList_fill = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let selectList_fill = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
     public static let selectList_groupLabel_fill = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.fill_default, dark: ElevateAliases.Action.UnderstatedEmphasized.fill_default)
     public static let selectList_groupLabel_text = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_default, dark: ElevateAliases.Action.StrongNeutral.text_default)
     public static let suffix_color_default = Color.adaptive(light: ElevateAliases.Action.StrongEmphasized.text_default, dark: ElevateAliases.Action.StrongEmphasized.text_default)

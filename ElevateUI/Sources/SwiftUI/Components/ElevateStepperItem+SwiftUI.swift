@@ -40,6 +40,10 @@ public struct ElevateStepperItem<Content: View>: View {
     /// Optional nested content
     private let content: (() -> Content)?
 
+    // MARK: - Environment
+
+    @Environment(\.stepperDirection) private var direction
+
     // MARK: - State
 
     @State private var isPressed = false
@@ -84,37 +88,73 @@ public struct ElevateStepperItem<Content: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: tokenGap) {
-            // Marker and connector
-            HStack(alignment: .center, spacing: 0) {
-                // Connector line (if not first)
-                if !isFirst {
-                    Rectangle()
-                        .fill(tokenConnectorColor)
-                        .frame(width: tokenConnectorContainer, height: tokenConnectorStrokeWidth)
+        Group {
+            if direction == .column {
+                // Vertical stepper layout: marker on left, text on right
+                HStack(alignment: .top, spacing: tokenGap) {
+                    // Marker column with vertical connector
+                    VStack(spacing: 0) {
+                        markerView
+
+                        // Vertical connector line below marker (if not last)
+                        Rectangle()
+                            .fill(tokenConnectorColor)
+                            .frame(width: tokenConnectorStrokeWidth, height: tokenConnectorContainer)
+                    }
+
+                    // Label and help text
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(label)
+                            .font(ElevateTypography.labelMedium)
+                            .foregroundColor(tokenLabelColor)
+
+                        if let helpText = helpText {
+                            Text(helpText)
+                                .font(ElevateTypography.bodySmall)
+                                .foregroundColor(tokenHelpTextColor)
+                        }
+
+                        // Nested content
+                        if let content = content {
+                            content()
+                        }
+                    }
                 }
+            } else {
+                // Horizontal stepper layout: marker above text
+                VStack(alignment: .leading, spacing: tokenGap) {
+                    // Marker and connector
+                    HStack(alignment: .center, spacing: 0) {
+                        // Connector line (if not first)
+                        if !isFirst {
+                            Rectangle()
+                                .fill(tokenConnectorColor)
+                                .frame(width: tokenConnectorContainer, height: tokenConnectorStrokeWidth)
+                        }
 
-                // Marker
-                markerView
-            }
+                        // Marker
+                        markerView
+                    }
 
-            // Label and help text
-            VStack(alignment: .leading, spacing: 4) {
-                Text(label)
-                    .font(ElevateTypography.labelMedium)
-                    .foregroundColor(tokenLabelColor)
+                    // Label and help text
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(label)
+                            .font(ElevateTypography.labelMedium)
+                            .foregroundColor(tokenLabelColor)
 
-                if let helpText = helpText {
-                    Text(helpText)
-                        .font(ElevateTypography.bodySmall)
-                        .foregroundColor(tokenHelpTextColor)
+                        if let helpText = helpText {
+                            Text(helpText)
+                                .font(ElevateTypography.bodySmall)
+                                .foregroundColor(tokenHelpTextColor)
+                        }
+                    }
+
+                    // Nested content
+                    if let content = content {
+                        content()
+                            .padding(.leading, tokenMarkerSize + tokenGap)
+                    }
                 }
-            }
-
-            // Nested content
-            if let content = content {
-                content()
-                    .padding(.leading, tokenMarkerSize + tokenGap)
             }
         }
         .opacity(isDisabled ? 0.6 : 1.0)

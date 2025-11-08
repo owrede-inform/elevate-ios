@@ -31,11 +31,11 @@ public enum ElevateIconSize {
 /// Usage:
 /// ```swift
 /// ElevateButton("Delete", prefix: {
-///     ElevateIcon.close.image(size: .small)
+///     ElevateIconName.close.image(size: .small)
 /// })
 /// ```
 @available(iOS 15, *)
-public enum ElevateIcon: String, CaseIterable {
+public enum ElevateIconName: String, CaseIterable {
 
     // MARK: - Actions
     case close = "xmark"
@@ -147,16 +147,16 @@ public enum ElevateIcon: String, CaseIterable {
     // MARK: - Semantic Helpers
 
     /// Success icons (typically green/positive)
-    public static let successIcons: [ElevateIcon] = [.checkCircle, .checkCircle]
+    public static let successIcons: [ElevateIconName] = [.checkCircle, .checkCircle]
 
     /// Warning icons (typically yellow/caution)
-    public static let warningIcons: [ElevateIcon] = [.warningTriangle]
+    public static let warningIcons: [ElevateIconName] = [.warningTriangle]
 
     /// Error/Danger icons (typically red/negative)
-    public static let errorIcons: [ElevateIcon] = [.errorCircle, .closeCircle]
+    public static let errorIcons: [ElevateIconName] = [.errorCircle, .closeCircle]
 
     /// Info icons (typically blue/neutral)
-    public static let infoIcons: [ElevateIcon] = [.infoCircle, .helpCircle]
+    public static let infoIcons: [ElevateIconName] = [.infoCircle, .helpCircle]
 }
 
 // MARK: - Icon Size Extension

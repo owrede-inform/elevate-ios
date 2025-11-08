@@ -167,7 +167,6 @@ public struct ButtonComponentTokens {
     public static let border_radius_s: CGFloat = 4.0
     public static let border_width: CGFloat = 1.0
     public static let elvt_component_button_border_radius_pill: CGFloat = 9999.0
-    public static let elvt_component_button_font_size_m: CGFloat = 16.0
     public static let gap_l: CGFloat = 12.0
     public static let gap_m: CGFloat = 8.0
     public static let gap_s: CGFloat = 4.0

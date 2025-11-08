@@ -20,55 +20,19 @@ public struct CardComponentTokens {
     public static let border_color_primary = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.border_default, dark: ElevateAliases.Action.UnderstatedPrimary.border_default)
     public static let border_color_success = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.border_default, dark: ElevateAliases.Action.UnderstatedSuccess.border_default)
     public static let border_color_warning = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.border_default, dark: ElevateAliases.Action.UnderstatedWarning.border_default)
-    public static let fill_elevated = Color.adaptive(
-            lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-        )
-    public static let fill_ground = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_overlay = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_popover = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_raised = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_sunken = Color.adaptive(
-            lightRGB: (red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000),
-            darkRGB: (red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-        )
+    public static let fill_elevated = Color.adaptive(light: ElevateAliases.Layout.Layer.elevated, dark: ElevateAliases.Layout.Layer.elevated)
+    public static let fill_ground = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let fill_overlay = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
+    public static let fill_popover = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
+    public static let fill_raised = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let fill_sunken = Color.adaptive(light: ElevateAliases.Layout.Layer.sunken, dark: ElevateAliases.Layout.Layer.sunken)
     public static let footer_border_color = Color.adaptive(light: ElevateAliases.Layout.General.border_subtle, dark: ElevateAliases.Layout.General.border_subtle)
-    public static let footer_fill_danger = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let footer_fill_emphasized = Color.adaptive(
-            lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-        )
-    public static let footer_fill_neutral = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let footer_fill_primary = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let footer_fill_success = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let footer_fill_warning = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let footer_fill_danger = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let footer_fill_emphasized = Color.adaptive(light: ElevateAliases.Layout.Layer.elevated, dark: ElevateAliases.Layout.Layer.elevated)
+    public static let footer_fill_neutral = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let footer_fill_primary = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let footer_fill_success = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let footer_fill_warning = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
     public static let heading_border_color = Color.adaptive(light: ElevateAliases.Layout.General.border_subtle, dark: ElevateAliases.Layout.General.border_subtle)
     public static let heading_text_color = Color.adaptive(light: ElevateAliases.Content.General.text_default, dark: ElevateAliases.Content.General.text_default)
     public static let text_color = Color.adaptive(light: ElevateAliases.Action.StrongNeutral.text_default, dark: ElevateAliases.Action.StrongNeutral.text_default)

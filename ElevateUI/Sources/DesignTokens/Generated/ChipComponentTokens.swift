@@ -185,7 +185,6 @@ public struct ChipComponentTokens {
     public static let control_width_l: CGFloat = 40.0
     public static let control_width_m: CGFloat = 32.0
     public static let control_width_s: CGFloat = 24.0
-    public static let elvt_component_chip_font_size_s: CGFloat = 13.0
     public static let elvt_component_chip_icon_size_l: CGFloat = 20.0
     public static let elvt_component_chip_icon_size_m: CGFloat = 16.0
     public static let elvt_component_chip_icon_size_s: CGFloat = 14.0

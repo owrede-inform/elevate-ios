@@ -12,10 +12,7 @@ public struct DrawerComponentTokens {
     // MARK: - Colors
 
     public static let border_color = Color.adaptive(light: ElevateAliases.Layout.General.border_default, dark: ElevateAliases.Layout.General.border_default)
-    public static let fill = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
+    public static let fill = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
     public static let text_color_default = Color.adaptive(light: ElevateAliases.Action.UnderstatedEmphasized.text_default, dark: ElevateAliases.Action.UnderstatedEmphasized.text_default)
 
     // MARK: - Dimensions

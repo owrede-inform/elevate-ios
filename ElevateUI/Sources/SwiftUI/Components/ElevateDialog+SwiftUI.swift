@@ -149,6 +149,7 @@ extension View {
     ///   - dragIndicator: Show drag indicator (default: true for medium detents)
     ///   - onDismiss: Closure called when dialog is dismissed
     ///   - content: Dialog content builder
+    @available(iOS 16.0, *)
     public func elevateDialog<Content: View>(
         isPresented: Binding<Bool>,
         detents: Set<PresentationDetent> = [.large],
@@ -172,6 +173,7 @@ extension View {
     ///   - message: Dialog message
     ///   - primaryAction: Primary button action
     ///   - secondaryAction: Secondary button action (optional)
+    @available(iOS 16.0, *)
     public func elevateAlert(
         isPresented: Binding<Bool>,
         title: String,
@@ -197,7 +199,7 @@ extension View {
 // MARK: - Previews
 
 #if DEBUG
-@available(iOS 15, *)
+@available(iOS 16.0, *)
 struct ElevateDialog_Previews: PreviewProvider {
     static var previews: some View {
         PreviewContainer()

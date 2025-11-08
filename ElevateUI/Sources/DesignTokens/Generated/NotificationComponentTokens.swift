@@ -21,30 +21,12 @@ public struct NotificationComponentTokens {
     public static let fill_primary = Color.adaptive(light: ElevateAliases.Action.UnderstatedPrimary.fill_default, dark: ElevateAliases.Action.UnderstatedPrimary.fill_default)
     public static let fill_success = Color.adaptive(light: ElevateAliases.Action.UnderstatedSuccess.fill_default, dark: ElevateAliases.Action.UnderstatedSuccess.fill_default)
     public static let fill_warning = Color.adaptive(light: ElevateAliases.Action.UnderstatedWarning.fill_default, dark: ElevateAliases.Action.UnderstatedWarning.fill_default)
-    public static let icon_color_closable = Color.adaptive(
-            lightRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000),
-            darkRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
-        )
-    public static let icon_color_danger = Color.adaptive(
-            lightRGB: (red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000),
-            darkRGB: (red: 0.9608, green: 0.0039, blue: 0.0039, opacity: 1.0000)
-        )
-    public static let icon_color_neutral = Color.adaptive(
-            lightRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000),
-            darkRGB: (red: 0.2392, green: 0.2588, blue: 0.3255, opacity: 1.0000)
-        )
-    public static let icon_color_primary = Color.adaptive(
-            lightRGB: (red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000),
-            darkRGB: (red: 0.0431, green: 0.3608, blue: 0.8745, opacity: 1.0000)
-        )
-    public static let icon_color_success = Color.adaptive(
-            lightRGB: (red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000),
-            darkRGB: (red: 0.0196, green: 0.4627, blue: 0.2392, opacity: 1.0000)
-        )
-    public static let icon_color_warning = Color.adaptive(
-            lightRGB: (red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000),
-            darkRGB: (red: 0.7333, green: 0.3882, blue: 0.0000, opacity: 1.0000)
-        )
+    public static let icon_color_closable = Color.adaptive(light: ElevateAliases.Feedback.Icon.neutral, dark: ElevateAliases.Feedback.Icon.neutral)
+    public static let icon_color_danger = Color.adaptive(light: ElevateAliases.Feedback.Icon.danger, dark: ElevateAliases.Feedback.Icon.danger)
+    public static let icon_color_neutral = Color.adaptive(light: ElevateAliases.Feedback.Icon.neutral, dark: ElevateAliases.Feedback.Icon.neutral)
+    public static let icon_color_primary = Color.adaptive(light: ElevateAliases.Feedback.Icon.primary, dark: ElevateAliases.Feedback.Icon.primary)
+    public static let icon_color_success = Color.adaptive(light: ElevateAliases.Feedback.Icon.success, dark: ElevateAliases.Feedback.Icon.success)
+    public static let icon_color_warning = Color.adaptive(light: ElevateAliases.Feedback.Icon.warning, dark: ElevateAliases.Feedback.Icon.warning)
     public static let text_color = Color.adaptive(light: ElevateAliases.Feedback.General.text_neutral, dark: ElevateAliases.Feedback.General.text_neutral)
 
     // MARK: - Dimensions

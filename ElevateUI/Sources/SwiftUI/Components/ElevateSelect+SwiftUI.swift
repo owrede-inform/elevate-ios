@@ -86,7 +86,7 @@ public struct ElevateSelect<T: Hashable & CustomStringConvertible>: View {
         }
         .disabled(!isEnabled)
         .sheet(isPresented: $showSheet) {
-            NavigationView {
+            let sheetView = NavigationView {
                 SelectionSheet(
                     selection: $selection,
                     options: options,
@@ -103,8 +103,14 @@ public struct ElevateSelect<T: Hashable & CustomStringConvertible>: View {
                     }
                 }
             }
-            .presentationDetents([.medium, .large])
-            .presentationDragIndicator(.visible)
+
+            if #available(iOS 16.0, *) {
+                sheetView
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.visible)
+            } else {
+                sheetView
+            }
         }
     }
 
@@ -122,11 +128,11 @@ public struct ElevateSelect<T: Hashable & CustomStringConvertible>: View {
                 .font(.system(size: 12))
         }
         .padding(.horizontal, SelectComponentTokens.padding_inline_m)
-        .padding(.vertical, SelectComponentTokens.padding_block_m)
+        .padding(.vertical, 8)
         .background(backgroundColor)
         .overlay(
             RoundedRectangle(cornerRadius: SelectComponentTokens.border_radius_m)
-                .stroke(borderColor, lineWidth: SelectComponentTokens.border_width_m)
+                .stroke(borderColor, lineWidth: SelectComponentTokens.border_width_default)
         )
     }
 

@@ -63,49 +63,52 @@ public struct ElevateTree<Node: TreeNode, Content: View>: View {
 
     // MARK: - Tree Node View
 
-    @ViewBuilder
-    private func treeNodeView(node: Node, level: Int) -> some View {
+    private func treeNodeView(node: Node, level: Int) -> AnyView {
         if let children = node.children, !children.isEmpty {
             // Node with children - use DisclosureGroup
-            DisclosureGroup(
-                isExpanded: Binding(
-                    get: { expandedNodes.contains(node.id) },
-                    set: { isExpanded in
-                        if isExpanded {
-                            expandedNodes.insert(node.id)
-                            performHaptic(.light)
-                        } else {
-                            expandedNodes.remove(node.id)
-                            performHaptic(.light)
+            return AnyView(
+                DisclosureGroup(
+                    isExpanded: Binding(
+                        get: { expandedNodes.contains(node.id) },
+                        set: { isExpanded in
+                            if isExpanded {
+                                expandedNodes.insert(node.id)
+                                performHaptic(.light)
+                            } else {
+                                expandedNodes.remove(node.id)
+                                performHaptic(.light)
+                            }
                         }
+                    )
+                ) {
+                    ForEach(children) { child in
+                        treeNodeView(node: child, level: level + 1)
                     }
-                )
-            ) {
-                ForEach(children) { child in
-                    treeNodeView(node: child, level: level + 1)
+                } label: {
+                    treeNodeLabel(node: node, level: level)
                 }
-            } label: {
-                treeNodeLabel(node: node, level: level)
-            }
+            )
         } else {
             // Leaf node - simple button
-            Button {
-                performHaptic(.light)
-                onSelect?(node)
-            } label: {
-                treeNodeLabel(node: node, level: level)
-            }
-            .buttonStyle(.plain)
-            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                if let onDelete = onDelete {
-                    Button(role: .destructive) {
-                        performHaptic(.medium)
-                        onDelete(node)
-                    } label: {
-                        Label("Delete", systemImage: "trash")
+            return AnyView(
+                Button {
+                    performHaptic(.light)
+                    onSelect?(node)
+                } label: {
+                    treeNodeLabel(node: node, level: level)
+                }
+                .buttonStyle(.plain)
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    if let onDelete = onDelete {
+                        Button(role: .destructive) {
+                            performHaptic(.medium)
+                            onDelete(node)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
                     }
                 }
-            }
+            )
         }
     }
 
@@ -141,10 +144,8 @@ public struct ElevateTree<Node: TreeNode, Content: View>: View {
 
 /// Protocol for tree nodes with hierarchical structure
 public protocol TreeNode: Identifiable {
-    associatedtype ChildNode: TreeNode where ChildNode.ID == ID
-
     var id: ID { get }
-    var children: [ChildNode]? { get }
+    var children: [Self]? { get }
 }
 
 // MARK: - Outline Group Alternative (iOS 17+)
@@ -212,19 +213,16 @@ extension ElevateTree {
         icon: KeyPath<T, String>? = nil,
         onSelect: ((T) -> Void)? = nil,
         onDelete: ((T) -> Void)? = nil
-    ) -> some View where Node == T, Content == Label<Text, Image> {
+    ) -> ElevateTree<T, Label<Text, Image>> where Node == T, Content == Label<Text, Image> {
         ElevateTree(
             data: data,
             content: { node in
-                if let icon = icon {
-                    Label(node[keyPath: label], systemImage: node[keyPath: icon])
-                } else {
-                    Label(node[keyPath: label], systemImage: "doc")
-                }
+                let iconName = icon.map { node[keyPath: $0] } ?? "doc"
+                return Label(node[keyPath: label], systemImage: iconName)
             },
             onSelect: onSelect,
             onDelete: onDelete
-        ) as! ElevateTree<T, Label<Text, Image>>
+        )
     }
 }
 

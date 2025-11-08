@@ -15,22 +15,10 @@ public struct ToolbarComponentTokens {
     public static let border_color_elevated = Color.adaptive(light: ElevateAliases.Layout.General.border_accent, dark: ElevateAliases.Layout.General.border_accent)
     public static let border_color_overlay = Color.adaptive(light: ElevateAliases.Layout.General.border_accent, dark: ElevateAliases.Layout.General.border_accent)
     public static let border_color_sunken = Color.adaptive(light: ElevateAliases.Layout.General.border_accent, dark: ElevateAliases.Layout.General.border_accent)
-    public static let fill_default = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_elevated = Color.adaptive(
-            lightRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000),
-            darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-        )
-    public static let fill_overlay = Color.adaptive(
-            lightRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000),
-            darkRGB: (red: 1.0000, green: 1.0000, blue: 1.0000, opacity: 1.0000)
-        )
-    public static let fill_sunken = Color.adaptive(
-            lightRGB: (red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000),
-            darkRGB: (red: 0.8353, green: 0.8510, blue: 0.8824, opacity: 1.0000)
-        )
+    public static let fill_default = Color.adaptive(light: ElevateAliases.Layout.Layer.ground, dark: ElevateAliases.Layout.Layer.ground)
+    public static let fill_elevated = Color.adaptive(light: ElevateAliases.Layout.Layer.elevated, dark: ElevateAliases.Layout.Layer.elevated)
+    public static let fill_overlay = Color.adaptive(light: ElevateAliases.Layout.Layer.overlay, dark: ElevateAliases.Layout.Layer.overlay)
+    public static let fill_sunken = Color.adaptive(light: ElevateAliases.Layout.Layer.sunken, dark: ElevateAliases.Layout.Layer.sunken)
 
     // MARK: - Dimensions
 

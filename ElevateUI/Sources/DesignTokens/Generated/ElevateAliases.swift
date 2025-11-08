@@ -33,20 +33,14 @@ public struct ElevateAliases {
         public enum StrongDanger {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Red._800, dark: ElevatePrimitives.Red._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Red._500, dark: ElevatePrimitives.Red._500)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 1.0000, green: 0.9412, blue: 0.9412, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Red._50, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Red._600, dark: ElevatePrimitives.Red._600)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Red._900, dark: ElevatePrimitives.Red._800)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Red._700, dark: ElevatePrimitives.Red._500)
             public static let border_selected_hover = Color.adaptive(light: ElevatePrimitives.Red._800, dark: ElevatePrimitives.Red._600)
             public static let fill_active = Color.adaptive(light: ElevatePrimitives.Red._900, dark: ElevatePrimitives.Red._700)
             public static let fill_default = Color.adaptive(light: ElevatePrimitives.Red._600, dark: ElevatePrimitives.Red._500)
-            public static let fill_disabled_default = Color.adaptive(
-                lightRGB: (red: 1.0000, green: 0.6745, blue: 0.6745, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let fill_disabled_default = Color.adaptive(light: ElevatePrimitives.Red._200, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let fill_hover = Color.adaptive(light: ElevatePrimitives.Red._700, dark: ElevatePrimitives.Red._600)
             public static let fill_selected_active = Color.adaptive(light: ElevatePrimitives.Red._950, dark: ElevatePrimitives.Red._900)
             public static let fill_selected_default = Color.adaptive(light: ElevatePrimitives.Red._800, dark: ElevatePrimitives.Red._700)
@@ -65,10 +59,7 @@ public struct ElevateAliases {
         public enum StrongEmphasized {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Gray._800, dark: ElevatePrimitives.Gray._300)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Gray._500, dark: ElevatePrimitives.Gray._700)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Gray._200, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Gray._600, dark: ElevatePrimitives.Gray._500)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Gray._900, dark: ElevatePrimitives.Blue._900)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Gray._700, dark: ElevatePrimitives.Blue._500)
@@ -94,10 +85,7 @@ public struct ElevateAliases {
         public enum StrongNeutral {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Gray._600, dark: ElevatePrimitives.Gray._400)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Gray._300, dark: ElevatePrimitives.Gray._700)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.7451, green: 0.7647, blue: 0.8039, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Gray._200, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Gray._500, dark: ElevatePrimitives.Gray._500)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Gray._600, dark: ElevatePrimitives.Gray._400)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Gray._400, dark: ElevatePrimitives.Gray._300)
@@ -123,20 +111,14 @@ public struct ElevateAliases {
         public enum StrongPrimary {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Blue._800, dark: ElevatePrimitives.Blue._900)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Blue._500, dark: ElevatePrimitives.Blue._500)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.9176, green: 0.9569, blue: 1.0000, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Blue._50, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Blue._600, dark: ElevatePrimitives.Blue._800)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Blue._900, dark: ElevatePrimitives.Blue._900)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Blue._700, dark: ElevatePrimitives.Blue._500)
             public static let border_selected_hover = Color.adaptive(light: ElevatePrimitives.Blue._800, dark: ElevatePrimitives.Blue._800)
             public static let fill_active = Color.adaptive(light: ElevatePrimitives.Blue._900, dark: ElevatePrimitives.Blue._700)
             public static let fill_default = Color.adaptive(light: ElevatePrimitives.Blue._600, dark: ElevatePrimitives.Blue._500)
-            public static let fill_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.5647, green: 0.7765, blue: 1.0000, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let fill_disabled_default = Color.adaptive(light: ElevatePrimitives.Blue._200, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let fill_hover = Color.adaptive(light: ElevatePrimitives.Blue._700, dark: ElevatePrimitives.Blue._600)
             public static let fill_selected_active = Color.adaptive(light: ElevatePrimitives.Blue._950, dark: ElevatePrimitives.Blue._900)
             public static let fill_selected_default = Color.adaptive(light: ElevatePrimitives.Blue._800, dark: ElevatePrimitives.Blue._700)
@@ -155,20 +137,14 @@ public struct ElevateAliases {
         public enum StrongSuccess {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Green._800, dark: ElevatePrimitives.Green._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Green._500, dark: ElevatePrimitives.Green._500)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.9020, green: 0.9725, blue: 0.9255, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Green._50, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Green._600, dark: ElevatePrimitives.Green._600)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Green._900, dark: ElevatePrimitives.Green._900)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Green._700, dark: ElevatePrimitives.Green._700)
             public static let border_selected_hover = Color.adaptive(light: ElevatePrimitives.Green._800, dark: ElevatePrimitives.Green._800)
             public static let fill_active = Color.adaptive(light: ElevatePrimitives.Green._900, dark: ElevatePrimitives.Green._700)
             public static let fill_default = Color.adaptive(light: ElevatePrimitives.Green._600, dark: ElevatePrimitives.Green._500)
-            public static let fill_disabled_default = Color.adaptive(
-                lightRGB: (red: 0.6667, green: 0.9020, blue: 0.7373, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let fill_disabled_default = Color.adaptive(light: ElevatePrimitives.Green._100, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let fill_hover = Color.adaptive(light: ElevatePrimitives.Green._700, dark: ElevatePrimitives.Green._600)
             public static let fill_selected_active = Color.adaptive(light: ElevatePrimitives.Green._950, dark: ElevatePrimitives.Green._900)
             public static let fill_selected_default = Color.adaptive(light: ElevatePrimitives.Green._800, dark: ElevatePrimitives.Green._700)
@@ -187,20 +163,14 @@ public struct ElevateAliases {
         public enum StrongWarning {
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Orange._700, dark: ElevatePrimitives.Orange._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Orange._400, dark: ElevatePrimitives.Orange._500)
-            public static let border_disabled_default = Color.adaptive(
-                lightRGB: (red: 1.0000, green: 0.8275, blue: 0.4745, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Orange._100, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Orange._500, dark: ElevatePrimitives.Orange._600)
             public static let border_selected_active = Color.adaptive(light: ElevatePrimitives.Orange._800, dark: ElevatePrimitives.Orange._950)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Orange._600, dark: ElevatePrimitives.Orange._500)
             public static let border_selected_hover = Color.adaptive(light: ElevatePrimitives.Orange._700, dark: ElevatePrimitives.Orange._300)
             public static let fill_active = Color.adaptive(light: ElevatePrimitives.Orange._600, dark: ElevatePrimitives.Orange._700)
             public static let fill_default = Color.adaptive(light: ElevatePrimitives.Orange._300, dark: ElevatePrimitives.Orange._500)
-            public static let fill_disabled_default = Color.adaptive(
-                lightRGB: (red: 1.0000, green: 0.9529, blue: 0.8275, opacity: 1.0000),
-                darkRGB: (red: 0.9529, green: 0.9569, blue: 0.9686, opacity: 1.0000)
-            )
+            public static let fill_disabled_default = Color.adaptive(light: ElevatePrimitives.Orange._50, dark: ElevateAliases.Layout.Layer.appBackground)
             public static let fill_hover = Color.adaptive(light: ElevatePrimitives.Orange._400, dark: ElevatePrimitives.Orange._600)
             public static let fill_selected_active = Color.adaptive(light: ElevatePrimitives.Orange._700, dark: ElevatePrimitives.Orange._900)
             public static let fill_selected_default = Color.adaptive(light: ElevatePrimitives.Orange._500, dark: ElevatePrimitives.Orange._700)
@@ -321,11 +291,14 @@ public struct ElevateAliases {
         // MARK: UnderstatedSuccess
 
         public enum UnderstatedSuccess {
+            public static let `default` = Color.adaptive(light: ElevatePrimitives.Green._50, dark: ElevatePrimitives.Green._800)
+            public static let active = Color.adaptive(light: ElevatePrimitives.Green._200, dark: ElevatePrimitives.Green._950)
             public static let border_active = Color.adaptive(light: ElevatePrimitives.Green._300, dark: ElevatePrimitives.Green._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Green._500, dark: ElevatePrimitives.Green._500)
             public static let border_disabled_default = Color.adaptive(light: ElevatePrimitives.Green._200, dark: ElevatePrimitives.Green._100)
             public static let border_hover = Color.adaptive(light: ElevatePrimitives.Green._600, dark: ElevatePrimitives.Green._600)
             public static let border_selected_default = Color.adaptive(light: ElevatePrimitives.Green._700, dark: ElevatePrimitives.Green._700)
+            public static let disabled = Color.adaptive(light: ElevatePrimitives.Green._50, dark: ElevatePrimitives.Green._950)
             public static let fill_active = Color.adaptive(light: ElevatePrimitives.Green._300, dark: ElevatePrimitives.Green._1000)
             public static let fill_default = Color.adaptive(light: ElevatePrimitives.Green._50, dark: ElevatePrimitives.Green._900)
             public static let fill_disabled_default = Color.adaptive(light: ElevatePrimitives.Green._100, dark: ElevatePrimitives.Green._950)
@@ -333,6 +306,7 @@ public struct ElevateAliases {
             public static let fill_selected_active = Color.adaptive(light: ElevatePrimitives.Green._400, dark: ElevatePrimitives.Green._950)
             public static let fill_selected_default = Color.adaptive(light: ElevatePrimitives.Green._200, dark: ElevatePrimitives.Green._800)
             public static let fill_selected_hover = Color.adaptive(light: ElevatePrimitives.Green._300, dark: ElevatePrimitives.Green._900)
+            public static let hover = Color.adaptive(light: ElevatePrimitives.Green._100, dark: ElevatePrimitives.Green._900)
             public static let text_active = Color.adaptive(light: ElevatePrimitives.Green._500, dark: ElevatePrimitives.Green._700)
             public static let text_default = Color.adaptive(light: ElevatePrimitives.Green._600, dark: ElevatePrimitives.Green._500)
             public static let text_disabled_default = Color.adaptive(light: ElevatePrimitives.Green._300, dark: ElevatePrimitives.Green._100)
@@ -380,6 +354,17 @@ public struct ElevateAliases {
             public static let text_muted = Color.adaptive(light: ElevatePrimitives.Gray._300, dark: ElevatePrimitives.Gray._700)
             public static let text_understated = Color.adaptive(light: ElevatePrimitives.Gray._500, dark: ElevatePrimitives.Gray._300)
         }
+
+        // MARK: Icon
+
+        public enum Icon {
+            public static let danger = Color.adaptive(light: ElevatePrimitives.Red._500, dark: ElevatePrimitives.Red._500)
+            public static let emphasized = Color.adaptive(light: ElevatePrimitives.Gray._900, dark: ElevatePrimitives.Gray._100)
+            public static let neutral = Color.adaptive(light: ElevatePrimitives.Gray._800, dark: ElevatePrimitives.Gray._300)
+            public static let primary = Color.adaptive(light: ElevatePrimitives.Blue._500, dark: ElevatePrimitives.Blue._500)
+            public static let success = Color.adaptive(light: ElevatePrimitives.Green._500, dark: ElevatePrimitives.Green._500)
+            public static let warning = Color.adaptive(light: ElevatePrimitives.Orange._500, dark: ElevatePrimitives.Orange._500)
+        }
     }
 
     // MARK: Feedback
@@ -403,6 +388,17 @@ public struct ElevateAliases {
             public static let text_warning = Color.adaptive(light: ElevatePrimitives.Orange._500, dark: ElevatePrimitives.Orange._300)
         }
 
+        // MARK: Icon
+
+        public enum Icon {
+            public static let danger = Color.adaptive(light: ElevatePrimitives.Red._500, dark: ElevatePrimitives.Red._300)
+            public static let emphasized = Color.adaptive(light: ElevatePrimitives.Gray._900, dark: ElevatePrimitives.Gray._200)
+            public static let neutral = Color.adaptive(light: ElevatePrimitives.Gray._800, dark: ElevatePrimitives.Gray._200)
+            public static let primary = Color.adaptive(light: ElevatePrimitives.Blue._600, dark: ElevatePrimitives.Blue._400)
+            public static let success = Color.adaptive(light: ElevatePrimitives.Green._600, dark: ElevatePrimitives.Green._400)
+            public static let warning = Color.adaptive(light: ElevatePrimitives.Orange._500, dark: ElevatePrimitives.Orange._300)
+        }
+
         // MARK: Strong
 
         public enum Strong {
@@ -424,10 +420,26 @@ public struct ElevateAliases {
         // MARK: General
 
         public enum General {
+            public static let backdrop = Color.adaptive(light: ElevatePrimitives.Black._color_black, dark: ElevatePrimitives.Black._color_black)
             public static let border_accent = Color.adaptive(light: ElevatePrimitives.Gray._300, dark: ElevatePrimitives.Gray._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Gray._100, dark: ElevatePrimitives.Gray._900)
             public static let border_prominent = Color.adaptive(light: ElevatePrimitives.Gray._400, dark: ElevatePrimitives.Gray._600)
             public static let border_subtle = Color.adaptive(light: ElevatePrimitives.Gray._50, dark: ElevatePrimitives.Gray._950)
+        }
+
+        // MARK: Layer
+
+        public enum Layer {
+            public static let appBackground = Color.adaptive(light: ElevatePrimitives.Gray._50, dark: ElevatePrimitives.Black._color_black)
+            public static let elevated = Color.adaptive(light: ElevatePrimitives.Gray._50, dark: ElevatePrimitives.Gray._950)
+            public static let ground = Color.adaptive(light: ElevatePrimitives.White._color_white, dark: ElevatePrimitives.Gray._1000)
+            public static let overlay = Color.adaptive(light: ElevatePrimitives.White._color_white, dark: ElevatePrimitives.Gray._900)
+            public static let sunken = Color.adaptive(light: ElevatePrimitives.Gray._100, dark: ElevatePrimitives.Gray._1000)
+        }
+
+        // MARK: Shadow
+
+        public enum Shadow {
         }
     }
 

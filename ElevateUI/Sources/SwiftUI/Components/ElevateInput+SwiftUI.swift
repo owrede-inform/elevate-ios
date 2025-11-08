@@ -61,12 +61,12 @@ public struct ElevateInput: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(spacing: InputComponentTokens.gap_icon_m) {
+        HStack(spacing: InputComponentTokens.gap_prefix_m) {
             // Leading icon
             if let leadingIcon = leadingIcon {
                 Image(systemName: leadingIcon)
                     .foregroundColor(iconColor)
-                    .font(.system(size: InputComponentTokens.icon_size_m))
+                    .font(.system(size: InputComponentTokens.icon_size_height_m))
             }
 
             // Text field
@@ -85,15 +85,15 @@ public struct ElevateInput: View {
             if let trailingIcon = trailingIcon {
                 Image(systemName: trailingIcon)
                     .foregroundColor(iconColor)
-                    .font(.system(size: InputComponentTokens.icon_size_m))
+                    .font(.system(size: InputComponentTokens.icon_size_height_m))
             }
         }
         .padding(.horizontal, InputComponentTokens.padding_inline_m)
-        .padding(.vertical, InputComponentTokens.padding_block_m)
+        .padding(.vertical, 8)
         .background(backgroundColor)
         .overlay(
             RoundedRectangle(cornerRadius: InputComponentTokens.border_radius_m)
-                .stroke(borderColor, lineWidth: InputComponentTokens.border_width_m)
+                .stroke(borderColor, lineWidth: InputComponentTokens.border_width_default)
         )
         .animation(.easeInOut(duration: 0.2), value: isFocused)
     }
@@ -130,9 +130,9 @@ public struct ElevateInput: View {
 
     private var textColor: Color {
         if !isEnabled {
-            return InputComponentTokens.text_color_disabled
+            return Color(.secondaryLabel)
         }
-        return InputComponentTokens.text_color_default
+        return Color(.label)
     }
 
     private var iconColor: Color {
@@ -176,7 +176,7 @@ public struct ElevateSecureInput: View {
     }
 
     public var body: some View {
-        HStack(spacing: InputComponentTokens.gap_icon_m) {
+        HStack(spacing: InputComponentTokens.gap_prefix_m) {
             SecureField(placeholder, text: $text)
                 .focused($isFocused)
                 .textContentType(textContentType)
@@ -188,11 +188,11 @@ public struct ElevateSecureInput: View {
                 .disabled(!isEnabled)
         }
         .padding(.horizontal, InputComponentTokens.padding_inline_m)
-        .padding(.vertical, InputComponentTokens.padding_block_m)
+        .padding(.vertical, 8)
         .background(backgroundColor)
         .overlay(
             RoundedRectangle(cornerRadius: InputComponentTokens.border_radius_m)
-                .stroke(borderColor, lineWidth: InputComponentTokens.border_width_m)
+                .stroke(borderColor, lineWidth: InputComponentTokens.border_width_default)
         )
         .animation(.easeInOut(duration: 0.2), value: isFocused)
     }
@@ -211,8 +211,8 @@ public struct ElevateSecureInput: View {
     }
 
     private var textColor: Color {
-        if !isEnabled { return InputComponentTokens.text_color_disabled }
-        return InputComponentTokens.text_color_default
+        if !isEnabled { return Color(.secondaryLabel) }
+        return Color(.label)
     }
 }
 
