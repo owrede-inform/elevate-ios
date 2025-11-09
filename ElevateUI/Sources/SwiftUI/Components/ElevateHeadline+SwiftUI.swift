@@ -111,31 +111,31 @@ public struct ElevateHeadline<EndContent: View>: View {
 
     private var titleFont: Font {
         switch size {
-        case .extraExtraSmall: return ElevateTypography.labelLarge
-        case .extraSmall: return ElevateTypography.headingXSmall
-        case .small: return ElevateTypography.headingSmall
-        case .medium: return ElevateTypography.headingMedium
-        case .large: return ElevateTypography.headingLarge
-        case .extraLarge: return ElevateTypography.displaySmall
+        case .extraExtraSmall: return ElevateTypographyiOS.labelLarge // 18pt (web: 16pt)
+        case .extraSmall: return ElevateTypographyiOS.headingXSmall // 23pt (web: 20pt)
+        case .small: return ElevateTypographyiOS.headingSmall // 28pt (web: 24pt)
+        case .medium: return ElevateTypographyiOS.headingMedium // 32pt (web: 28pt)
+        case .large: return ElevateTypographyiOS.headingLarge // 37pt (web: 32pt)
+        case .extraLarge: return ElevateTypographyiOS.displaySmall // 41pt (web: 36pt)
         }
     }
 
     private var overlineFont: Font {
         switch size {
-        case .extraExtraSmall, .extraSmall: return ElevateTypography.labelSmall
-        case .small, .medium: return ElevateTypography.labelMedium
-        case .large, .extraLarge: return ElevateTypography.labelLarge
+        case .extraExtraSmall, .extraSmall: return ElevateTypographyiOS.labelSmall // 14pt (web: 12pt)
+        case .small, .medium: return ElevateTypographyiOS.labelMedium // 16pt (web: 14pt)
+        case .large, .extraLarge: return ElevateTypographyiOS.labelLarge // 18pt (web: 16pt)
         }
     }
 
     private var subtitleFont: Font {
         switch size {
-        case .extraExtraSmall: return ElevateTypography.bodySmall
-        case .extraSmall: return ElevateTypography.bodySmall
-        case .small: return ElevateTypography.bodyMedium
-        case .medium: return ElevateTypography.bodyMedium
-        case .large: return ElevateTypography.bodyLarge
-        case .extraLarge: return ElevateTypography.bodyLarge
+        case .extraExtraSmall: return ElevateTypographyiOS.bodySmall // 14pt (web: 12pt)
+        case .extraSmall: return ElevateTypographyiOS.bodySmall // 14pt (web: 12pt)
+        case .small: return ElevateTypographyiOS.bodyMedium // 16pt (web: 14pt)
+        case .medium: return ElevateTypographyiOS.bodyMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.bodyLarge // 18pt (web: 16pt)
+        case .extraLarge: return ElevateTypographyiOS.bodyLarge // 18pt (web: 16pt)
         }
     }
 

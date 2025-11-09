@@ -86,7 +86,7 @@ public struct ElevateProgress: View {
             // Label (optional)
             if let label = label {
                 Text(label)
-                    .font(ElevateTypography.bodySmall)
+                    .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                     .foregroundColor(ProgressComponentTokens.bar_text_on_track)
             }
 
@@ -198,9 +198,9 @@ public struct ElevateProgress: View {
 
     private var tokenLabelFont: Font {
         switch size {
-        case .small: return ElevateTypography.bodySmall
-        case .medium: return ElevateTypography.bodyMedium
-        case .large: return ElevateTypography.bodyLarge
+        case .small: return ElevateTypographyiOS.bodySmall // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.bodyMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.bodyLarge // 18pt (web: 16pt)
         }
     }
 }

@@ -276,17 +276,17 @@ public struct ElevateExpansionPanel<Content: View>: View {
 
     private var tokenHeaderFont: Font {
         switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
+        case .small: return ElevateTypographyiOS.labelSmall // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.labelMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.labelLarge // 18pt (web: 16pt)
         }
     }
 
     private var tokenBodyFont: Font {
         switch size {
-        case .small: return ElevateTypography.bodySmall
-        case .medium: return ElevateTypography.bodyMedium
-        case .large: return ElevateTypography.bodyLarge
+        case .small: return ElevateTypographyiOS.bodySmall // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.bodyMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.bodyLarge // 18pt (web: 16pt)
         }
     }
 }

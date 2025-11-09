@@ -58,14 +58,14 @@ public struct ElevateEmptyState<Action: View>: View {
 
             // Title
             Text(title)
-                .font(ElevateTypography.titleMedium)
+                .font(ElevateTypographyiOS.titleMedium) // 18pt (web: 16pt)
                 .foregroundColor(EmptyStateComponentTokens.text_color)
                 .multilineTextAlignment(.center)
 
             // Description
             if let description = description {
                 Text(description)
-                    .font(ElevateTypography.bodyMedium)
+                    .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                     .foregroundColor(EmptyStateComponentTokens.text_color.opacity(0.7))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)

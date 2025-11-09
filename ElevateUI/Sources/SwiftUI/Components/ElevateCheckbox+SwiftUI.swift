@@ -34,10 +34,6 @@ public struct ElevateCheckbox: View {
     /// Action to perform when checkbox state changes
     private let onChange: ((Bool) -> Void)?
 
-    // MARK: - State
-
-    @State private var isPressed = false
-
     // MARK: - Initializer
 
     /// Creates a checkbox with label and binding
@@ -62,178 +58,28 @@ public struct ElevateCheckbox: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(spacing: tokenGap) {
-            // Checkbox control
-            ZStack {
-                // Background and border
-                RoundedRectangle(cornerRadius: tokenCornerRadius)
-                    .fill(tokenBackgroundColor)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: tokenCornerRadius)
-                            .strokeBorder(tokenBorderColor, lineWidth: tokenBorderWidth)
-                    )
-
-                // Icon (checkmark or dash)
-                if isChecked || isIndeterminate {
-                    Image(systemName: isIndeterminate ? "minus" : "checkmark")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: tokenIconSize, height: tokenIconSize)
-                        .foregroundColor(tokenIconColor)
-                }
+        Button(action: {
+            if !isDisabled {
+                isChecked.toggle()
+                onChange?(isChecked)
             }
-            .frame(width: tokenControlSize, height: tokenControlSize)
-            .scrollFriendlyTap(
-                onPressedChanged: { pressed in
-                    if !isDisabled {
-                        isPressed = pressed
-                    }
-                },
-                action: {
-                    if !isDisabled {
-                        isChecked.toggle()
-                        onChange?(isChecked)
-                    }
-                }
-            )
-
-            // Label
+        }) {
             Text(label)
-                .font(tokenLabelFont)
-                .foregroundColor(tokenLabelColor)
         }
-        .opacity(isDisabled ? 0.6 : 1.0)
+        .buttonStyle(ElevateCheckboxStyle(
+            size: size,
+            isChecked: isChecked,
+            isIndeterminate: isIndeterminate,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        ))
+        .disabled(isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(isIndeterminate ? "Mixed" : (isChecked ? "Checked" : "Unchecked"))
     }
 
-    // MARK: - Token Accessors
-
-    private var tokenControlSize: CGFloat {
-        switch size {
-        case .small: return CheckboxComponentTokens.control_width_s
-        case .medium: return CheckboxComponentTokens.control_width_m
-        case .large: return CheckboxComponentTokens.control_width_l
-        }
-    }
-
-    private var tokenGap: CGFloat {
-        switch size {
-        case .small: return CheckboxComponentTokens.gap_s
-        case .medium: return CheckboxComponentTokens.gap_m
-        case .large: return CheckboxComponentTokens.gap_l
-        }
-    }
-
-    private var tokenCornerRadius: CGFloat {
-        switch size {
-        case .small: return CheckboxComponentTokens.control_radius_s
-        case .medium: return CheckboxComponentTokens.control_radius_m
-        case .large: return CheckboxComponentTokens.control_radius_l
-        }
-    }
-
-    private var tokenBorderWidth: CGFloat {
-        switch size {
-        case .small: return CheckboxComponentTokens.control_border_width_s
-        case .medium: return CheckboxComponentTokens.control_border_width_m
-        case .large: return CheckboxComponentTokens.control_border_width_l
-        }
-    }
-
-    private var tokenIconSize: CGFloat {
-        switch size {
-        case .small: return CheckboxComponentTokens.icon_width_s * 0.6
-        case .medium: return CheckboxComponentTokens.icon_width_m * 0.6
-        case .large: return CheckboxComponentTokens.icon_width_l * 0.6
-        }
-    }
-
-    private var tokenBackgroundColor: Color {
-        if isDisabled {
-            if isChecked || isIndeterminate {
-                return CheckboxComponentTokens.control_fill_checked_disabled
-            } else {
-                return CheckboxComponentTokens.control_fill_unchecked_disabled
-            }
-        }
-
-        if isChecked {
-            return isPressed
-                ? CheckboxComponentTokens.control_fill_checked_active
-                : CheckboxComponentTokens.control_fill_checked_default
-        } else if isIndeterminate {
-            return isPressed
-                ? CheckboxComponentTokens.control_fill_indeterminate_active
-                : CheckboxComponentTokens.control_fill_indeterminate_default
-        } else {
-            return isPressed
-                ? CheckboxComponentTokens.control_fill_unchecked_active
-                : CheckboxComponentTokens.control_fill_unchecked_default
-        }
-    }
-
-    private var tokenBorderColor: Color {
-        if isDisabled {
-            if isChecked || isIndeterminate {
-                return CheckboxComponentTokens.control_border_color_checked_disabled
-            } else {
-                return CheckboxComponentTokens.control_border_color_unchecked_disabled
-            }
-        }
-
-        if isInvalid {
-            if isChecked || isIndeterminate {
-                return CheckboxComponentTokens.control_border_color_checked_invalid_default
-            } else {
-                return isPressed
-                    ? CheckboxComponentTokens.control_border_color_unchecked_invalid_active
-                    : CheckboxComponentTokens.control_border_color_unchecked_invalid_default
-            }
-        }
-
-        if isChecked {
-            return isPressed
-                ? CheckboxComponentTokens.control_border_color_checked_active
-                : CheckboxComponentTokens.control_border_color_checked_default
-        } else if isIndeterminate {
-            return isPressed
-                ? CheckboxComponentTokens.control_border_color_indeterminate_active
-                : CheckboxComponentTokens.control_border_color_indeterminate_default
-        } else {
-            return isPressed
-                ? CheckboxComponentTokens.control_border_color_unchecked_active
-                : CheckboxComponentTokens.control_border_color_unchecked_default
-        }
-    }
-
-    private var tokenIconColor: Color {
-        if isDisabled {
-            return CheckboxComponentTokens.icon_color_disabled
-        }
-        return isPressed
-            ? CheckboxComponentTokens.icon_color_active
-            : CheckboxComponentTokens.icon_color_default
-    }
-
-    private var tokenLabelColor: Color {
-        if isDisabled {
-            return CheckboxComponentTokens.label_disabled
-        }
-        return isPressed
-            ? CheckboxComponentTokens.label_active
-            : CheckboxComponentTokens.label_default
-    }
-
-    private var tokenLabelFont: Font {
-        switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
-        }
-    }
 }
 
 // MARK: - Checkbox Size

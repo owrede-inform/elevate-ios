@@ -316,9 +316,9 @@ struct ElevateCard_Previews: PreviewProvider {
                 ElevateCard {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Simple Card")
-                            .font(ElevateTypography.titleMedium)
+                            .font(ElevateTypographyiOS.titleMedium) // 18pt (web: 16pt)
                         Text("This is a basic card with just content.")
-                            .font(ElevateTypography.bodySmall)
+                            .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                     }
                 }
 
@@ -326,11 +326,11 @@ struct ElevateCard_Previews: PreviewProvider {
                 ElevateCard(
                     content: {
                         Text("Card content goes here.")
-                            .font(ElevateTypography.bodyMedium)
+                            .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                     },
                     header: {
                         Text("Card Header")
-                            .font(ElevateTypography.titleMedium)
+                            .font(ElevateTypographyiOS.titleMedium) // 18pt (web: 16pt)
                     }
                 )
 
@@ -339,17 +339,17 @@ struct ElevateCard_Previews: PreviewProvider {
                     tone: .primary,
                     content: {
                         Text("Main card content.")
-                            .font(ElevateTypography.bodyMedium)
+                            .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                     },
                     header: {
                         Text("Header Section")
-                            .font(ElevateTypography.titleMedium)
+                            .font(ElevateTypographyiOS.titleMedium) // 18pt (web: 16pt)
                     },
                     footer: {
                         HStack {
                             Spacer()
                             Text("Footer Actions")
-                                .font(ElevateTypography.labelSmall)
+                                .font(ElevateTypographyiOS.labelSmall) // 14pt (web: 12pt)
                         }
                     }
                 )
@@ -358,7 +358,7 @@ struct ElevateCard_Previews: PreviewProvider {
                 ForEach([CardElevation.ground, .raised, .elevated, .sunken], id: \.self) { elevation in
                     ElevateCard(elevation: elevation) {
                         Text("Elevation: \(String(describing: elevation))")
-                            .font(ElevateTypography.bodyMedium)
+                            .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                     }
                 }
             }

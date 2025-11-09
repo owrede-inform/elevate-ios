@@ -122,14 +122,14 @@ public struct ElevateRadioGroup<Value: Hashable, Content: View>: View {
 
     private var tokenLabelFont: Font {
         switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
+        case .small: return ElevateTypographyiOS.labelSmall   // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.labelMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.labelLarge   // 18pt (web: 16pt)
         }
     }
 
     private var tokenHelpTextFont: Font {
-        ElevateTypography.bodySmall
+        ElevateTypographyiOS.bodySmall // 14pt (web: 12pt)
     }
 
     private var tokenLabelColor: Color {

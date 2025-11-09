@@ -37,10 +37,6 @@ public struct ElevateRadio<Value: Hashable>: View {
     /// Action to perform when radio is selected
     private let onChange: ((Value) -> Void)?
 
-    // MARK: - State
-
-    @State private var isPressed = false
-
     // MARK: - Computed Properties
 
     private var isChecked: Bool {
@@ -73,163 +69,27 @@ public struct ElevateRadio<Value: Hashable>: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(spacing: tokenGap) {
-            // Radio control (circular)
-            ZStack {
-                // Track (background circle with border)
-                Circle()
-                    .fill(tokenTrackColor)
-                    .overlay(
-                        Circle()
-                            .strokeBorder(tokenBorderColor, lineWidth: tokenBorderWidth)
-                    )
-
-                // Handle (center dot when checked)
-                if isChecked {
-                    Circle()
-                        .fill(tokenHandleColor)
-                        .frame(width: tokenHandleSize, height: tokenHandleSize)
-                }
+        Button(action: {
+            if !isDisabled && !isChecked {
+                selectedValue = value
+                onChange?(value)
             }
-            .frame(width: tokenControlSize, height: tokenControlSize)
-            .scrollFriendlyTap(
-                onPressedChanged: { pressed in
-                    if !isDisabled {
-                        isPressed = pressed
-                    }
-                },
-                action: {
-                    if !isDisabled && !isChecked {
-                        selectedValue = value
-                        onChange?(value)
-                    }
-                }
-            )
-
-            // Label
+        }) {
             if !hideLabel {
                 Text(label)
-                    .font(tokenLabelFont)
-                    .foregroundColor(tokenLabelColor)
             }
         }
-        .opacity(isDisabled ? 0.6 : 1.0)
+        .buttonStyle(ElevateRadioStyle<Value>(
+            isChecked: isChecked,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid,
+            size: size
+        ))
+        .disabled(isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(isChecked ? "Selected" : "Not selected")
-    }
-
-    // MARK: - Token Accessors
-
-    private var tokenControlSize: CGFloat {
-        switch size {
-        case .small: return RadioComponentTokens.control_track_width_s
-        case .medium: return RadioComponentTokens.control_track_width_m
-        case .large: return RadioComponentTokens.control_track_width_l
-        }
-    }
-
-    private var tokenHandleSize: CGFloat {
-        switch size {
-        case .small: return RadioComponentTokens.control_handle_width_s
-        case .medium: return RadioComponentTokens.control_handle_width_m
-        case .large: return RadioComponentTokens.control_handle_width_l
-        }
-    }
-
-    private var tokenGap: CGFloat {
-        switch size {
-        case .small: return 8.0
-        case .medium: return 12.0
-        case .large: return 16.0
-        }
-    }
-
-    private var tokenBorderWidth: CGFloat {
-        switch size {
-        case .small: return RadioComponentTokens.control_track_border_width_s
-        case .medium: return RadioComponentTokens.control_track_border_width_m
-        case .large: return RadioComponentTokens.control_track_border_width_l
-        }
-    }
-
-    private var tokenTrackColor: Color {
-        if isDisabled {
-            if isChecked {
-                return RadioComponentTokens.control_track_color_neutral_checked_disabled
-            } else {
-                return RadioComponentTokens.control_track_color_neutral_unchecked_disabled
-            }
-        }
-
-        if isInvalid {
-            return isPressed
-                ? RadioComponentTokens.control_track_color_invalid_clicked
-                : RadioComponentTokens.control_track_color_invalid_default
-        }
-
-        if isChecked {
-            return isPressed
-                ? RadioComponentTokens.control_track_color_neutral_checked_active
-                : RadioComponentTokens.control_track_color_neutral_checked_default
-        } else {
-            return isPressed
-                ? RadioComponentTokens.control_track_color_neutral_unchecked_clicked
-                : RadioComponentTokens.control_track_color_neutral_unchecked_default
-        }
-    }
-
-    private var tokenBorderColor: Color {
-        if isDisabled {
-            if isChecked {
-                return RadioComponentTokens.control_track_border_color_neutral_checked_disabled
-            } else {
-                return RadioComponentTokens.control_track_border_color_neutral_unchecked_disabled
-            }
-        }
-
-        if isInvalid {
-            return isPressed
-                ? RadioComponentTokens.control_track_border_color_invalid_active
-                : RadioComponentTokens.control_track_border_color_invalid_default
-        }
-
-        if isChecked {
-            return isPressed
-                ? RadioComponentTokens.control_track_border_color_neutral_checked_clicked
-                : RadioComponentTokens.control_track_border_color_neutral_checked_default
-        } else {
-            return isPressed
-                ? RadioComponentTokens.control_track_border_color_neutral_unchecked_clicked
-                : RadioComponentTokens.control_track_border_color_neutral_unchecked_default
-        }
-    }
-
-    private var tokenHandleColor: Color {
-        if isDisabled {
-            return RadioComponentTokens.control_handle_color_disabled
-        }
-        return isPressed
-            ? RadioComponentTokens.control_handle_color_clicked
-            : RadioComponentTokens.control_handle_color_default
-    }
-
-    private var tokenLabelColor: Color {
-        if isDisabled {
-            return RadioComponentTokens.value_color_disabled
-        }
-        return isPressed
-            ? RadioComponentTokens.value_color_clicked
-            : RadioComponentTokens.value_color_default
-    }
-
-    private var tokenLabelFont: Font {
-        switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
-        }
     }
 }
 

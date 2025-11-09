@@ -85,7 +85,7 @@ public struct ElevateNotification: View {
                     // Content
                     VStack(alignment: .leading, spacing: NotificationComponentTokens.text_gap) {
                         Text(message)
-                            .font(ElevateTypography.bodyMedium)
+                            .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                             .foregroundColor(tokenTextColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }

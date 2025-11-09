@@ -78,7 +78,7 @@ public struct ElevateDivider: View {
                 // Horizontal divider with label
                 line
                 Text(label)
-                    .font(ElevateTypography.bodySmall)
+                    .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                     .foregroundColor(tokenTextColor)
                     .lineLimit(1)
                 line

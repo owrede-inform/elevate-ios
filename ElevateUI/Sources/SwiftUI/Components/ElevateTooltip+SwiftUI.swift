@@ -91,7 +91,7 @@ public struct ElevateTooltip<Content: View>: View {
             }
 
             Text(tooltip)
-                .font(ElevateTypography.bodySmall)
+                .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                 .foregroundColor(TooltipComponentTokens.label_color)
                 .padding(.horizontal, TooltipComponentTokens.padding_inline)
                 .padding(.vertical, TooltipComponentTokens.padding_block)

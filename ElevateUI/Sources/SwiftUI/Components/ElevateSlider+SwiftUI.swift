@@ -128,7 +128,7 @@ public struct ElevateSlider: View {
             // Value display (optional)
             if label != nil {
                 Text(formatValue(value))
-                    .font(ElevateTypography.bodySmall)
+                    .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                     .foregroundColor(ElevateAliases.Content.General.text_understated)
             }
         }
@@ -205,9 +205,9 @@ public struct ElevateSlider: View {
 
     private var tokenLabelFont: Font {
         switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
+        case .small: return ElevateTypographyiOS.labelSmall // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.labelMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.labelLarge // 18pt (web: 16pt)
         }
     }
 

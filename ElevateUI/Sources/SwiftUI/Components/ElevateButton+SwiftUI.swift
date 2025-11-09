@@ -106,11 +106,11 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
     private var tokenFont: Font {
         switch size {
         case .small:
-            return ElevateTypography.labelSmall
+            return ElevateTypographyiOS.labelSmall   // 14pt (web: 12pt)
         case .medium:
-            return ElevateTypography.labelMedium
+            return ElevateTypographyiOS.labelMedium  // 16pt (web: 14pt)
         case .large:
-            return ElevateTypography.labelLarge
+            return ElevateTypographyiOS.labelLarge   // 18pt (web: 16pt)
         }
     }
 

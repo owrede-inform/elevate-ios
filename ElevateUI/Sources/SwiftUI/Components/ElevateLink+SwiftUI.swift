@@ -100,7 +100,7 @@ public struct ElevateLink: View {
             HStack(spacing: 4) {
                 // Link text
                 Text(label)
-                    .font(ElevateTypography.bodyMedium)
+                    .font(ElevateTypographyiOS.bodyMedium) // 16pt (web: 14pt)
                     .foregroundColor(tokenLinkColor)
                     .underline(true, color: tokenLinkColor)
 

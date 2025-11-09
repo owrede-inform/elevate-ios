@@ -31,10 +31,6 @@ public struct ElevateSwitch: View {
     /// Action to perform when switch state changes
     private let onChange: ((Bool) -> Void)?
 
-    // MARK: - State
-
-    @State private var isPressed = false
-
     // MARK: - Initializer
 
     /// Creates a switch with label and binding
@@ -57,152 +53,25 @@ public struct ElevateSwitch: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(spacing: tokenGap) {
-            // Switch control
-            ZStack(alignment: isOn ? .trailing : .leading) {
-                // Track background
-                RoundedRectangle(cornerRadius: tokenTrackHeight / 2)
-                    .fill(tokenTrackColor)
-                    .frame(width: tokenTrackWidth, height: tokenTrackHeight)
-
-                // Handle (thumb)
-                Circle()
-                    .fill(tokenHandleColor)
-                    .frame(width: tokenHandleDiameter, height: tokenHandleDiameter)
-                    .padding(tokenTrackPadding)
+        Button(action: {
+            if !isDisabled {
+                isOn.toggle()
+                onChange?(isOn)
             }
-            .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isOn)
-            .scrollFriendlyTap(
-                onPressedChanged: { pressed in
-                    if !isDisabled {
-                        isPressed = pressed
-                    }
-                },
-                action: {
-                    if !isDisabled {
-                        isOn.toggle()
-                        onChange?(isOn)
-                    }
-                }
-            )
-
-            // Label
+        }) {
             Text(label)
-                .font(tokenLabelFont)
-                .foregroundColor(tokenLabelColor)
         }
-        .opacity(isDisabled ? 0.6 : 1.0)
+        .buttonStyle(ElevateSwitchStyle(
+            isOn: isOn,
+            isDisabled: isDisabled,
+            tone: tone,
+            size: size
+        ))
+        .disabled(isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityAddTraits(.isButton)
         .accessibilityValue(isOn ? "On" : "Off")
-    }
-
-    // MARK: - Token Accessors
-
-    private var tokenTrackWidth: CGFloat {
-        switch size {
-        case .small: return SwitchComponentTokens.track_width_s
-        case .medium: return SwitchComponentTokens.track_width_m
-        case .large: return SwitchComponentTokens.track_width_l
-        }
-    }
-
-    private var tokenTrackHeight: CGFloat {
-        switch size {
-        case .small: return SwitchComponentTokens.track_height_s
-        case .medium: return SwitchComponentTokens.track_height_m
-        case .large: return SwitchComponentTokens.track_height_l
-        }
-    }
-
-    private var tokenHandleDiameter: CGFloat {
-        switch size {
-        case .small: return SwitchComponentTokens.handle_diameter_s
-        case .medium: return SwitchComponentTokens.handle_diameter_m
-        case .large: return SwitchComponentTokens.handle_diameter_l
-        }
-    }
-
-    private var tokenTrackPadding: CGFloat {
-        switch size {
-        case .small: return SwitchComponentTokens.track_padding_s
-        case .medium: return SwitchComponentTokens.track_padding_m
-        case .large: return SwitchComponentTokens.track_padding_l
-        }
-    }
-
-    private var tokenGap: CGFloat {
-        switch size {
-        case .small: return SwitchComponentTokens.gap_s
-        case .medium: return SwitchComponentTokens.gap_m
-        case .large: return SwitchComponentTokens.gap_l
-        }
-    }
-
-    private var tokenTrackColor: Color {
-        if isDisabled {
-            return isOn
-                ? (tone == .success
-                    ? SwitchComponentTokens.track_fill_checked_success_disabled
-                    : SwitchComponentTokens.track_fill_checked_primary_disabled)
-                : SwitchComponentTokens.track_fill_unchecked_disabled
-        }
-
-        if isOn {
-            if tone == .success {
-                return isPressed
-                    ? SwitchComponentTokens.track_fill_checked_success_hover
-                    : SwitchComponentTokens.track_fill_checked_success_default
-            } else {
-                return isPressed
-                    ? SwitchComponentTokens.track_fill_checked_primary_hover
-                    : SwitchComponentTokens.track_fill_checked_primary_enabled
-            }
-        } else {
-            return isPressed
-                ? SwitchComponentTokens.track_fill_unchecked_hover
-                : SwitchComponentTokens.track_fill_unchecked_default
-        }
-    }
-
-    private var tokenHandleColor: Color {
-        if isDisabled {
-            return isOn
-                ? (tone == .success
-                    ? SwitchComponentTokens.handle_fill_checked_success_disabled
-                    : SwitchComponentTokens.handle_fill_checked_primary_disabled)
-                : SwitchComponentTokens.handle_fill_unchecked_disabled
-        }
-
-        if isOn {
-            if tone == .success {
-                return isPressed
-                    ? SwitchComponentTokens.handle_fill_checked_success_active
-                    : SwitchComponentTokens.handle_fill_checked_success_default
-            } else {
-                return isPressed
-                    ? SwitchComponentTokens.handle_fill_checked_primary_active
-                    : SwitchComponentTokens.handle_fill_checked_primary_default
-            }
-        } else {
-            return SwitchComponentTokens.handle_fill_unchecked_default
-        }
-    }
-
-    private var tokenLabelColor: Color {
-        if isDisabled {
-            return SwitchComponentTokens.label_disabled
-        }
-        return SwitchComponentTokens.label_default
-    }
-
-    private var tokenLabelFont: Font {
-        switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
-        }
     }
 }
 

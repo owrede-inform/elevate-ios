@@ -110,7 +110,7 @@ public struct ElevateField<Control: View>: View {
                             }
 
                             Text(helpText)
-                                .font(ElevateTypography.bodySmall)
+                                .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                                 .foregroundColor(tokenHelpTextColor)
                         }
                     }
@@ -118,7 +118,7 @@ public struct ElevateField<Control: View>: View {
                     if let status = status {
                         Spacer()
                         Text(status)
-                            .font(ElevateTypography.bodySmall)
+                            .font(ElevateTypographyiOS.bodySmall) // 14pt (web: 12pt)
                             .foregroundColor(tokenStatusColor)
                     }
                 }
@@ -180,9 +180,9 @@ public struct ElevateField<Control: View>: View {
 
     private var labelFont: Font {
         switch size {
-        case .small: return ElevateTypography.labelSmall
-        case .medium: return ElevateTypography.labelMedium
-        case .large: return ElevateTypography.labelLarge
+        case .small: return ElevateTypographyiOS.labelSmall // 14pt (web: 12pt)
+        case .medium: return ElevateTypographyiOS.labelMedium // 16pt (web: 14pt)
+        case .large: return ElevateTypographyiOS.labelLarge // 18pt (web: 16pt)
         }
     }
 }
