@@ -139,6 +139,33 @@ Web (px) → iOS (pt)
 32px → 44pt (touch target minimum)
 ```
 
+### 🔤 Typography Size Increases
+
+iOS text sizes increased by **+15%** across all styles for visual balance with larger touch targets.
+
+**Key Changes**:
+- Body Medium: 14pt → **16pt** (meets Apple's 16pt body text minimum)
+- Label XSmall: 11pt → **13pt** (exceeds Apple's 11pt minimum)
+- All sizes: Average +15% increase
+
+**Rationale**:
+- Touch targets increased ~25% (32→44pt, 40→48pt, 48→56pt)
+- Text increased 15% maintains visual harmony
+- Preserves ELEVATE typography hierarchy
+- Optimized for iOS Retina displays
+
+**Usage**:
+```swift
+// iOS-optimized typography (recommended)
+Text("Heading").font(ElevateTypographyiOS.headingLarge)  // 37pt vs web 32pt
+Text("Body").font(ElevateTypographyiOS.bodyMedium)       // 16pt vs web 14pt
+
+// Original web sizes (still available)
+Text("Heading").font(ElevateTypography.headingLarge)     // 32pt
+```
+
+**Complete breakdown**: See [TEXT_SIZE_ADAPTATIONS.md](TEXT_SIZE_ADAPTATIONS.md)
+
 ### 🌑 Shadow System
 
 ELEVATE uses multi-layer CSS box-shadows that need conversion to SwiftUI's `.shadow()` modifiers.
@@ -281,6 +308,46 @@ After any component update:
 - Documented initial major diversions
 - Established adaptation philosophy
 - Implemented 39 initial components from web ELEVATE
+
+### 2025-11-09: Typography Size Adaptations
+**Changes**: Created iOS-optimized typography with +15% size increases
+**Component**: Typography system - all text styles
+
+**What Changed**:
+- Created `ElevateTypographyiOS.swift` with +15% larger text across all styles
+- Body Medium: 14pt → 16pt (meets Apple's minimum recommendation)
+- Label XSmall: 11pt → 13pt (exceeds Apple's 11pt minimum)
+- All typography styles increased proportionally
+
+**Why Changed**:
+- Touch targets increased ~25% (32→44pt, 40→48pt, 48→56pt)
+- Text needed proportional increase for visual balance
+- Larger buttons/inputs require proportionally larger text labels
+- iOS Retina displays benefit from slightly larger text
+- Apple HIG recommends 16pt minimum for body text
+
+**Quantification**:
+```
+Display sizes: +13.9% to +15.8% (avg +15%)
+Heading sizes: +14.3% to +16.7% (avg +15%)
+Title sizes:   +12.5% to +14.3% (avg +13%)
+Body sizes:    +12.5% to +16.7% (avg +14%)
+Label sizes:   +12.5% to +18.2% (avg +15%)
+Code sizes:    +14.3% to +16.7% (avg +15%)
+
+Overall average: +15% across all typography
+```
+
+**Implementation**:
+- `ElevateTypographyiOS.swift` - iOS-optimized sizes (+15%)
+- `ElevateTypography.swift` - Original web sizes (unchanged)
+- Both available for use, iOS version recommended
+- Complete size comparison table in `docs/TEXT_SIZE_ADAPTATIONS.md`
+
+**Apple HIG Compliance**:
+- Body text ≥ 16pt ✅ (Body Medium = 16pt)
+- Minimum readable ≥ 11pt ✅ (Label XSmall = 13pt)
+- All text on interactive elements ≥ 13pt ✅
 
 ### 2025-11-09: Shadow System Implementation
 **Changes**: Created Swift shadow system for ELEVATE multi-layer box-shadows
