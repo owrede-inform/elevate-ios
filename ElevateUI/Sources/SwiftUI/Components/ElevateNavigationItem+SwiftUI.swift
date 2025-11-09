@@ -72,10 +72,10 @@ public struct ElevateNavigationItem<Destination: View>: View {
                 if let badge = badge {
                     Text(badge)
                         .font(.caption2)
-                        .foregroundColor(.white)
+                        .foregroundColor(ElevateAliases.Action.StrongDanger.text_default)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
-                        .background(Color.red)
+                        .background(ElevateAliases.Action.StrongDanger.fill_default)
                         .cornerRadius(12)
                 }
 

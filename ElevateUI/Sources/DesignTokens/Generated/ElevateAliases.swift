@@ -420,7 +420,7 @@ public struct ElevateAliases {
         // MARK: General
 
         public enum General {
-            public static let backdrop = Color.adaptive(light: ElevatePrimitives.Black._color_black, dark: ElevatePrimitives.Black._color_black)
+            public static let backdrop = Color.black.opacity(0.5)
             public static let border_accent = Color.adaptive(light: ElevatePrimitives.Gray._300, dark: ElevatePrimitives.Gray._700)
             public static let border_default = Color.adaptive(light: ElevatePrimitives.Gray._100, dark: ElevatePrimitives.Gray._900)
             public static let border_prominent = Color.adaptive(light: ElevatePrimitives.Gray._400, dark: ElevatePrimitives.Gray._600)

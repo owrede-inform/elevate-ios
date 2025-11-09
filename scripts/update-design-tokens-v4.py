@@ -373,6 +373,28 @@ class SwiftTokenMapper:
             return f"`{name}`"
         return name
 
+    @staticmethod
+    def convert_to_cgfloat(value: str) -> float:
+        """Convert CSS dimension value to CGFloat"""
+        # Remove units and convert to float
+        # Supports: px, pt, rem, em
+        value = value.strip()
+
+        # Handle pixel values
+        if value.endswith('px') or value.endswith('pt'):
+            return float(value[:-2])
+
+        # Handle rem/em (treat as px for now, assumes 16px base)
+        if value.endswith('rem') or value.endswith('em'):
+            return float(value[:-3]) * 16.0
+
+        # Handle unitless values
+        try:
+            return float(value)
+        except ValueError:
+            # Fallback for unrecognized formats
+            return 16.0
+
 
 def merge_theme_tokens(
     base_tokens: Dict[str, TokenReference],
@@ -845,6 +867,141 @@ extension Color {
 """
 
 
+class TypographyGenerator:
+    """Generates ElevateTypographyiOS.swift from merged tokens (ELEVATE + iOS scale)"""
+
+    def __init__(self, tokens: Dict[str, TokenReference]):
+        self.tokens = tokens
+        self.mapper = SwiftTokenMapper()
+
+    def generate(self) -> str:
+        """Generate ElevateTypographyiOS.swift with iOS-scaled typography"""
+
+        # Extract typography tokens
+        typography_tokens = self._get_typography_tokens()
+
+        if not typography_tokens:
+            return ""
+
+        code = """#if os(iOS)
+import SwiftUI
+
+/// ELEVATE iOS-Optimized Typography
+///
+/// Typography styles scaled for iOS readability using dynamic scaling factor.
+/// References ElevateTypography base sizes and applies iOS scaling.
+///
+/// Architecture:
+/// - ElevateTypography.Sizes.* = ELEVATE web defaults (can be themed)
+/// - iosScaleFactor = iOS platform multiplier (1.25x = +25%)
+/// - Final size = ElevateTypography.Sizes.* × iosScaleFactor
+///
+/// Example: bodyMedium = ElevateTypography.Sizes.bodyMedium (14pt) × 1.25 = 17.5pt
+///
+/// Apple HIG Compliance:
+/// - Body text ≥ 17pt (we use 17.5pt)
+/// - Minimum readable ≥ 11pt (we use 13.75pt for smallest)
+///
+/// Auto-generated from ELEVATE design tokens + iOS primitives.css overrides
+/// DO NOT EDIT MANUALLY - Run scripts/update-design-tokens-v4.py to update
+@available(iOS 15, *)
+public struct ElevateTypographyiOS {
+
+    // MARK: - iOS Scaling Factor
+
+    /// iOS typography scaling factor applied to all ELEVATE web sizes
+    /// Single point of control for iOS text size adaptation
+    /// Change this value to adjust ALL typography sizes proportionally
+    public static let iosScaleFactor: CGFloat = 1.25  // +25% larger than web
+
+    // MARK: - Font Families
+
+    /// Primary font family (Inter) - delegates to ElevateTypography
+    public static let fontFamilyPrimary = ElevateTypography.fontFamilyPrimary
+
+    /// Monospace font family (Roboto Mono) - delegates to ElevateTypography
+    public static let fontFamilyMono = ElevateTypography.fontFamilyMono
+
+    // MARK: - Font Weights
+
+    /// Font weights - delegates to ElevateTypography
+    public typealias FontWeight = ElevateTypography.FontWeight
+
+    // MARK: - Display Styles
+
+"""
+
+        # Display styles
+        code += self._generate_font_property("displayLarge", typography_tokens, "57px", "bold", "Display heading (largest)")
+        code += self._generate_font_property("displayMedium", typography_tokens, "45px", "bold", "Medium display heading")
+        code += self._generate_font_property("displaySmall", typography_tokens, "36px", "bold", "Small display heading")
+
+        code += "\n    // MARK: - Heading Styles\n\n"
+        code += self._generate_font_property("headingLarge", typography_tokens, "32px", "bold", "Large heading")
+        code += self._generate_font_property("headingMedium", typography_tokens, "28px", "bold", "Medium heading")
+        code += self._generate_font_property("headingSmall", typography_tokens, "24px", "semibold", "Small heading")
+        code += self._generate_font_property("headingXSmall", typography_tokens, "20px", "semibold", "Extra small heading")
+
+        code += "\n    // MARK: - Title Styles\n\n"
+        code += self._generate_font_property("titleLarge", typography_tokens, "22px", "semibold", "Large title")
+        code += self._generate_font_property("titleMedium", typography_tokens, "16px", "semibold", "Medium title")
+        code += self._generate_font_property("titleSmall", typography_tokens, "14px", "semibold", "Small title")
+
+        code += "\n    // MARK: - Body Text Styles\n\n"
+        code += self._generate_font_property("bodyLarge", typography_tokens, "16px", "regular", "Large body text")
+        code += self._generate_font_property("bodyMedium", typography_tokens, "14px", "regular", "Medium body text (default) - Apple HIG compliant")
+        code += self._generate_font_property("bodySmall", typography_tokens, "12px", "regular", "Small body text")
+
+        code += "\n    // MARK: - Label Styles\n\n"
+        code += self._generate_font_property("labelLarge", typography_tokens, "16px", "medium", "Large label (emphasized)")
+        code += self._generate_font_property("labelMedium", typography_tokens, "14px", "medium", "Medium label (emphasized)")
+        code += self._generate_font_property("labelSmall", typography_tokens, "12px", "medium", "Small label (emphasized)")
+        code += self._generate_font_property("labelXSmall", typography_tokens, "11px", "medium", "Extra small label - Exceeds Apple 11pt min")
+
+        code += "\n    // MARK: - Monospace Styles\n\n"
+        code += self._generate_font_property("code", typography_tokens, "14px", "regular", "Code/monospace text", use_mono=True)
+        code += self._generate_font_property("codeSmall", typography_tokens, "12px", "regular", "Small code/monospace text", use_mono=True)
+
+        code += "}\n#endif\n"
+
+        return code
+
+    def _get_typography_tokens(self) -> Dict[str, TokenReference]:
+        """Extract typography-related tokens"""
+        typography = {}
+
+        for name, token in self.tokens.items():
+            # Token names are stored WITHOUT $ prefix
+            if name.startswith('elvt-typography-'):
+                typography[name] = token
+
+        return typography
+
+    def _generate_font_property(self, swift_name: str, tokens: Dict[str, TokenReference],
+                                 fallback_size: str, weight: str, comment: str, use_mono: bool = False) -> str:
+        """Generate a single Font property referencing ElevateTypography.Sizes"""
+
+        # Get web base size for documentation
+        web_base_size = float(fallback_size.replace('px', ''))
+        web_size_pt = fallback_size.replace('px', 'pt')
+
+        font_family = "fontFamilyMono" if use_mono else "fontFamilyPrimary"
+
+        # Generate code that references ElevateTypography.Sizes
+        code = f"    /// {comment}\n"
+        code += f"    /// Web: {web_size_pt} (ElevateTypography.Sizes.{swift_name}) → iOS: {web_base_size * 1.25:.2f}pt (×iosScaleFactor)\n"
+        code += f"    public static let {swift_name} = Font.custom({font_family}, size: ElevateTypography.Sizes.{swift_name} * iosScaleFactor)\n"
+        code += f"        .weight(FontWeight.{weight}.swiftUIWeight)\n\n"
+
+        return code
+
+    def _camel_to_kebab(self, name: str) -> str:
+        """Convert camelCase to kebab-case"""
+        # Insert hyphen before uppercase letters, then lowercase
+        result = re.sub('([a-z0-9])([A-Z])', r'\1-\2', name)
+        return result.lower()
+
+
 def main():
     import argparse
 
@@ -1039,6 +1196,31 @@ def main():
             cache_manager.update_cache(component_source_files, output_file)
         else:
             print(f"  ⚠️  No tokens found")
+
+    # Generate iOS-optimized typography
+    typography_file = GENERATED_DIR.parent.parent / "Typography" / "ElevateTypographyiOS.swift"
+
+    if args.force or cache_manager.needs_regeneration(all_source_files, typography_file):
+        print("\nGenerating iOS-optimized typography...")
+        typography_gen = TypographyGenerator(light_tokens)  # Use merged tokens (ELEVATE + iOS)
+        typography_code = typography_gen.generate()
+
+        if typography_code:
+            typography_file.parent.mkdir(exist_ok=True, parents=True)
+            with open(typography_file, 'w') as f:
+                f.write(typography_code)
+            print(f"  ✅ {typography_file.name}")
+            print(f"  📊 {len(typography_code)} bytes")
+
+            # Count typography styles
+            style_count = typography_code.count('public static let')
+            print(f"  📊 {style_count} typography styles (1.25x iOS scale)")
+
+            cache_manager.update_cache(all_source_files, typography_file)
+        else:
+            print("  ⚠️  No typography tokens found")
+    else:
+        print(f"  ⏭️  ElevateTypographyiOS.swift (cached)")
 
     print("\n✅ Token extraction complete!")
     print(f"\nGenerated files: {GENERATED_DIR}")

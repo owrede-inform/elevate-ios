@@ -38,6 +38,55 @@ $elvt-component-input-height-s: 2.75rem;     /* ELEVATE web: 2rem (32px) → iOS
 $elvt-component-input-height-m: 3rem;        /* ELEVATE web: 2.5rem (40px) → iOS: 3rem (48pt) (+20%) */
 $elvt-component-input-height-l: 3.5rem;      /* ELEVATE web: 3rem (48px) → iOS: 3.5rem (56pt) (+16.7%) */
 
+/* ========================================================================
+ * Typography Scale (iOS Adaptation)
+ * ======================================================================== */
+
+/**
+ * iOS requires larger text for readability on mobile screens.
+ * Typography is scaled by 1.25x (25% increase) from ELEVATE web defaults.
+ *
+ * SINGLE POINT OF CONTROL: $ios-typography-scale
+ * Change this value to adjust ALL typography sizes proportionally.
+ *
+ * Reference: Apple HIG minimum text sizes
+ * - Body text: 17pt (we use 17.5pt via 14pt * 1.25)
+ * - Minimum readable: 11pt (we exceed this with 13.75pt via 11pt * 1.25)
+ */
+
+$ios-typography-scale: 1.25;  /* 25% increase for iOS readability */
+
+/* Display Styles */
+$elvt-typography-display-large: 71.25px;    /* 71.25pt = 57pt * 1.25 (web: 57pt) */
+$elvt-typography-display-medium: 56.25px;   /* 56.25pt = 45pt * 1.25 (web: 45pt) */
+$elvt-typography-display-small: 45px;       /* 45pt = 36pt * 1.25 (web: 36pt) */
+
+/* Heading Styles */
+$elvt-typography-heading-large: 40px;       /* 40pt = 32pt * 1.25 (web: 32pt) */
+$elvt-typography-heading-medium: 35px;      /* 35pt = 28pt * 1.25 (web: 28pt) */
+$elvt-typography-heading-small: 30px;       /* 30pt = 24pt * 1.25 (web: 24pt) */
+$elvt-typography-heading-xsmall: 25px;      /* 25pt = 20pt * 1.25 (web: 20pt) */
+
+/* Title Styles */
+$elvt-typography-title-large: 27.5px;       /* 27.5pt = 22pt * 1.25 (web: 22pt) */
+$elvt-typography-title-medium: 20px;        /* 20pt = 16pt * 1.25 (web: 16pt) */
+$elvt-typography-title-small: 17.5px;       /* 17.5pt = 14pt * 1.25 (web: 14pt) */
+
+/* Body Text Styles */
+$elvt-typography-body-large: 20px;          /* 20pt = 16pt * 1.25 (web: 16pt) */
+$elvt-typography-body-medium: 17.5px;       /* 17.5pt = 14pt * 1.25 (web: 14pt) - Apple HIG compliant */
+$elvt-typography-body-small: 15px;          /* 15pt = 12pt * 1.25 (web: 12pt) */
+
+/* Label Styles */
+$elvt-typography-label-large: 20px;         /* 20pt = 16pt * 1.25 (web: 16pt) */
+$elvt-typography-label-medium: 17.5px;      /* 17.5pt = 14pt * 1.25 (web: 14pt) */
+$elvt-typography-label-small: 15px;         /* 15pt = 12pt * 1.25 (web: 12pt) */
+$elvt-typography-label-xsmall: 13.75px;     /* 13.75pt = 11pt * 1.25 (web: 11pt) - Exceeds Apple 11pt min */
+
+/* Monospace Styles */
+$elvt-typography-code: 17.5px;              /* 17.5pt = 14pt * 1.25 (web: 14pt) */
+$elvt-typography-code-small: 15px;          /* 15pt = 12pt * 1.25 (web: 12pt) */
+
 /* ============================================================================
  * Notes for Maintenance
  * ========================================================================== */

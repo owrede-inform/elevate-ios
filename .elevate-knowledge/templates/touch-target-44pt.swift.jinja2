@@ -1,0 +1,13 @@
+{# Template: Touch Target Expansion to 44pt #}
+{# Input: visual_size, content_view #}
+// MARK: - Touch Target (iOS HIG: 44pt minimum)
+// Visual size: {{ visual_size.width }}pt × {{ visual_size.height }}pt
+// Touch target: 44pt × 44pt (with invisible hit area)
+
+{{ content_view }}
+    .frame(width: {{ visual_size.width }}, height: {{ visual_size.height }})
+    {% if visual_size.width < 44 or visual_size.height < 44 %}
+    .frame(minWidth: 44, minHeight: 44)
+    .contentShape(Rectangle())  // Expand hit area
+    {% endif %}
+    .accessibilityAddTraits(.isButton)

@@ -2,28 +2,28 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ColorAdaptive.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592"
   },
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ElevatePrimitives.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592"
   },
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ElevateAliases.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592"
   },
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/LightboxComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_lightbox.scss": "354c3857bb09bf94045bc3167ebbeb20"
@@ -31,7 +31,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/SelectComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select.scss": "c5733e56396d59067fdf20bed7ca651e"
@@ -39,7 +39,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Empty-stateComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_empty-state.scss": "20e005b332155538a4933c263dcc517a"
@@ -47,7 +47,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Stepper-itemComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_stepper-item.scss": "d1dfbffd58d5d67fb371e45ca076383f"
@@ -55,7 +55,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/SkeletonComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_skeleton.scss": "d2c69f2401444ac5cd26fdb30571b3f6"
@@ -63,7 +63,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/TextareaComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_textarea.scss": "667f1ebb314c9ef68e66ed9847c814fb"
@@ -71,7 +71,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ProgressComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_progress.scss": "09d862657e3e7d5dd8ce73cc34c2a7ec"
@@ -79,7 +79,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/StepperComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_stepper.scss": "6b739ea90ff0e0e832a35032bfa28002"
@@ -87,7 +87,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/CheckboxComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_checkbox.scss": "ba921f1e05746a0da8277468f9f4d46a"
@@ -95,7 +95,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/BreadcrumbComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_breadcrumb.scss": "1c6de2cd5529ffeac5437f76eed0beea"
@@ -103,7 +103,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/BadgeComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_badge.scss": "74c3744f5cc65ba3d35e533c74019457"
@@ -111,7 +111,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/NotificationComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_notification.scss": "1548b79b78ca882d0d5aa54d7fffd019"
@@ -119,7 +119,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/HeadingComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_heading.scss": "680e05c44730d9f7cf0826aeed8a3552"
@@ -127,7 +127,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Required-indicatorComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_required-indicator.scss": "826ff520106af99873af0168de73609e"
@@ -135,7 +135,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Split-panelComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_split-panel.scss": "430f70defff4b30b20f79c7cf221c23b"
@@ -143,7 +143,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Select-option-groupComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select-option-group.scss": "7aa88c919519d30c065a187fe9965820"
@@ -151,7 +151,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Tab-groupComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tab-group.scss": "f5f3b303ab404c3ad9167d7ed952f3eb"
@@ -159,7 +159,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Tree-itemComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tree-item.scss": "90f136b0bd8245090519573ce48049e5"
@@ -167,7 +167,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Radio-groupComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio-group.scss": "7c15fb445d183e3ae98228cf9587280c"
@@ -175,7 +175,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/RadioComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio.scss": "ed584de454a39075104155094b447c71"
@@ -183,7 +183,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ChipComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_chip.scss": "627df9322afd3e4bf743ebe713bd4b69"
@@ -191,7 +191,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Button-groupComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_button-group.scss": "7f86ce1d1382dd130cccf88fd79bd6ef"
@@ -199,7 +199,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ButtonComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_button.scss": "9abf83825b9a9d644ab20594b748f045"
@@ -207,7 +207,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/TableComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_table.scss": "defb8d374f742fccb0f452ba0e203721"
@@ -215,7 +215,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/IndicatorComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_indicator.scss": "a8cc5b929017a49f09bda92d6784d65a"
@@ -223,7 +223,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Select-optionComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select-option.scss": "c7bf108213e909bb9449ff463b8fda9e"
@@ -231,7 +231,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/DialogComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dialog.scss": "225d1419171bd3ff5d592ce0c5f0a045"
@@ -239,7 +239,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/PaginatorComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_paginator.scss": "726c5b7e43d444133ad4ca2ac0895c68"
@@ -247,7 +247,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Navigation-itemComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_navigation-item.scss": "73a1de7c51d8513247d8b69ab3d9d749"
@@ -255,7 +255,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/InputComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_input.scss": "de7ed3cee4fe0722ef378dc0ca47d689"
@@ -263,7 +263,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/MenuComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_menu.scss": "54e0cc03457dc3d039b2a6b857cbf90b"
@@ -271,7 +271,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/CardComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_card.scss": "0d0033f965e7c1fe513f0b6fdc1b3801"
@@ -279,7 +279,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Breadcrumb-itemComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_breadcrumb-item.scss": "519e4c4676311a675b98ed8f97de3c43"
@@ -287,7 +287,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/TabComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tab.scss": "23ae4047385670e6c61ec9ab228cd365"
@@ -295,7 +295,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/IconComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_icon.scss": "c64719ac66001e8cef62b0d5a11fc60c"
@@ -303,7 +303,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/SliderComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_slider.scss": "f8ee409b630eeda9d5d35274ad002abe"
@@ -311,7 +311,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Expansion-panelComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_expansion-panel.scss": "ce57d4c8b8a3f7601ae57afe6468d9cf"
@@ -319,7 +319,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Icon-buttonComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_icon-button.scss": "efb9821872be20f7dc3236b601353569"
@@ -327,7 +327,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Radio-buttonComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio-button.scss": "c500d72e8e8f1191f4c269b87ce47889"
@@ -335,7 +335,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/TooltipComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tooltip.scss": "c8c8d9fec3febdadd07af6fd3664fc2e"
@@ -343,7 +343,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ApplicationComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_application.scss": "36de5f51743a9d2caf4eba622ff2f00e"
@@ -351,7 +351,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ScrollbarComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_scrollbar.scss": "446fbe905b7777e222dd2d724e54bbcb"
@@ -359,7 +359,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/DrawerComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_drawer.scss": "137ee591039e549ab0871395c621bcb3"
@@ -367,7 +367,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/FieldComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_field.scss": "d372832afe61648b3d35fb666f4d1c2a"
@@ -375,7 +375,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/LinkComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_link.scss": "4864bff3e13e98c4bba547af7d82825c"
@@ -383,7 +383,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/ToolbarComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_toolbar.scss": "0b3b9e6ec456472104023a16cc4f325a"
@@ -391,7 +391,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/Menu-itemComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_menu-item.scss": "7991c67b04edc399d3cb3e3cb683464f"
@@ -399,7 +399,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/DropdownComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dropdown.scss": "2821a95b73080e1c38d21f5ae4c373bd"
@@ -407,7 +407,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/SwitchComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_switch.scss": "e645008e17490b94184c76c12f18c503"
@@ -415,7 +415,7 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/DividerComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_divider.scss": "6c732faa90e22872f2c4cb5f35e48ccd"
@@ -423,9 +423,16 @@
   "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/DesignTokens/Generated/DropzoneComponentTokens.swift": {
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
-    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "71b62abf6c54274a1b47ae5ddaadf09e",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dropzone.scss": "5c2b48e2c5c6163216a883b9b4cc9129"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/ElevateUI/Sources/Typography/ElevateTypographyiOS.swift": {
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": "a1c69b35b08911e02198b4d3f34d22bb",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
+    "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592"
   }
 }

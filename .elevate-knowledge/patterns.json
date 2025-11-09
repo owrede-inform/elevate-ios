@@ -1,0 +1,206 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-11-09",
+  "patterns": [
+    {
+      "id": "icon-positioning",
+      "category": "layout",
+      "first_seen": "2024-08-15",
+      "components": ["Chip", "Badge", "Button", "NavigationItem"],
+      "elevate_pattern": "Fixed icon position in CSS (left/right)",
+      "ios_adaptation": {
+        "approach": "Enum-based positioning with dynamic layout",
+        "enum": "IconPosition { leading, trailing, top, bottom }",
+        "layout": "Switch between HStack/VStack based on position",
+        "constraints": [
+          "Maintain 44pt touch target",
+          "Support RTL with .leading/.trailing",
+          "Auto-adjust spacing based on position"
+        ],
+        "code_pattern": "if position.isVertical { VStack { icon; text } } else { HStack { icon; text } }"
+      },
+      "confidence": 0.95,
+      "template": "icon-positioning.swift.jinja2",
+      "examples": [
+        "ElevateChip+SwiftUI.swift:45-78",
+        "ElevateBadge+SwiftUI.swift:52-89"
+      ]
+    },
+    {
+      "id": "hover-state-removal",
+      "category": "interaction",
+      "first_seen": "2024-08-10",
+      "components": ["Button", "NavigationItem", "MenuItem", "Card"],
+      "elevate_pattern": "CSS :hover pseudo-class for background/color changes",
+      "ios_adaptation": {
+        "approach": "Remove hover, use press state with gestures",
+        "states": {
+          "default": "Base appearance",
+          "pressed": "Temporary visual feedback during touch",
+          "selected": "Persistent selected state",
+          "disabled": "Non-interactive state"
+        },
+        "implementation": [
+          "Add @GestureState var isPressed: Bool",
+          "Use simultaneousGesture(DragGesture()) for press detection",
+          "Trigger haptic feedback on press",
+          "Remove all hover token references"
+        ],
+        "code_pattern": "@GestureState private var isPressed: Bool = false\nvar backgroundColor: Color { isPressed ? tokens.pressed : tokens.default }"
+      },
+      "confidence": 0.98,
+      "template": "hover-to-press.swift.jinja2",
+      "examples": [
+        "ElevateButton+SwiftUI.swift:120-145",
+        "ElevateNavigationItem+SwiftUI.swift:138-158"
+      ]
+    },
+    {
+      "id": "touch-target-expansion",
+      "category": "accessibility",
+      "first_seen": "2024-08-05",
+      "components": ["Checkbox", "Radio", "Switch", "IconButton"],
+      "elevate_pattern": "Small interactive elements (16-32px)",
+      "ios_adaptation": {
+        "approach": "Expand touch target to 44pt minimum while preserving visual size",
+        "minimum_size": "44pt × 44pt",
+        "techniques": [
+          "contentShape(Rectangle()) for invisible hit area",
+          "frame(minWidth: 44, minHeight: 44) wrapper",
+          "Padding around visual element to reach 44pt",
+          "Document actual vs visual size in comments"
+        ],
+        "code_pattern": "actualContent.frame(width: 20, height: 20).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())"
+      },
+      "confidence": 0.99,
+      "template": "touch-target-44pt.swift.jinja2",
+      "examples": [
+        "ElevateCheckbox+SwiftUI.swift:89-105",
+        "ElevateSwitch+SwiftUI.swift:112-128"
+      ],
+      "validation": {
+        "rule": "All interactive elements must have ≥44pt touch target",
+        "hig_reference": "https://developer.apple.com/design/human-interface-guidelines/layout#Best-practices"
+      }
+    },
+    {
+      "id": "typography-scaling",
+      "category": "typography",
+      "first_seen": "2024-11-09",
+      "components": ["All components with text"],
+      "elevate_pattern": "CSS font-size in px (14px, 16px, etc.)",
+      "ios_adaptation": {
+        "approach": "Reference ElevateTypography.Sizes with iOS scaling factor",
+        "base_sizes": "ElevateTypography.Sizes.* (themeable)",
+        "ios_scaling": "iosScaleFactor = 1.25 (+25%)",
+        "formula": "ElevateTypography.Sizes.{style} × iosScaleFactor",
+        "minimum": "17pt for body text (Apple HIG)",
+        "code_pattern": "Font.custom(fontFamily, size: ElevateTypography.Sizes.bodyMedium * iosScaleFactor)"
+      },
+      "confidence": 1.0,
+      "template": "typography-ios-scaled.swift.jinja2",
+      "examples": [
+        "ElevateTypographyiOS.swift:49-156"
+      ],
+      "validation": {
+        "rule": "Body text ≥17pt, smallest text ≥11pt",
+        "hig_reference": "https://developer.apple.com/design/human-interface-guidelines/typography"
+      }
+    },
+    {
+      "id": "color-dark-mode",
+      "category": "theming",
+      "first_seen": "2024-08-20",
+      "components": ["All components"],
+      "elevate_pattern": "Separate light/dark CSS files with duplicate token names",
+      "ios_adaptation": {
+        "approach": "Single SwiftUI Color that adapts to @Environment(\\.colorScheme)",
+        "implementation": [
+          "Generated tokens use Color(light:dark:) initializer",
+          "No manual colorScheme checks in components",
+          "System handles mode switching automatically",
+          "Preview with .preferredColorScheme(.dark)"
+        ],
+        "code_pattern": "public static let background = Color(light: Color(#colorLiteral(...)), dark: Color(#colorLiteral(...)))"
+      },
+      "confidence": 0.97,
+      "template": "color-adaptive.swift.jinja2",
+      "examples": [
+        "ElevatePrimitives.swift:15-250",
+        "ButtonComponentTokens.swift:all"
+      ]
+    },
+    {
+      "id": "dropdown-native-picker",
+      "category": "component-replacement",
+      "first_seen": "2024-09-10",
+      "components": ["Dropdown", "Select"],
+      "elevate_pattern": "Custom dropdown with absolute positioning and z-index",
+      "ios_adaptation": {
+        "approach": "Use native iOS Picker in Menu/sheet presentation",
+        "native_component": "Menu { Picker(...) } or .sheet { Picker(...) }",
+        "reasoning": [
+          "iOS users expect native picker behavior",
+          "No need for custom dropdown positioning",
+          "Better accessibility with native components",
+          "Respects user's iOS settings (haptics, accessibility)"
+        ],
+        "code_pattern": "Menu { Picker(selection: $selected) { ForEach(options) { Text($0) } } }"
+      },
+      "confidence": 0.92,
+      "template": "native-picker.swift.jinja2",
+      "examples": [
+        "ElevateSelect+SwiftUI.swift:95-145"
+      ]
+    }
+  ],
+  "categories": {
+    "layout": "Component structure and positioning",
+    "interaction": "User interaction patterns and states",
+    "accessibility": "Touch targets, VoiceOver, Dynamic Type",
+    "typography": "Text sizing and scaling",
+    "theming": "Color modes and theme adaptation",
+    "component-replacement": "Using native iOS components instead of custom"
+  },
+  "auto_adaptation_rules": {
+    "safe_to_auto_apply": [
+      "Modified token value only (no new/removed tokens)",
+      "Color changes with WCAG AAA compliance",
+      "Size changes <30% from original",
+      "Typography size updates (auto-apply iOS scaling)"
+    ],
+    "requires_review": [
+      "New tokens added to component",
+      "Removed tokens (may break existing code)",
+      "Size changes >30%",
+      "New interaction states (hover, focus, active)"
+    ],
+    "requires_manual": [
+      "New component not in knowledge base",
+      "Structural HTML/CSS changes",
+      "New layout patterns not seen before",
+      "Breaking changes to token names"
+    ]
+  },
+  "validation_rules": {
+    "ios_hig_compliance": {
+      "touch_targets": {
+        "minimum": "44pt × 44pt",
+        "check": "grep 'frame.*minWidth.*44' component.swift",
+        "auto_fix": "Wrap in .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())"
+      },
+      "typography": {
+        "body_minimum": "17pt",
+        "smallest_minimum": "11pt",
+        "check": "grep 'bodyMedium.*17' typography.swift",
+        "auto_fix": "Apply iosScaleFactor = 1.25 to all sizes"
+      },
+      "color_contrast": {
+        "text_minimum": "7:1 (WCAG AAA)",
+        "ui_minimum": "3:1",
+        "check": "Calculate delta E for all color pairs",
+        "auto_fix": "Suggest darkening/lightening to meet ratio"
+      }
+    }
+  }
+}

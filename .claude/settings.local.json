@@ -83,7 +83,8 @@
       "Bash(git diff:*)",
       "SlashCommand(/ultrathink:ultrathink Check the project. Understand the ELEVATE concept (specifically the role of tokens). Analyze how it can be improved!)",
       "Bash(xcrun simctl:*)",
-      "Bash(set -o pipefail)"
+      "Bash(set -o pipefail)",
+      "Bash(./scripts/elevate-update.sh:*)"
     ],
     "deny": [],
     "ask": []

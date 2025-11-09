@@ -1,0 +1,36 @@
+{# Template: Hover State to Press State Conversion #}
+{# Input: component_name, state_properties #}
+// MARK: - Press State (iOS Adaptation)
+// NOTE: Removed hover state - iOS uses press gestures per DIVERSIONS.md
+
+@GestureState private var isPressed: Bool = false
+
+private var {{ state_property_name }}: {{ state_type }} {
+    if !isEnabled {
+        return {{ tokens_prefix }}.{{ state }}_disabled_default
+    }
+    if isPressed {
+        return {{ tokens_prefix }}.{{ state }}_pressed_default
+    }
+    {% if has_selected_state %}
+    if isSelected {
+        return {{ tokens_prefix }}.{{ state }}_selected_default
+    }
+    {% endif %}
+    return {{ tokens_prefix }}.{{ state }}_default
+}
+
+// Apply press gesture
+.simultaneousGesture(
+    DragGesture(minimumDistance: 0)
+        .updating($isPressed) { _, state, _ in
+            state = true
+        }
+)
+{% if enable_haptics %}
+.onChange(of: isPressed) { pressed in
+    if pressed {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+    }
+}
+{% endif %}

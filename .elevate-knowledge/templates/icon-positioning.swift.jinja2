@@ -1,0 +1,44 @@
+{# Template: Dynamic Icon Positioning #}
+{# Input: icon_positions, default_position #}
+// MARK: - Icon Position (iOS Adaptation)
+// Supports: leading, trailing, top, bottom with RTL support
+
+public enum IconPosition {
+    case leading
+    case trailing
+    case top
+    case bottom
+
+    var isVertical: Bool {
+        self == .top || self == .bottom
+    }
+}
+
+private var iconPosition: IconPosition = .{{ default_position }}
+
+// Layout based on position
+{% raw %}@ViewBuilder{% endraw %}
+private var contentWithIcon: some View {
+    if iconPosition.isVertical {
+        VStack(spacing: {{ spacing }}) {
+            if iconPosition == .top {
+                {{ icon_view }}
+                {{ text_view }}
+            } else {
+                {{ text_view }}
+                {{ icon_view }}
+            }
+        }
+    } else {
+        HStack(spacing: {{ spacing }}) {
+            if iconPosition == .leading {
+                {{ icon_view }}
+                {{ text_view }}
+            } else {
+                {{ text_view }}
+                {{ icon_view }}
+            }
+        }
+        .environment(\.layoutDirection, iconPosition == .leading ? .leftToRight : .rightToLeft)
+    }
+}

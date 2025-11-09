@@ -1,0 +1,15 @@
+{# Template: iOS Typography with Dynamic Scaling #}
+{# Input: text_style, base_size, font_family #}
+// MARK: - Typography (iOS: 1.25x scaled)
+// Web: {{ base_size }}pt → iOS: {{ base_size * 1.25 }}pt
+// Uses: ElevateTypography.Sizes.{{ text_style }} * iosScaleFactor
+
+Text("{{ label }}")
+    .font(ElevateTypographyiOS.{{ text_style }})
+    {% if has_color %}
+    .foregroundColor({{ color_token }})
+    {% endif %}
+    {% if is_multiline %}
+    .lineLimit(nil)
+    .fixedSize(horizontal: false, vertical: true)
+    {% endif %}
