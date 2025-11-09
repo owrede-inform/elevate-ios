@@ -139,6 +139,61 @@ Web (px) → iOS (pt)
 32px → 44pt (touch target minimum)
 ```
 
+### 🌑 Shadow System
+
+ELEVATE uses multi-layer CSS box-shadows that need conversion to SwiftUI's `.shadow()` modifiers.
+
+**Components with shadows**:
+- **Menu**: Uses `shadow-popover` (4 layers)
+- **Dropdown**: Uses `shadow-elevated` (4 layers)
+
+**Available shadow types**:
+```swift
+// Light mode
+ElevateShadow.elevated  // Dropdowns, floating elements
+ElevateShadow.overlay   // Modals, dialogs
+ElevateShadow.popover   // Menus, tooltips
+ElevateShadow.raised    // Subtle elevation
+ElevateShadow.sunken    // Inset elements (approximation)
+
+// Dark mode
+ElevateShadow.elevatedDark
+ElevateShadow.overlayDark
+ElevateShadow.popoverDark
+ElevateShadow.raisedDark
+ElevateShadow.sunkenDark
+```
+
+**Usage**:
+```swift
+// Single shadow
+VStack {
+    Text("Dropdown")
+}
+.applyShadow(ElevateShadow.elevated)
+
+// Adaptive light/dark
+VStack {
+    Text("Menu")
+}
+.applyShadow(light: .popover, dark: .popoverDark)
+```
+
+**Implementation**: `ElevateUI/Sources/DesignTokens/Core/ElevateShadow.swift`
+
+**CSS to Swift conversion**:
+```
+CSS: 0 0 1px rgba(41,47,55,0.3), 0 1px 4px rgba(79,94,113,0.12)
+Swift:
+  .shadow(color: Color(red: 41/255, green: 47/255, blue: 55/255, opacity: 0.3), radius: 1, x: 0, y: 0)
+  .shadow(color: Color(red: 79/255, green: 94/255, blue: 113/255, opacity: 0.12), radius: 4, x: 0, y: 1)
+```
+
+**Limitations**:
+- SwiftUI doesn't support `inset` box-shadows (used in `shadow-sunken`)
+- CSS spread radius not supported in SwiftUI (approximated with larger blur radius)
+- Multi-layer shadows require multiple `.shadow()` modifiers (applied via `applyShadow()`)
+
 ---
 
 ## 🔄 Update Procedure
@@ -226,6 +281,40 @@ After any component update:
 - Documented initial major diversions
 - Established adaptation philosophy
 - Implemented 39 initial components from web ELEVATE
+
+### 2025-11-09: Shadow System Implementation
+**Changes**: Created Swift shadow system for ELEVATE multi-layer box-shadows
+**Components affected**: Menu, Dropdown (and any component needing shadows)
+
+**What Changed**:
+- Created `ElevateShadow` struct with multi-layer shadow support
+- Implemented all 5 ELEVATE shadow types (elevated, overlay, popover, raised, sunken)
+- Added light and dark mode variants for each shadow type
+- Created `.applyShadow()` view modifier for easy application
+
+**Why Changed**:
+- CSS box-shadow supports comma-separated layers, SwiftUI requires multiple `.shadow()` calls
+- ELEVATE uses 4-layer shadows for depth and realism
+- Need adaptive shadows for light/dark mode
+
+**Implementation Details**:
+```swift
+// ELEVATE CSS (4 layers):
+// 0 0 1px rgba(41,47,55,0.3),
+// 0 1px 4px rgba(79,94,113,0.12),
+// 0 5px 16px -3px rgba(79,94,113,0.12),
+// 0 8px 24px -5px rgba(79,94,113,0.1)
+
+// Swift equivalent:
+.applyShadow(ElevateShadow.elevated)
+// Applies all 4 layers automatically
+```
+
+**Components using shadows**:
+- Menu: `shadow-popover` → `.applyShadow(light: .popover, dark: .popoverDark)`
+- Dropdown: `shadow-elevated` → `.applyShadow(light: .elevated, dark: .elevatedDark)`
+
+**Location**: `ElevateUI/Sources/DesignTokens/Core/ElevateShadow.swift`
 
 ### 2025-11-09: Touch Target Testing Infrastructure
 **Changes**: Implemented comprehensive test suite for iOS touch target compliance
