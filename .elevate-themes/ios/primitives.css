@@ -1,0 +1,63 @@
+/**
+ * iOS-Specific Primitive Overrides
+ *
+ * This file defines iOS-specific primitive values that override ELEVATE web defaults.
+ * These overrides ensure the design system adapts to iOS touch interaction requirements
+ * and Apple Human Interface Guidelines.
+ *
+ * Key Differences from Web:
+ * - Touch targets: 44pt minimum (vs web 32px)
+ * - Spacing: Larger gaps for touch-friendly UI
+ * - Corner radius: iOS-typical rounded corners
+ *
+ * Usage: This file is loaded AFTER ELEVATE core primitives, allowing selective overrides.
+ * Only include values that differ from web - everything else inherits from ELEVATE.
+ *
+ * Generated tokens: scripts/update-design-tokens-v4.py
+ * Documentation: docs/DIVERSIONS.md
+ */
+
+/* ========================================================================
+ * Touch Target Primitives (iOS Adaptation)
+ * ======================================================================== */
+
+/**
+ * iOS Human Interface Guidelines require 44pt × 44pt minimum touch targets
+ * ELEVATE web uses 32px, which is appropriate for mouse pointers but too small for fingers.
+ *
+ * Reference: https://developer.apple.com/design/human-interface-guidelines/layout
+ */
+
+/* Button heights - iOS touch target compliance */
+$elvt-component-button-height-s: 2.75rem;    /* ELEVATE web: 2rem (32px) → iOS: 2.75rem (44pt) (+37.5%) */
+$elvt-component-button-height-m: 3rem;       /* ELEVATE web: 2.5rem (40px) → iOS: 3rem (48pt) (+20%) */
+$elvt-component-button-height-l: 3.5rem;     /* ELEVATE web: 3rem (48px) → iOS: 3.5rem (56pt) (+16.7%) */
+
+/* Input heights - iOS touch target compliance */
+$elvt-component-input-height-s: 2.75rem;     /* ELEVATE web: 2rem (32px) → iOS: 2.75rem (44pt) (+37.5%) */
+$elvt-component-input-height-m: 3rem;        /* ELEVATE web: 2.5rem (40px) → iOS: 3rem (48pt) (+20%) */
+$elvt-component-input-height-l: 3.5rem;      /* ELEVATE web: 3rem (48px) → iOS: 3.5rem (56pt) (+16.7%) */
+
+/* ============================================================================
+ * Notes for Maintenance
+ * ========================================================================== */
+
+/*
+ * When updating from new ELEVATE versions:
+ *
+ * 1. Check if ELEVATE web has changed any primitive values
+ * 2. Decide if iOS should adopt the change or maintain the override
+ * 3. Document the decision in docs/DIVERSIONS.md
+ * 4. Run tests: swift test (should pass touch target validations)
+ * 5. Regenerate tokens: python3 scripts/update-design-tokens-v4.py
+ *
+ * Touch Target Validation:
+ * - All interactive elements must meet 44pt × 44pt minimum
+ * - Tests will fail if sizes drop below iOS requirements
+ * - See: ElevateUITests/TokenConsistencyTests.swift::testTouchTargetAdaptations
+ *
+ * References:
+ * - Apple HIG: https://developer.apple.com/design/human-interface-guidelines/
+ * - ELEVATE source: @inform-elevate/elevate-design-tokens
+ * - Project docs: docs/DIVERSIONS.md, docs/TOKEN_SYSTEM_IMPROVEMENTS.md
+ */

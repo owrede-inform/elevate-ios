@@ -1,0 +1,28 @@
+/**
+ * iOS-Specific Component Token Overrides
+ *
+ * This file allows manual overrides of specific component token values
+ * when automatic generation doesn't produce the desired iOS adaptation.
+ *
+ * Currently empty - all iOS adaptations are handled via primitives.css
+ *
+ * Usage:
+ * 1. Prefer primitives.css for systematic changes (touch targets, spacing, etc.)
+ * 2. Use this file only for component-specific edge cases
+ * 3. Document every override with reasoning
+ *
+ * Examples of when to use overrides.css:
+ * - A specific component needs different spacing than the primitive
+ * - iOS native pattern differs significantly from web ELEVATE
+ * - Temporary workaround for ELEVATE token generation issues
+ *
+ * Loaded after: primitives.css and ELEVATE core tokens
+ * Generated to: ElevateUI/Sources/DesignTokens/Generated/*.swift
+ */
+
+/* Component-specific overrides go here */
+
+/* Example (commented out):
+ * $elvt-component-dialog-max-width: var(--elvt-component-dialog-max-width, 90vw);  // iOS needs wider modals on small screens
+ * $elvt-component-notification-duration: var(--elvt-component-notification-duration, 4s);  // iOS users expect longer toast visibility
+ */

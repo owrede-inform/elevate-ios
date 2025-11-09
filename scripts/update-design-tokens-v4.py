@@ -53,7 +53,9 @@ COMPONENT_TOKENS_PATH = ELEVATE_TOKENS_PATH / "tokens" / "component"
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 THEME_PATH = PROJECT_ROOT / ".elevate-themes" / "ios"
+THEME_PRIMITIVES_FILE = THEME_PATH / "primitives.css"
 THEME_EXTEND_FILE = THEME_PATH / "extend.css"
+THEME_OVERRIDES_FILE = THEME_PATH / "overrides.css"
 THEME_OVERWRITE_FILE = THEME_PATH / "overwrite.css"
 THEME_OVERWRITE_DARK_FILE = THEME_PATH / "overwrite-dark.css"
 
@@ -333,8 +335,16 @@ class SwiftTokenMapper:
 
             # If no property keyword found, use last part as property
             # This handles tokens like: layout-layer-ground → Layout.Layer.ground
+            # Preserve original casing for camelCase tokens like appBackground
             if not property_parts and subcategory_parts:
-                property_parts = [subcategory_parts.pop().lower()]
+                last_part = subcategory_parts.pop()
+                # Check if the original part (before capitalize) was camelCase
+                original_part = parts[2 + len(subcategory_parts)]
+                # If original contains uppercase (camelCase), preserve it
+                if any(c.isupper() for c in original_part):
+                    property_parts = [original_part]
+                else:
+                    property_parts = [last_part.lower()]
 
             subcategory = ''.join(subcategory_parts) if subcategory_parts else 'General'
             property_name = '_'.join(property_parts) if property_parts else 'value'
@@ -495,7 +505,7 @@ public struct {class_name} {{
             code += "    // MARK: - Spacing\n\n"
             for token_name, token_ref in sorted(spacing_tokens.items()):
                 property_name = self.mapper.sanitize_swift_name(token_name.replace('-', '_'))
-                value = token_ref.fallback.to_swift_value()
+                value = self._resolve_dimension_value(token_name, token_ref)
                 code += f"    public static let {property_name}: CGFloat = {value}\n"
             code += "\n"
 
@@ -504,7 +514,7 @@ public struct {class_name} {{
             code += "    // MARK: - Dimensions\n\n"
             for token_name, token_ref in sorted(dimension_tokens.items()):
                 property_name = self.mapper.sanitize_swift_name(token_name.replace('-', '_'))
-                value = token_ref.fallback.to_swift_value()
+                value = self._resolve_dimension_value(token_name, token_ref)
                 code += f"    public static let {property_name}: CGFloat = {value}\n"
             code += "\n"
 
@@ -562,6 +572,20 @@ public struct {class_name} {{
             return f"Color(red: {r:.4f}, green: {g:.4f}, blue: {b:.4f}, opacity: {a:.4f})"
 
         return "Color.clear"
+
+    def _resolve_dimension_value(self, token_name: str, token_ref: TokenReference) -> str:
+        """Resolve dimension token value, checking for references to iOS overrides"""
+        # If token has a reference (e.g., var(--elvt-component-button-height-s, 2rem))
+        # try to resolve it from light_tokens which includes iOS primitive overrides
+        if token_ref.reference:
+            # Look up the referenced token in light_tokens
+            referenced_token = self.light_tokens.get(token_ref.reference)
+            if referenced_token:
+                # Use the referenced token's value
+                return referenced_token.fallback.to_swift_value()
+
+        # Fall back to the token's own fallback value
+        return token_ref.fallback.to_swift_value()
 
 
 class PrimitivesGenerator:
@@ -855,19 +879,46 @@ def main():
 
     # Merge iOS theme tokens
     print("\nMerging iOS theme tokens...")
-    if THEME_EXTEND_FILE.exists() or THEME_OVERWRITE_FILE.exists() or THEME_OVERWRITE_DARK_FILE.exists():
-        # Light mode: use extend.css + overwrite.css
-        light_tokens = merge_theme_tokens(light_tokens, THEME_EXTEND_FILE, THEME_OVERWRITE_FILE)
+    has_theme_files = (
+        THEME_PRIMITIVES_FILE.exists() or
+        THEME_EXTEND_FILE.exists() or
+        THEME_OVERRIDES_FILE.exists() or
+        THEME_OVERWRITE_FILE.exists() or
+        THEME_OVERWRITE_DARK_FILE.exists()
+    )
 
-        # Dark mode: use extend.css + overwrite-dark.css (or overwrite.css if overwrite-dark.css doesn't exist)
+    if has_theme_files:
+        # iOS primitive overrides (touch targets, spacing, etc.)
+        if THEME_PRIMITIVES_FILE.exists():
+            primitives_parser = SCSSUniversalParser(THEME_PRIMITIVES_FILE)
+            primitives_overrides = primitives_parser.extract_all_tokens()
+            light_tokens.update(primitives_overrides)
+            dark_tokens.update(primitives_overrides)
+            print(f"  + {len(primitives_overrides)} primitive overrides from {THEME_PRIMITIVES_FILE.name}")
+
+        # Light mode: use extend.css + overrides.css (new) + overwrite.css (legacy)
+        light_tokens = merge_theme_tokens(light_tokens, THEME_EXTEND_FILE, THEME_OVERRIDES_FILE)
+        if THEME_OVERWRITE_FILE.exists():
+            light_tokens = merge_theme_tokens(light_tokens, None, THEME_OVERWRITE_FILE)
+
+        # Dark mode: use extend.css + overrides.css (new) + overwrite-dark.css (legacy)
         dark_overwrite_file = THEME_OVERWRITE_DARK_FILE if THEME_OVERWRITE_DARK_FILE.exists() else THEME_OVERWRITE_FILE
-        dark_tokens = merge_theme_tokens(dark_tokens, THEME_EXTEND_FILE, dark_overwrite_file)
+        dark_tokens = merge_theme_tokens(dark_tokens, THEME_EXTEND_FILE, THEME_OVERRIDES_FILE)
+        if dark_overwrite_file.exists():
+            dark_tokens = merge_theme_tokens(dark_tokens, None, dark_overwrite_file)
 
+        # Report counts
         extend_count = 0
         if THEME_EXTEND_FILE.exists():
             extend_parser = SCSSUniversalParser(THEME_EXTEND_FILE)
             extend_count = len(extend_parser.extract_all_tokens())
             print(f"  + {extend_count} extend tokens from {THEME_EXTEND_FILE.name}")
+
+        overrides_count = 0
+        if THEME_OVERRIDES_FILE.exists():
+            overrides_parser = SCSSUniversalParser(THEME_OVERRIDES_FILE)
+            overrides_count = len(overrides_parser.extract_all_tokens())
+            print(f"  + {overrides_count} component overrides from {THEME_OVERRIDES_FILE.name}")
 
         overwrite_count = 0
         if THEME_OVERWRITE_FILE.exists():
@@ -885,8 +936,12 @@ def main():
     # Determine source files (ELEVATE + theme)
     base_source_files = [LIGHT_MODE_FILE, DARK_MODE_FILE]
     theme_source_files = []
+    if THEME_PRIMITIVES_FILE.exists():
+        theme_source_files.append(THEME_PRIMITIVES_FILE)
     if THEME_EXTEND_FILE.exists():
         theme_source_files.append(THEME_EXTEND_FILE)
+    if THEME_OVERRIDES_FILE.exists():
+        theme_source_files.append(THEME_OVERRIDES_FILE)
     if THEME_OVERWRITE_FILE.exists():
         theme_source_files.append(THEME_OVERWRITE_FILE)
     if THEME_OVERWRITE_DARK_FILE.exists():

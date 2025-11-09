@@ -40,9 +40,9 @@ public struct InputComponentTokens {
     public static let gap_prefix_m: CGFloat = 4.0
     public static let gap_prefix_s: CGFloat = 4.0
     public static let gap_s: CGFloat = 4.0
-    public static let height_l: CGFloat = 48.0
-    public static let height_m: CGFloat = 40.0
-    public static let height_s: CGFloat = 32.0
+    public static let height_l: CGFloat = 56.0
+    public static let height_m: CGFloat = 48.0
+    public static let height_s: CGFloat = 44.0
     public static let icon_size_height_l: CGFloat = 24.0
     public static let icon_size_height_m: CGFloat = 20.0
     public static let icon_size_height_s: CGFloat = 16.0
