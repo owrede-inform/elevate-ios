@@ -41,10 +41,6 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
 
     private let action: () -> Void
 
-    // MARK: - State
-
-    @State private var isPressed = false
-
     // MARK: - Initializers
 
     /// Create button with all options
@@ -75,41 +71,30 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        HStack(spacing: tokenGap) {
-            prefix()
-
-            Text(label)
-                .font(tokenFont)
-                .lineLimit(1)
-
-            suffix()
-        }
-        .foregroundColor(tokenTextColor)
-        .padding(effectivePadding)
-        .frame(height: tokenHeight)
-        .frame(maxWidth: .infinity)
-        .background(tokenBackgroundColor)
-        .cornerRadius(tokenCornerRadius)
-        .overlay(
-            RoundedRectangle(cornerRadius: tokenCornerRadius)
-                .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
-        )
-        .contentShape(Rectangle())
-        .scrollFriendlyTap(
-            onPressedChanged: { pressed in
-                if !isDisabled {
-                    withAnimation(.none) {
-                        isPressed = pressed
-                    }
-                }
-            },
-            action: {
-                if !isDisabled {
-                    action()
-                }
+        Button(action: {
+            if !isDisabled {
+                action()
             }
-        )
-        .allowsHitTesting(!isDisabled)
+        }) {
+            HStack(spacing: tokenGap) {
+                prefix()
+
+                Text(label)
+                    .font(tokenFont)
+                    .lineLimit(1)
+
+                suffix()
+            }
+        }
+        .buttonStyle(ElevateButtonStyle(
+            tone: tone,
+            size: size,
+            shape: shape,
+            isSelected: isSelected,
+            isDisabled: isDisabled,
+            customPadding: customPadding
+        ))
+        .disabled(isDisabled)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(label)
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
@@ -117,59 +102,6 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
     }
 
     // MARK: - Token Accessors
-
-    private var toneColors: ButtonTokens.ToneColors {
-        tone.colors
-    }
-
-    private var tokenBackgroundColor: Color {
-        if isDisabled {
-            return toneColors.backgroundDisabled
-        } else if isSelected {
-            return isPressed ? toneColors.backgroundSelectedActive : toneColors.backgroundSelected
-        } else if isPressed {
-            return toneColors.backgroundActive
-        } else {
-            return toneColors.background
-        }
-    }
-
-    private var tokenTextColor: Color {
-        if isDisabled {
-            return toneColors.textDisabled
-        } else if isSelected {
-            return isPressed ? toneColors.textSelectedActive : toneColors.textSelected
-        } else if isPressed {
-            return toneColors.textActive
-        } else {
-            return toneColors.text
-        }
-    }
-
-    private var tokenBorderColor: Color {
-        if isSelected {
-            return toneColors.borderSelected
-        } else {
-            return toneColors.border
-        }
-    }
-
-    private var tokenBorderWidth: CGFloat {
-        ButtonComponentTokens.border_width
-    }
-
-    private var tokenHeight: CGFloat {
-        size.componentSize.height
-    }
-
-    private var effectivePadding: EdgeInsets {
-        customPadding ?? EdgeInsets(
-            top: 0,
-            leading: size.componentSize.paddingInline,
-            bottom: 0,
-            trailing: size.componentSize.paddingInline
-        )
-    }
 
     private var tokenFont: Font {
         switch size {
@@ -188,10 +120,6 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
         case .medium: return ButtonComponentTokens.gap_m
         case .large: return ButtonComponentTokens.gap_l
         }
-    }
-
-    private var tokenCornerRadius: CGFloat {
-        shape.borderRadius
     }
 }
 
