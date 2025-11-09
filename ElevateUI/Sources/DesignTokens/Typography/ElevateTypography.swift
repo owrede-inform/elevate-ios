@@ -78,14 +78,22 @@ public struct ElevateTypography {
         }
     }
 
-    // MARK: - Base Sizes (ELEVATE Web Defaults)
+    // MARK: - iOS Scale Factor
 
-    /// Typography base sizes from ELEVATE design tokens
-    /// These can be themed/overridden, and iOS applies iosScaleFactor on top
-    public enum Sizes {
+    /// iOS typography scale factor for mobile readability
+    /// Applied to all ELEVATE Core UI base sizes for iOS platform
+    /// Documented in: .claude/components/iOS-DEVIATIONS.md
+    public static let iosScaleFactor: CGFloat = 1.15  // +15% increase
+
+    // MARK: - Base Sizes (ELEVATE Core UI Web Defaults)
+
+    /// Typography base sizes from ELEVATE design tokens (web/desktop)
+    /// These represent the original ELEVATE Core UI sizes before iOS scaling
+    /// iOS sizes are calculated by applying iosScaleFactor (1.15×)
+    public enum WebSizes {
         // Display
-        public static let displayLarge: CGFloat = 57
-        public static let displayMedium: CGFloat = 45
+        public static let displayLarge: CGFloat = 56
+        public static let displayMedium: CGFloat = 44
         public static let displaySmall: CGFloat = 36
 
         // Headings
@@ -113,6 +121,44 @@ public struct ElevateTypography {
         // Monospace
         public static let code: CGFloat = 14
         public static let codeSmall: CGFloat = 12
+    }
+
+    // MARK: - iOS Sizes (Auto-calculated with Scale Factor)
+
+    /// Typography sizes for iOS, automatically scaled from web base sizes
+    /// Formula: webSize × iosScaleFactor (1.15)
+    /// This ensures iOS text is +15% larger for mobile readability
+    public enum Sizes {
+        // Display
+        public static let displayLarge: CGFloat = WebSizes.displayLarge * iosScaleFactor      // 56 × 1.15 = 64.4
+        public static let displayMedium: CGFloat = WebSizes.displayMedium * iosScaleFactor    // 44 × 1.15 = 50.6
+        public static let displaySmall: CGFloat = WebSizes.displaySmall * iosScaleFactor      // 36 × 1.15 = 41.4
+
+        // Headings
+        public static let headingLarge: CGFloat = WebSizes.headingLarge * iosScaleFactor      // 32 × 1.15 = 36.8
+        public static let headingMedium: CGFloat = WebSizes.headingMedium * iosScaleFactor    // 28 × 1.15 = 32.2
+        public static let headingSmall: CGFloat = WebSizes.headingSmall * iosScaleFactor      // 24 × 1.15 = 27.6
+        public static let headingXSmall: CGFloat = WebSizes.headingXSmall * iosScaleFactor    // 20 × 1.15 = 23.0
+
+        // Titles
+        public static let titleLarge: CGFloat = WebSizes.titleLarge * iosScaleFactor          // 22 × 1.15 = 25.3
+        public static let titleMedium: CGFloat = WebSizes.titleMedium * iosScaleFactor        // 16 × 1.15 = 18.4
+        public static let titleSmall: CGFloat = WebSizes.titleSmall * iosScaleFactor          // 14 × 1.15 = 16.1
+
+        // Body
+        public static let bodyLarge: CGFloat = WebSizes.bodyLarge * iosScaleFactor            // 16 × 1.15 = 18.4
+        public static let bodyMedium: CGFloat = WebSizes.bodyMedium * iosScaleFactor          // 14 × 1.15 = 16.1
+        public static let bodySmall: CGFloat = WebSizes.bodySmall * iosScaleFactor            // 12 × 1.15 = 13.8
+
+        // Labels
+        public static let labelLarge: CGFloat = WebSizes.labelLarge * iosScaleFactor          // 16 × 1.15 = 18.4
+        public static let labelMedium: CGFloat = WebSizes.labelMedium * iosScaleFactor        // 14 × 1.15 = 16.1
+        public static let labelSmall: CGFloat = WebSizes.labelSmall * iosScaleFactor          // 12 × 1.15 = 13.8
+        public static let labelXSmall: CGFloat = WebSizes.labelXSmall * iosScaleFactor        // 11 × 1.15 = 12.65
+
+        // Monospace
+        public static let code: CGFloat = WebSizes.code * iosScaleFactor                      // 14 × 1.15 = 16.1
+        public static let codeSmall: CGFloat = WebSizes.codeSmall * iosScaleFactor            // 12 × 1.15 = 13.8
     }
 
     // MARK: - Heading Styles
@@ -202,92 +248,93 @@ public struct ElevateTypography {
     // MARK: - UIKit Compatibility
 
     /// UIKit-compatible font accessors
+    /// All sizes use the calculated iOS Sizes (web base × 1.15)
     public enum UIKit {
 
         // MARK: - Headings
 
         public static var displayLarge: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 57)?.withWeight(.bold) ?? .systemFont(ofSize: 57, weight: .bold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.displayLarge)?.withWeight(.bold) ?? .systemFont(ofSize: Sizes.displayLarge, weight: .bold)
         }
 
         public static var displayMedium: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 45)?.withWeight(.bold) ?? .systemFont(ofSize: 45, weight: .bold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.displayMedium)?.withWeight(.bold) ?? .systemFont(ofSize: Sizes.displayMedium, weight: .bold)
         }
 
         public static var displaySmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 36)?.withWeight(.bold) ?? .systemFont(ofSize: 36, weight: .bold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.displaySmall)?.withWeight(.bold) ?? .systemFont(ofSize: Sizes.displaySmall, weight: .bold)
         }
 
         public static var headingLarge: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 32)?.withWeight(.bold) ?? .systemFont(ofSize: 32, weight: .bold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.headingLarge)?.withWeight(.bold) ?? .systemFont(ofSize: Sizes.headingLarge, weight: .bold)
         }
 
         public static var headingMedium: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 28)?.withWeight(.bold) ?? .systemFont(ofSize: 28, weight: .bold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.headingMedium)?.withWeight(.bold) ?? .systemFont(ofSize: Sizes.headingMedium, weight: .bold)
         }
 
         public static var headingSmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 24)?.withWeight(.semibold) ?? .systemFont(ofSize: 24, weight: .semibold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.headingSmall)?.withWeight(.semibold) ?? .systemFont(ofSize: Sizes.headingSmall, weight: .semibold)
         }
 
         public static var headingXSmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 20)?.withWeight(.semibold) ?? .systemFont(ofSize: 20, weight: .semibold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.headingXSmall)?.withWeight(.semibold) ?? .systemFont(ofSize: Sizes.headingXSmall, weight: .semibold)
         }
 
         // MARK: - Titles
 
         public static var titleLarge: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 22)?.withWeight(.semibold) ?? .systemFont(ofSize: 22, weight: .semibold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.titleLarge)?.withWeight(.semibold) ?? .systemFont(ofSize: Sizes.titleLarge, weight: .semibold)
         }
 
         public static var titleMedium: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 16)?.withWeight(.semibold) ?? .systemFont(ofSize: 16, weight: .semibold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.titleMedium)?.withWeight(.semibold) ?? .systemFont(ofSize: Sizes.titleMedium, weight: .semibold)
         }
 
         public static var titleSmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 14)?.withWeight(.semibold) ?? .systemFont(ofSize: 14, weight: .semibold)
+            UIFont(name: fontFamilyPrimary, size: Sizes.titleSmall)?.withWeight(.semibold) ?? .systemFont(ofSize: Sizes.titleSmall, weight: .semibold)
         }
 
         // MARK: - Body
 
         public static var bodyLarge: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 16)?.withWeight(.regular) ?? .systemFont(ofSize: 16, weight: .regular)
+            UIFont(name: fontFamilyPrimary, size: Sizes.bodyLarge)?.withWeight(.regular) ?? .systemFont(ofSize: Sizes.bodyLarge, weight: .regular)
         }
 
         public static var bodyMedium: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 14)?.withWeight(.regular) ?? .systemFont(ofSize: 14, weight: .regular)
+            UIFont(name: fontFamilyPrimary, size: Sizes.bodyMedium)?.withWeight(.regular) ?? .systemFont(ofSize: Sizes.bodyMedium, weight: .regular)
         }
 
         public static var bodySmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 12)?.withWeight(.regular) ?? .systemFont(ofSize: 12, weight: .regular)
+            UIFont(name: fontFamilyPrimary, size: Sizes.bodySmall)?.withWeight(.regular) ?? .systemFont(ofSize: Sizes.bodySmall, weight: .regular)
         }
 
         // MARK: - Labels
 
         public static var labelLarge: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 16)?.withWeight(.medium) ?? .systemFont(ofSize: 16, weight: .medium)
+            UIFont(name: fontFamilyPrimary, size: Sizes.labelLarge)?.withWeight(.medium) ?? .systemFont(ofSize: Sizes.labelLarge, weight: .medium)
         }
 
         public static var labelMedium: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 14)?.withWeight(.medium) ?? .systemFont(ofSize: 14, weight: .medium)
+            UIFont(name: fontFamilyPrimary, size: Sizes.labelMedium)?.withWeight(.medium) ?? .systemFont(ofSize: Sizes.labelMedium, weight: .medium)
         }
 
         public static var labelSmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 12)?.withWeight(.medium) ?? .systemFont(ofSize: 12, weight: .medium)
+            UIFont(name: fontFamilyPrimary, size: Sizes.labelSmall)?.withWeight(.medium) ?? .systemFont(ofSize: Sizes.labelSmall, weight: .medium)
         }
 
         public static var labelXSmall: UIFont {
-            UIFont(name: fontFamilyPrimary, size: 11)?.withWeight(.medium) ?? .systemFont(ofSize: 11, weight: .medium)
+            UIFont(name: fontFamilyPrimary, size: Sizes.labelXSmall)?.withWeight(.medium) ?? .systemFont(ofSize: Sizes.labelXSmall, weight: .medium)
         }
 
         // MARK: - Monospace
 
         public static var code: UIFont {
-            UIFont(name: fontFamilyMono, size: 14)?.withWeight(.regular) ?? .monospacedSystemFont(ofSize: 14, weight: .regular)
+            UIFont(name: fontFamilyMono, size: Sizes.code)?.withWeight(.regular) ?? .monospacedSystemFont(ofSize: Sizes.code, weight: .regular)
         }
 
         public static var codeSmall: UIFont {
-            UIFont(name: fontFamilyMono, size: 12)?.withWeight(.regular) ?? .monospacedSystemFont(ofSize: 12, weight: .regular)
+            UIFont(name: fontFamilyMono, size: Sizes.codeSmall)?.withWeight(.regular) ?? .monospacedSystemFont(ofSize: Sizes.codeSmall, weight: .regular)
         }
     }
 }
