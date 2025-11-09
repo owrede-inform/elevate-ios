@@ -81,13 +81,16 @@ public struct ElevateSkeleton: View {
     private var linesShape: some View {
         VStack(alignment: .leading, spacing: tokenLineGap) {
             ForEach(0..<lineCount, id: \.self) { index in
-                RoundedRectangle(cornerRadius: SkeletonComponentTokens.radius)
-                    .fill(SkeletonComponentTokens.fill)
-                    .frame(height: tokenLineHeight)
-                    .frame(maxWidth: index == lineCount - 1 ? .infinity : nil)
-                    .frame(width: index == lineCount - 1 ? nil : .infinity)
-                    .background(widthModifier(for: index))
-                    .overlay(effectModifier)
+                GeometryReader { geometry in
+                    RoundedRectangle(cornerRadius: SkeletonComponentTokens.radius)
+                        .fill(SkeletonComponentTokens.fill)
+                        .frame(
+                            width: index == lineCount - 1 ? geometry.size.width * (lineWidth / 100) : geometry.size.width,
+                            height: tokenLineHeight
+                        )
+                        .overlay(effectModifier)
+                }
+                .frame(height: tokenLineHeight)
             }
         }
     }
@@ -114,15 +117,6 @@ public struct ElevateSkeleton: View {
     }
 
     // MARK: - Modifiers
-
-    private func widthModifier(for index: Int) -> some View {
-        GeometryReader { geometry in
-            Color.clear.preference(
-                key: WidthPreferenceKey.self,
-                value: index == lineCount - 1 ? geometry.size.width * (lineWidth / 100) : geometry.size.width
-            )
-        }
-    }
 
     private var effectModifier: some View {
         Group {
@@ -231,15 +225,6 @@ public enum SkeletonFont {
     case label       // Label size
     case content     // Body/content size
     case headline    // Headline size
-}
-
-// MARK: - Width Preference Key
-
-private struct WidthPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
 }
 
 // MARK: - Preview Support
