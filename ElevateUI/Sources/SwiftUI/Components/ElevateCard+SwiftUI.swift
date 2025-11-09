@@ -91,6 +91,7 @@ public struct ElevateCard<Content: View, Header: View, Footer: View>: View {
             RoundedRectangle(cornerRadius: tokenBorderRadius)
                 .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
         )
+        .modifier(CardShadowModifier(elevation: elevation))
     }
 
     // MARK: - Token Accessors
@@ -248,6 +249,58 @@ extension ElevateCard where Footer == EmptyView {
             header: header,
             footer: { EmptyView() }
         )
+    }
+}
+
+// MARK: - Card Shadow Modifier
+
+@available(iOS 15, *)
+private struct CardShadowModifier: ViewModifier {
+    let elevation: CardElevation
+
+    @Environment(\.colorScheme) var colorScheme
+
+    func body(content: Content) -> some View {
+        switch elevation {
+        case .ground:
+            // No shadow - flat on surface
+            content
+
+        case .raised:
+            // Subtle elevation
+            content.applyShadow(
+                light: .raised,
+                dark: .raisedDark
+            )
+
+        case .elevated:
+            // Moderate depth
+            content.applyShadow(
+                light: .elevated,
+                dark: .elevatedDark
+            )
+
+        case .sunken:
+            // Inset appearance (approximation)
+            content.applyShadow(
+                light: .sunken,
+                dark: .sunkenDark
+            )
+
+        case .overlay:
+            // High elevation for modals
+            content.applyShadow(
+                light: .overlay,
+                dark: .overlayDark
+            )
+
+        case .popover:
+            // Floating menus/tooltips
+            content.applyShadow(
+                light: .popover,
+                dark: .popoverDark
+            )
+        }
     }
 }
 
