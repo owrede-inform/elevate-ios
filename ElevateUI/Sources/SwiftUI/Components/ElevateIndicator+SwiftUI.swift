@@ -145,7 +145,7 @@ extension ElevateIndicator {
                         .frame(width: 12, height: 12)
                         .overlay(
                             Circle()
-                                .strokeBorder(ElevateAliases.Content.General.text_inverted, lineWidth: 2)
+                                .strokeBorder(ElevateAliases.Feedback.Strong.text_inverted, lineWidth: 2)
                         )
                 )
             }

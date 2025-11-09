@@ -80,7 +80,10 @@
       "WebFetch(domain:www.avanderlee.com)",
       "Bash(git ls-tree:*)",
       "Bash(PYTHONPATH=scripts:$PYTHONPATH python3:*)",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "SlashCommand(/ultrathink:ultrathink Check the project. Understand the ELEVATE concept (specifically the role of tokens). Analyze how it can be improved!)",
+      "Bash(xcrun simctl:*)",
+      "Bash(set -o pipefail)"
     ],
     "deny": [],
     "ask": []

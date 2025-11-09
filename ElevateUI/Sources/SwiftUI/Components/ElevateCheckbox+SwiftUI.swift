@@ -83,22 +83,18 @@ public struct ElevateCheckbox: View {
                 }
             }
             .frame(width: tokenControlSize, height: tokenControlSize)
-            .onTapGesture {
-                if !isDisabled {
-                    isChecked.toggle()
-                    onChange?(isChecked)
+            .scrollFriendlyTap(
+                onPressedChanged: { pressed in
+                    if !isDisabled {
+                        isPressed = pressed
+                    }
+                },
+                action: {
+                    if !isDisabled {
+                        isChecked.toggle()
+                        onChange?(isChecked)
+                    }
                 }
-            }
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { _ in
-                        if !isDisabled {
-                            isPressed = true
-                        }
-                    }
-                    .onEnded { _ in
-                        isPressed = false
-                    }
             )
 
             // Label

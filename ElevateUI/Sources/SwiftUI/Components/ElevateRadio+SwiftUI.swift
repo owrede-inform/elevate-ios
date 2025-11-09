@@ -92,22 +92,18 @@ public struct ElevateRadio<Value: Hashable>: View {
                 }
             }
             .frame(width: tokenControlSize, height: tokenControlSize)
-            .onTapGesture {
-                if !isDisabled && !isChecked {
-                    selectedValue = value
-                    onChange?(value)
+            .scrollFriendlyTap(
+                onPressedChanged: { pressed in
+                    if !isDisabled {
+                        isPressed = pressed
+                    }
+                },
+                action: {
+                    if !isDisabled && !isChecked {
+                        selectedValue = value
+                        onChange?(value)
+                    }
                 }
-            }
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { _ in
-                        if !isDisabled {
-                            isPressed = true
-                        }
-                    }
-                    .onEnded { _ in
-                        isPressed = false
-                    }
             )
 
             // Label

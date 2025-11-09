@@ -95,23 +95,19 @@ public struct ElevateButton<Prefix: View, Suffix: View>: View {
                 .stroke(tokenBorderColor, lineWidth: tokenBorderWidth)
         )
         .contentShape(Rectangle())
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { _ in
-                    if !isDisabled && !isPressed {
-                        withAnimation(.none) {
-                            isPressed = true
-                        }
+        .scrollFriendlyTap(
+            onPressedChanged: { pressed in
+                if !isDisabled {
+                    withAnimation(.none) {
+                        isPressed = pressed
                     }
                 }
-                .onEnded { _ in
-                    if !isDisabled {
-                        withAnimation(.none) {
-                            isPressed = false
-                        }
-                        action()
-                    }
+            },
+            action: {
+                if !isDisabled {
+                    action()
                 }
+            }
         )
         .allowsHitTesting(!isDisabled)
         .accessibilityElement(children: .combine)

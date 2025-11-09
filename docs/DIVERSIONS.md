@@ -166,6 +166,62 @@ Text("Heading").font(ElevateTypography.headingLarge)     // 32pt
 
 **Complete breakdown**: See [TEXT_SIZE_ADAPTATIONS.md](TEXT_SIZE_ADAPTATIONS.md)
 
+### 🖐️ Scroll-Friendly Gesture Handling
+
+**Problem**: SwiftUI's `.onTapGesture` and `.gesture(DragGesture)` block ScrollView scrolling when touches start on interactive components.
+
+**Solution**: Use UIControl-based tracking methods via `ScrollFriendlyGestures.swift` utility.
+
+**Why This Matters**:
+- Users expect to scroll anywhere on screen, including starting swipes on buttons
+- Native iOS buttons in UIScrollView work this way - instant feedback + scroll works
+- SwiftUI gestures by default capture ALL touches, preventing parent scroll views from scrolling
+
+**How iOS Native Pattern Works**:
+1. `beginTracking`: Touch down → Instant visual feedback (synchronous, 0ms delay)
+2. `continueTracking`: Track movement without canceling
+3. `endTracking`: Fire action ONLY if finger released within 20px of start position
+4. `cancelTracking`: Automatically called when scroll gesture starts
+
+**Key Insight**: UIControl tracking methods are called SYNCHRONOUSLY during touch delivery, BEFORE gesture recognizers run. UIScrollView automatically doesn't delay touches for UIControl subclasses.
+
+**Implementation**:
+```swift
+// ❌ WRONG: Blocks scrolling
+.simultaneousGesture(
+    DragGesture(minimumDistance: 0)
+        .onChanged { _ in isPressed = true }
+        .onEnded { _ in action() }
+)
+
+// ✅ CORRECT: Allows scrolling
+.scrollFriendlyTap(
+    onPressedChanged: { pressed in
+        isPressed = pressed
+    },
+    action: {
+        action()
+    }
+)
+```
+
+**Components Using Scroll-Friendly Gestures**:
+- Button (ElevateButton+SwiftUI.swift)
+- Checkbox (ElevateCheckbox+SwiftUI.swift)
+- Switch (ElevateSwitch+SwiftUI.swift)
+- Radio (ElevateRadio+SwiftUI.swift)
+
+**Utility Location**: `ElevateUI/Sources/SwiftUI/Utilities/ScrollFriendlyGestures.swift`
+
+**Complete Documentation**: See ScrollFriendlyGestures.swift for 300+ line technical deep-dive on implementation details, iOS touch delivery system, and UIControl tracking lifecycle.
+
+**When to Use**:
+- ✅ Buttons, chips, badges in ScrollViews or Lists
+- ✅ Interactive cards that should scroll
+- ✅ Form controls (switches, checkboxes) in scrollable forms
+- ❌ Components explicitly designed to prevent scrolling (e.g., slider with drag-to-change-value)
+- ❌ Full-screen tap areas where scrolling isn't relevant
+
 ### 🌑 Shadow System
 
 ELEVATE uses multi-layer CSS box-shadows that need conversion to SwiftUI's `.shadow()` modifiers.
@@ -418,6 +474,60 @@ XCTAssertGreaterThanOrEqual(TextareaComponentTokens.height_m, 44)
 ```
 
 **Documentation**: See component-specific adaptations in `.claude/components/` for detailed implementation
+
+### 2025-11-09: Scroll-Friendly Gesture Handling
+**Changes**: Replaced SwiftUI gesture recognizers with UIControl-based scroll-friendly pattern
+**Components affected**: Button, Checkbox, Switch, Radio
+
+**What Changed**:
+- Replaced `.simultaneousGesture(DragGesture(minimumDistance: 0))` with `.scrollFriendlyTap()`
+- Replaced `.onTapGesture` + `.gesture(DragGesture)` combos with single `.scrollFriendlyTap()`
+- Implemented UIControl tracking methods for instant feedback without blocking scrolling
+
+**Why Changed**:
+- **User reported issue**: "buttons feel and react well now - but when they are touched the swipe is not happening anymore"
+- SwiftUI's DragGesture with minimumDistance: 0 captures ALL touches immediately
+- This blocked ScrollView's pan gesture recognizer from receiving touches
+- Result: Buttons worked but swipes starting on buttons didn't scroll
+
+**iOS Native Solution**:
+- UIButton in UIScrollView works perfectly - instant feedback + scrolling works
+- Uses UIControl tracking methods called SYNCHRONOUSLY during touch delivery
+- `beginTracking`: Instant visual feedback (0ms delay)
+- `endTracking`: Fire action ONLY if released within 20px (tap vs swipe detection)
+- `cancelTracking`: Auto-called when scroll starts
+- UIScrollView doesn't delay touches for UIControl subclasses
+
+**Implementation**:
+```swift
+// Before (blocking scrolling):
+.simultaneousGesture(
+    DragGesture(minimumDistance: 0)
+        .onChanged { _ in isPressed = true }
+        .onEnded { _ in action() }
+)
+
+// After (scroll-friendly):
+.scrollFriendlyTap(
+    onPressedChanged: { pressed in isPressed = pressed },
+    action: { action() }
+)
+```
+
+**Benefits**:
+- ✅ Instant visual feedback (synchronous, 0ms delay)
+- ✅ Scrolling works even when touch starts on button
+- ✅ Native iOS behavior matching UIButton
+- ✅ Proper tap vs swipe detection (20px threshold)
+- ✅ Automatic scroll cancellation
+
+**Research Sources**:
+- SwiftUI simultaneousGesture() for dual recognition
+- UIGestureRecognizer require(toFail:) for gesture priority
+- UIControl tracking methods for scroll compatibility
+- iOS touch delivery system and gesture recognizer hierarchy
+
+**Utility Location**: `ElevateUI/Sources/SwiftUI/Utilities/ScrollFriendlyGestures.swift`
 
 ### [Future updates will be logged here]
 

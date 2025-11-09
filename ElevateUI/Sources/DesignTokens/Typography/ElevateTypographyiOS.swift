@@ -237,16 +237,6 @@ public struct ElevateTypographyiOS {
 }
 
 // MARK: - UIFont Weight Extension
-
-extension UIFont {
-    func withWeight(_ weight: UIFont.Weight) -> UIFont {
-        let descriptor = fontDescriptor.addingAttributes([
-            .traits: [
-                UIFontDescriptor.TraitKey.weight: weight
-            ]
-        ])
-        return UIFont(descriptor: descriptor, size: pointSize)
-    }
-}
+// Note: withWeight is now provided by iOS natively, so this extension has been removed
 
 #endif

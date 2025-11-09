@@ -72,22 +72,18 @@ public struct ElevateSwitch: View {
                     .padding(tokenTrackPadding)
             }
             .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isOn)
-            .onTapGesture {
-                if !isDisabled {
-                    isOn.toggle()
-                    onChange?(isOn)
+            .scrollFriendlyTap(
+                onPressedChanged: { pressed in
+                    if !isDisabled {
+                        isPressed = pressed
+                    }
+                },
+                action: {
+                    if !isDisabled {
+                        isOn.toggle()
+                        onChange?(isOn)
+                    }
                 }
-            }
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { _ in
-                        if !isDisabled {
-                            isPressed = true
-                        }
-                    }
-                    .onEnded { _ in
-                        isPressed = false
-                    }
             )
 
             // Label

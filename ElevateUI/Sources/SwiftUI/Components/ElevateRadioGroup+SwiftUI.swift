@@ -141,7 +141,7 @@ public struct ElevateRadioGroup<Value: Hashable, Content: View>: View {
 
     private var tokenHelpTextColor: Color {
         if isInvalid {
-            return ElevateAliases.Feedback.Strong.text_danger
+            return ElevateAliases.Feedback.General.text_danger
         }
         return ElevateAliases.Content.General.text_understated
     }
