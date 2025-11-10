@@ -97,3 +97,6 @@ iOSInjectionProject/
 scripts/backups/
 .elevate-src/
 .claude/settings.local.json
+/.claude/
+/.elevate-knowledge/
+/.elevate-themes/
