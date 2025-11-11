@@ -176,17 +176,17 @@ Create semantic token wrappers following the pattern in `TOKEN_WRAPPER_GUIDE.md`
 
 1. **Review documentation:**
    ```bash
-   open docs/COMPONENT_AUTHORING_GUIDE.md
-   open docs/TOKEN_WRAPPER_GUIDE.md
+   open docs/guides/component-development.md
+   open docs/guides/token-wrapper-guide.md
    ```
 
 2. **Create token wrapper** (optional but recommended):
-   - Follow template in `TOKEN_WRAPPER_GUIDE.md`
+   - Follow template in `guides/token-wrapper-guide.md`
    - Use `ButtonTokens.swift` or `ChipTokens.swift` as reference
    - Place in `ElevateUI/Sources/DesignTokens/Components/`
 
 3. **Implement component:**
-   - Follow template in `COMPONENT_AUTHORING_GUIDE.md`
+   - Follow template in `guides/component-development.md`
    - Use existing components as reference
    - Place in `ElevateUI/Sources/SwiftUI/Components/`
 
@@ -210,7 +210,7 @@ Create semantic token wrappers following the pattern in `TOKEN_WRAPPER_GUIDE.md`
    - Sizes (s, m, l)
    - Properties (fill, label, border)
 
-3. **Use template from `TOKEN_WRAPPER_GUIDE.md`**
+3. **Use template from `guides/token-wrapper-guide.md`**
 
 4. **Verify:**
    ```bash
@@ -279,9 +279,9 @@ Target: All implemented components have wrappers
 
 ## 📚 Reference
 
-- **Token Wrapper Guide**: [docs/TOKEN_WRAPPER_GUIDE.md](TOKEN_WRAPPER_GUIDE.md)
-- **Component Authoring**: [docs/COMPONENT_AUTHORING_GUIDE.md](COMPONENT_AUTHORING_GUIDE.md)
-- **Token Generation**: [docs/TOKEN_GENERATION.md](TOKEN_GENERATION.md)
+- **Token Wrapper Guide**: [docs/guides/token-wrapper-guide.md](guides/token-wrapper-guide.md)
+- **Component Authoring**: [docs/guides/component-development.md](guides/component-development.md)
+- **Token Generation**: [docs/systems/token-system.md](systems/token-system.md)
 - **Test Suite**: [tests/test_token_generator.py](../tests/test_token_generator.py)
 
 ---
