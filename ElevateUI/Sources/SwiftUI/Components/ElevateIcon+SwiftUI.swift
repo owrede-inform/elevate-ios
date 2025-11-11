@@ -162,7 +162,7 @@ private struct AvatarIcon: View {
                 )
 
             Text(initials.prefix(2).uppercased())
-                .font(.system(size: fontSize, weight: .medium))
+                .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: fontSize).weight(.medium))
                 .foregroundColor(textColor)
         }
         .frame(width: avatarSize, height: avatarSize)
@@ -178,9 +178,9 @@ private struct AvatarIcon: View {
 
     private var fontSize: CGFloat {
         switch size {
-        case .small: return 12
-        case .medium: return 14
-        case .large: return 18
+        case .small: return ElevateTypography.Sizes.labelSmall  // Already iOS-scaled: 15pt
+        case .medium: return ElevateTypography.Sizes.labelMedium  // Already iOS-scaled: 17.5pt
+        case .large: return ElevateTypography.Sizes.bodyMedium  // Already iOS-scaled: 17.5pt (was 18, using closest)
         }
     }
 

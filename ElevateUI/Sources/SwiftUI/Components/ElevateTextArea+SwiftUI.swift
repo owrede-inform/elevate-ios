@@ -152,7 +152,8 @@ public struct ElevateTextArea: View {
             // Label
             if let label = label {
                 Text(label)
-                    .font(.system(size: labelFontSize, weight: .medium))
+                    .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: labelFontSize)
+                        .weight(.medium))
                     .foregroundColor(labelColor)
             }
 
@@ -161,7 +162,7 @@ public struct ElevateTextArea: View {
                 // Placeholder
                 if text.isEmpty {
                     Text(placeholder)
-                        .font(.system(size: sizeConfig.fontSize))
+                        .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                         .foregroundColor(placeholderColor)
                         .padding(.horizontal, sizeConfig.horizontalPadding)
                         .padding(.vertical, sizeConfig.verticalPadding)
@@ -179,7 +180,7 @@ public struct ElevateTextArea: View {
                         }
                     }
                 ))
-                .font(.system(size: sizeConfig.fontSize))
+                .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                 .foregroundColor(textColor)
                 .padding(.horizontal, sizeConfig.horizontalPadding - 5) // TextEditor has built-in padding
                 .padding(.vertical, sizeConfig.verticalPadding - 8)
@@ -209,7 +210,7 @@ public struct ElevateTextArea: View {
                     // Help text
                     if let helpText = helpText {
                         Text(helpText)
-                            .font(.system(size: helpTextFontSize))
+                            .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: helpTextFontSize))
                             .foregroundColor(helpTextColor)
                     }
 
@@ -218,7 +219,7 @@ public struct ElevateTextArea: View {
                     // Character count
                     if showCharacterCount {
                         Text("\(text.count)\(maxLength.map { "/\($0)" } ?? "")")
-                            .font(.system(size: helpTextFontSize))
+                            .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: helpTextFontSize))
                             .foregroundColor(characterCountColor)
                             .monospacedDigit()
                     }
@@ -232,19 +233,21 @@ public struct ElevateTextArea: View {
 
     // MARK: - Helper Properties
 
+    /// Label font size based on iOS-scaled typography
     private var labelFontSize: CGFloat {
         switch size {
-        case .small: return 13.0
-        case .medium: return 14.0
-        case .large: return 16.0
+        case .small: return ElevateTypography.Sizes.labelSmall  // Already iOS-scaled: 15pt
+        case .medium: return ElevateTypography.Sizes.labelMedium  // Already iOS-scaled: 17.5pt
+        case .large: return ElevateTypography.Sizes.labelLarge  // Already iOS-scaled: 20pt
         }
     }
 
+    /// Help text font size based on iOS-scaled typography
     private var helpTextFontSize: CGFloat {
         switch size {
-        case .small: return 11.0
-        case .medium: return 12.0
-        case .large: return 13.0
+        case .small: return ElevateTypography.Sizes.labelXSmall  // Already iOS-scaled: 13.75pt
+        case .medium: return ElevateTypography.Sizes.labelSmall  // Already iOS-scaled: 15pt
+        case .large: return ElevateTypography.Sizes.labelMedium  // Already iOS-scaled: 17.5pt
         }
     }
 }

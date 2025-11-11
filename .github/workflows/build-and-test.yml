@@ -1,0 +1,146 @@
+name: Build and Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build ElevateUI
+    runs-on: macos-15
+
+    strategy:
+      matrix:
+        destination:
+          - 'platform=iOS Simulator,name=iPhone 17'
+          - 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)'
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Cache Swift Packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            .build
+            ~/Library/Developer/Xcode/DerivedData
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -scheme ElevateUI \
+            -destination '${{ matrix.destination }}' \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+      - name: Upload Build Logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-${{ github.run_number }}
+          path: ~/Library/Logs/DiagnosticReports/
+          retention-days: 7
+
+  test:
+    name: Test ElevateUI
+    runs-on: macos-15
+    needs: build
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Cache Swift Packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            .build
+            ~/Library/Developer/Xcode/DerivedData
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Run All Tests
+        run: |
+          xcodebuild test \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -configuration Debug \
+            -enableCodeCoverage YES \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            | tee test-output.log
+
+      - name: Generate Test Report
+        if: always()
+        run: |
+          echo "# Test Results" > test-report.md
+          echo "" >> test-report.md
+
+          # Extract test counts
+          TOTAL_TESTS=$(grep -oE "Executed [0-9]+ tests" test-output.log | tail -1 | grep -oE "[0-9]+")
+          FAILURES=$(grep -oE "with [0-9]+ failures" test-output.log | tail -1 | grep -oE "[0-9]+") || echo "0"
+
+          echo "- **Total Tests**: $TOTAL_TESTS" >> test-report.md
+          echo "- **Failures**: $FAILURES" >> test-report.md
+          echo "" >> test-report.md
+
+          if [ "$FAILURES" == "0" ]; then
+            echo "✅ **All tests passed!**" >> test-report.md
+          else
+            echo "❌ **Some tests failed**" >> test-report.md
+          fi
+
+          cat test-report.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            test-output.log
+            test-report.md
+          retention-days: 7
+
+      - name: Upload Code Coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage
+          path: ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
+          retention-days: 7
+
+  lint:
+    name: Swift Lint
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check Swift Formatting
+        run: |
+          # Check for common Swift style issues
+          echo "Checking for trailing whitespace..."
+          ! grep -rn --include="*.swift" "[[:blank:]]$" ElevateUI/Sources || exit 1
+
+          echo "Checking for TODO/FIXME comments..."
+          grep -rn --include="*.swift" "TODO\|FIXME" ElevateUI/Sources || echo "No TODOs found"
+
+          echo "✅ Basic Swift lint checks passed"

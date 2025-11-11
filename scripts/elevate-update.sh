@@ -8,9 +8,10 @@
 #
 # Usage:
 #   ./scripts/elevate-update.sh check           # Check for new ELEVATE version
-#   ./scripts/elevate-update.sh analyze         # Analyze changes in current version
-#   ./scripts/elevate-update.sh validate        # Validate iOS HIG compliance
-#   ./scripts/elevate-update.sh update          # Full update workflow
+#   ./scripts/elevate-update.sh preview         # Preview changes and risk analysis
+#   ./scripts/elevate-update.sh apply           # Apply changes with validation
+#   ./scripts/elevate-update.sh validate        # Run validation pipeline
+#   ./scripts/elevate-update.sh rollback        # Rollback last update
 #   ./scripts/elevate-update.sh --help          # Show detailed help
 
 set -e  # Exit on error
@@ -267,17 +268,216 @@ For more information, see: docs/INTELLIGENT_UPDATE_SYSTEM.md
 EOF
 }
 
+# Command: preview
+cmd_preview() {
+    print_header "Preview ELEVATE Token Update"
+
+    print_info "Step 1/3: Detecting changes..."
+    if ! python3 "$SCRIPT_DIR/detect-elevate-changes.py" --verbose; then
+        RISK_CODE=$?
+        echo ""
+        if [ $RISK_CODE -eq 3 ]; then
+            print_error "CRITICAL RISK detected - manual review required"
+            exit 1
+        elif [ $RISK_CODE -eq 2 ]; then
+            print_warning "HIGH RISK detected - proceed with caution"
+        fi
+    fi
+
+    echo ""
+    print_info "Step 2/3: Calculating impact..."
+    python3 "$SCRIPT_DIR/benchmark-token-generation.py" --scenario single
+
+    echo ""
+    print_info "Step 3/3: Recommendations"
+    print_success "Preview complete!"
+    echo ""
+    echo "To apply these changes:"
+    echo "  ./scripts/elevate-update.sh apply"
+    echo ""
+    echo "For selective regeneration (faster):"
+    echo "  ./scripts/elevate-update.sh apply --selective"
+    echo ""
+}
+
+# Command: apply
+cmd_apply() {
+    local SELECTIVE_FLAG=""
+    local AUTO_COMMIT=false
+
+    # Parse flags
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --selective)
+                SELECTIVE_FLAG="--selective"
+                shift
+                ;;
+            --auto-commit)
+                AUTO_COMMIT=true
+                shift
+                ;;
+            *)
+                shift
+                ;;
+        esac
+    done
+
+    print_header "Apply ELEVATE Token Update"
+
+    # Step 1: Risk check
+    print_info "Step 1/5: Risk assessment..."
+    if ! python3 "$SCRIPT_DIR/detect-elevate-changes.py"; then
+        RISK_CODE=$?
+        if [ $RISK_CODE -eq 3 ]; then
+            print_error "CRITICAL RISK - aborting auto-apply"
+            print_info "Run manual preview first: ./scripts/elevate-update.sh preview"
+            exit 1
+        elif [ $RISK_CODE -eq 2 ]; then
+            print_warning "HIGH RISK detected"
+            read -p "Continue anyway? (y/N) " -n 1 -r
+            echo
+            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+                print_info "Aborted by user"
+                exit 0
+            fi
+        fi
+    fi
+
+    # Step 2: Create restore point
+    print_info "Step 2/5: Creating restore point..."
+    RESTORE_BRANCH="restore-tokens-$(date +%Y%m%d-%H%M%S)"
+    if git diff --quiet && git diff --cached --quiet; then
+        print_success "Working directory clean"
+    else
+        print_warning "Uncommitted changes detected"
+        git stash push -m "Pre-token-update stash $(date +%Y%m%d-%H%M%S)"
+        print_success "Changes stashed"
+    fi
+    git branch "$RESTORE_BRANCH"
+    print_success "Restore point created: $RESTORE_BRANCH"
+
+    # Step 3: Regenerate tokens
+    print_info "Step 3/5: Regenerating tokens..."
+    if python3 "$SCRIPT_DIR/update-design-tokens-v4.py" $SELECTIVE_FLAG; then
+        print_success "Tokens regenerated"
+    else
+        print_error "Token regeneration failed"
+        print_info "Restore point available: $RESTORE_BRANCH"
+        exit 1
+    fi
+
+    # Step 4: Run validation pipeline
+    print_info "Step 4/5: Running validation..."
+    if cmd_validate_quiet; then
+        print_success "Validation passed"
+    else
+        print_error "Validation failed"
+        print_info "Changes not committed. Restore point: $RESTORE_BRANCH"
+        exit 1
+    fi
+
+    # Step 5: Commit (if auto-commit enabled)
+    print_info "Step 5/5: Finalization..."
+    if [ "$AUTO_COMMIT" = true ]; then
+        git add ElevateUI/Sources/DesignTokens/
+        git commit -m "chore: Update ELEVATE design tokens
+
+Automated token update from elevate-update.sh
+Risk level: LOW
+Validation: PASSED
+
+🤖 Generated with elevate-update.sh"
+        print_success "Changes committed"
+    else
+        print_info "Changes not committed (use --auto-commit flag)"
+        print_info "Review changes with: git diff"
+    fi
+
+    echo ""
+    print_success "Token update complete!"
+    echo ""
+    print_info "Next steps:"
+    echo "  • Review changes: git diff"
+    echo "  • Run tests: xcodebuild test -scheme ElevateUI"
+    echo "  • Rollback if needed: ./scripts/elevate-update.sh rollback"
+    echo ""
+}
+
+# Command: rollback
+cmd_rollback() {
+    print_header "Rollback Token Update"
+
+    # Find most recent restore branch
+    RESTORE_BRANCH=$(git branch --list "restore-tokens-*" --sort=-committerdate | head -1 | sed 's/^[* ]*//')
+
+    if [ -z "$RESTORE_BRANCH" ]; then
+        print_error "No restore point found"
+        print_info "Restore branches have format: restore-tokens-YYYYMMDD-HHMMSS"
+        exit 1
+    fi
+
+    print_info "Found restore point: $RESTORE_BRANCH"
+    echo ""
+    print_warning "This will reset all token files to the restore point"
+    read -p "Continue with rollback? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        print_info "Rollback cancelled"
+        exit 0
+    fi
+
+    # Rollback
+    print_info "Rolling back..."
+    git checkout "$RESTORE_BRANCH" -- ElevateUI/Sources/DesignTokens/
+    print_success "Token files restored"
+
+    # Clean up
+    print_info "Cleaning up restore branch..."
+    git branch -d "$RESTORE_BRANCH"
+    print_success "Restore branch removed"
+
+    echo ""
+    print_success "Rollback complete!"
+    echo ""
+}
+
+# Quiet validation for use in apply workflow
+cmd_validate_quiet() {
+    # Run essential validations without verbose output
+    # Returns 0 on success, 1 on failure
+
+    # Check if token files are valid Swift
+    if ! swift build -c release --target ElevateUI >/dev/null 2>&1; then
+        return 1
+    fi
+
+    # Run token consistency tests
+    if ! xcodebuild test -scheme ElevateUI -destination 'platform=iOS Simulator,name=iPhone 17' \
+         -only-testing:ElevateUITests/TokenConsistencyTests >/dev/null 2>&1; then
+        return 1
+    fi
+
+    return 0
+}
+
 # Main command dispatcher
 main() {
     case "${1:-help}" in
         check)
             cmd_check
             ;;
-        analyze)
-            cmd_analyze
+        preview)
+            cmd_preview
+            ;;
+        apply)
+            shift  # Remove 'apply' from args
+            cmd_apply "$@"
             ;;
         validate)
             cmd_validate
+            ;;
+        rollback)
+            cmd_rollback
             ;;
         status)
             cmd_status

@@ -44,11 +44,11 @@ public struct MenuTokens {
             itemHeight: 36.0,
             horizontalPadding: 12.0,
             verticalPadding: 6.0,
-            cornerRadius: 4.0,
+            cornerRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (iOS scaled)
             borderWidth: 1.0,
             groupLabelHeight: 32.0,
-            fontSize: 14.0,
-            groupLabelFontSize: 12.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
+            groupLabelFontSize: ElevateTypography.Sizes.labelSmall,  // Already iOS-scaled: 15pt
             iconSize: 16.0,
             gap: 8.0
         )
@@ -59,11 +59,11 @@ public struct MenuTokens {
             itemHeight: 44.0,
             horizontalPadding: 16.0,
             verticalPadding: 8.0,
-            cornerRadius: 6.0,
+            cornerRadius: ElevateCornerRadius.s,  // 8pt × 1.25 = 10pt (iOS scaled)
             borderWidth: 1.0,
             groupLabelHeight: 36.0,
-            fontSize: 16.0,
-            groupLabelFontSize: 13.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt
+            groupLabelFontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt (was 13, using closest)
             iconSize: 18.0,
             gap: 10.0
         )
@@ -74,11 +74,11 @@ public struct MenuTokens {
             itemHeight: 52.0,
             horizontalPadding: 20.0,
             verticalPadding: 10.0,
-            cornerRadius: 8.0,
+            cornerRadius: ElevateCornerRadius.s,  // 8pt × 1.25 = 10pt (iOS scaled)
             borderWidth: 1.0,
             groupLabelHeight: 40.0,
-            fontSize: 18.0,
-            groupLabelFontSize: 14.0,
+            fontSize: ElevateTypography.Sizes.titleMedium,  // Already iOS-scaled: 20pt (was 18, using closest)
+            groupLabelFontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
             iconSize: 20.0,
             gap: 12.0
         )

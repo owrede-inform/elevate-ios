@@ -31,8 +31,8 @@ public struct TextAreaTokens {
             minHeight: 80.0,
             horizontalPadding: 12.0,
             verticalPadding: 8.0,
-            fontSize: 14.0,
-            borderRadius: 4.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
+            borderRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (iOS scaled)
             borderWidth: 1.0
         )
 
@@ -40,8 +40,8 @@ public struct TextAreaTokens {
             minHeight: 120.0,
             horizontalPadding: 16.0,
             verticalPadding: 12.0,
-            fontSize: 16.0,
-            borderRadius: 6.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt
+            borderRadius: ElevateCornerRadius.s,  // 8pt × 1.25 = 10pt (iOS scaled)
             borderWidth: 1.0
         )
 
@@ -49,8 +49,8 @@ public struct TextAreaTokens {
             minHeight: 160.0,
             horizontalPadding: 20.0,
             verticalPadding: 16.0,
-            fontSize: 18.0,
-            borderRadius: 8.0,
+            fontSize: ElevateTypography.Sizes.titleMedium,  // Already iOS-scaled: 20pt
+            borderRadius: ElevateCornerRadius.s,  // 8pt × 1.25 = 10pt (iOS scaled)
             borderWidth: 1.0
         )
     }

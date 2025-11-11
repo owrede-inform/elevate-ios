@@ -132,7 +132,7 @@ public struct BadgeTokens {
             height: BadgeComponentTokens.major_height,
             horizontalPadding: BadgeComponentTokens.padding_inline,
             verticalPadding: BadgeComponentTokens.elvt_component_badge_padding_block_major,
-            fontSize: 14.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
             fontWeight: .semibold,
             iconSize: BadgeComponentTokens.elvt_component_badge_icon_size_major,
             gap: BadgeComponentTokens.gap
@@ -142,7 +142,7 @@ public struct BadgeTokens {
             height: BadgeComponentTokens.minor_height,
             horizontalPadding: BadgeComponentTokens.elvt_component_badge_padding_inline_minor,
             verticalPadding: BadgeComponentTokens.elvt_component_badge_padding_block_minor,
-            fontSize: 12.0,
+            fontSize: ElevateTypography.Sizes.labelSmall,  // Already iOS-scaled: 15pt
             fontWeight: .medium,
             iconSize: BadgeComponentTokens.elvt_component_badge_icon_size_minor,
             gap: BadgeComponentTokens.gap

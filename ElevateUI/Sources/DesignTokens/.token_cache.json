@@ -434,5 +434,285 @@
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": "f4c1879cb46f78bd21296bbc8f6bd4b0",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": "6dd1fbfbb98b1b6928cebc2ec4294d61",
     "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": "80638768036ade64a46c6866c6966592"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_light.scss": {
+    "hash": "047fd16fcdc0e3b48e4fa3fdb821c9f3",
+    "last_checked": "2025-11-11T10:30:19.780575",
+    "last_changed": "2025-11-11T10:30:01.123478"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/values/_dark.scss": {
+    "hash": "a1c69b35b08911e02198b4d3f34d22bb",
+    "last_checked": "2025-11-11T10:30:19.781157",
+    "last_changed": "2025-11-11T10:30:01.124420"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_lightbox.scss": {
+    "hash": "354c3857bb09bf94045bc3167ebbeb20",
+    "last_checked": "2025-11-11T10:30:19.781197",
+    "last_changed": "2025-11-11T10:30:01.124737"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select.scss": {
+    "hash": "c5733e56396d59067fdf20bed7ca651e",
+    "last_checked": "2025-11-11T10:30:19.781243",
+    "last_changed": "2025-11-11T10:30:01.124972"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_empty-state.scss": {
+    "hash": "20e005b332155538a4933c263dcc517a",
+    "last_checked": "2025-11-11T10:30:19.781281",
+    "last_changed": "2025-11-11T10:30:01.125231"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_stepper-item.scss": {
+    "hash": "d1dfbffd58d5d67fb371e45ca076383f",
+    "last_checked": "2025-11-11T10:30:19.781325",
+    "last_changed": "2025-11-11T10:30:01.125402"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_skeleton.scss": {
+    "hash": "d2c69f2401444ac5cd26fdb30571b3f6",
+    "last_checked": "2025-11-11T10:30:19.781360",
+    "last_changed": "2025-11-11T10:30:01.125552"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_textarea.scss": {
+    "hash": "667f1ebb314c9ef68e66ed9847c814fb",
+    "last_checked": "2025-11-11T10:30:19.781403",
+    "last_changed": "2025-11-11T10:30:01.125822"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_progress.scss": {
+    "hash": "09d862657e3e7d5dd8ce73cc34c2a7ec",
+    "last_checked": "2025-11-11T10:30:19.781440",
+    "last_changed": "2025-11-11T10:30:01.125997"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_stepper.scss": {
+    "hash": "6b739ea90ff0e0e832a35032bfa28002",
+    "last_checked": "2025-11-11T10:30:19.781475",
+    "last_changed": "2025-11-11T10:30:01.126129"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_checkbox.scss": {
+    "hash": "ba921f1e05746a0da8277468f9f4d46a",
+    "last_checked": "2025-11-11T10:30:19.781522",
+    "last_changed": "2025-11-11T10:30:01.126440"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_breadcrumb.scss": {
+    "hash": "1c6de2cd5529ffeac5437f76eed0beea",
+    "last_checked": "2025-11-11T10:30:19.781555",
+    "last_changed": "2025-11-11T10:30:01.126623"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_badge.scss": {
+    "hash": "74c3744f5cc65ba3d35e533c74019457",
+    "last_checked": "2025-11-11T10:30:19.781594",
+    "last_changed": "2025-11-11T10:30:01.126758"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_notification.scss": {
+    "hash": "1548b79b78ca882d0d5aa54d7fffd019",
+    "last_checked": "2025-11-11T10:30:19.781631",
+    "last_changed": "2025-11-11T10:30:01.126839"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_heading.scss": {
+    "hash": "680e05c44730d9f7cf0826aeed8a3552",
+    "last_checked": "2025-11-11T10:30:19.781665",
+    "last_changed": "2025-11-11T10:30:01.126978"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_required-indicator.scss": {
+    "hash": "826ff520106af99873af0168de73609e",
+    "last_checked": "2025-11-11T10:30:19.781699",
+    "last_changed": "2025-11-11T10:30:01.127049"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_split-panel.scss": {
+    "hash": "430f70defff4b30b20f79c7cf221c23b",
+    "last_checked": "2025-11-11T10:30:19.781739",
+    "last_changed": "2025-11-11T10:30:01.127115"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select-option-group.scss": {
+    "hash": "7aa88c919519d30c065a187fe9965820",
+    "last_checked": "2025-11-11T10:30:19.781773",
+    "last_changed": "2025-11-11T10:30:01.127182"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tab-group.scss": {
+    "hash": "f5f3b303ab404c3ad9167d7ed952f3eb",
+    "last_checked": "2025-11-11T10:30:19.781807",
+    "last_changed": "2025-11-11T10:30:01.127265"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tree-item.scss": {
+    "hash": "90f136b0bd8245090519573ce48049e5",
+    "last_checked": "2025-11-11T10:30:19.781846",
+    "last_changed": "2025-11-11T10:30:01.127335"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio-group.scss": {
+    "hash": "7c15fb445d183e3ae98228cf9587280c",
+    "last_checked": "2025-11-11T10:30:19.781881",
+    "last_changed": "2025-11-11T10:30:01.127400"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio.scss": {
+    "hash": "ed584de454a39075104155094b447c71",
+    "last_checked": "2025-11-11T10:30:19.781925",
+    "last_changed": "2025-11-11T10:30:01.127524"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_chip.scss": {
+    "hash": "627df9322afd3e4bf743ebe713bd4b69",
+    "last_checked": "2025-11-11T10:30:19.781998",
+    "last_changed": "2025-11-11T10:30:01.127864"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_button-group.scss": {
+    "hash": "7f86ce1d1382dd130cccf88fd79bd6ef",
+    "last_checked": "2025-11-11T10:30:19.782036",
+    "last_changed": "2025-11-11T10:30:01.127934"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_button.scss": {
+    "hash": "1a95fcfc885c4baa5a9cb2cff5bbee3e",
+    "last_checked": "2025-11-11T10:30:19.782098",
+    "last_changed": "2025-11-11T10:30:19.782099"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_table.scss": {
+    "hash": "defb8d374f742fccb0f452ba0e203721",
+    "last_checked": "2025-11-11T10:30:19.782141",
+    "last_changed": "2025-11-11T10:30:01.128303"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_indicator.scss": {
+    "hash": "a8cc5b929017a49f09bda92d6784d65a",
+    "last_checked": "2025-11-11T10:30:19.782175",
+    "last_changed": "2025-11-11T10:30:01.128370"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_select-option.scss": {
+    "hash": "c7bf108213e909bb9449ff463b8fda9e",
+    "last_checked": "2025-11-11T10:30:19.782212",
+    "last_changed": "2025-11-11T10:30:01.128441"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dialog.scss": {
+    "hash": "225d1419171bd3ff5d592ce0c5f0a045",
+    "last_checked": "2025-11-11T10:30:19.782245",
+    "last_changed": "2025-11-11T10:30:01.128502"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_paginator.scss": {
+    "hash": "726c5b7e43d444133ad4ca2ac0895c68",
+    "last_checked": "2025-11-11T10:30:19.782279",
+    "last_changed": "2025-11-11T10:30:01.128567"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_navigation-item.scss": {
+    "hash": "73a1de7c51d8513247d8b69ab3d9d749",
+    "last_checked": "2025-11-11T10:30:19.782322",
+    "last_changed": "2025-11-11T10:30:01.128734"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_input.scss": {
+    "hash": "de7ed3cee4fe0722ef378dc0ca47d689",
+    "last_checked": "2025-11-11T10:30:19.782360",
+    "last_changed": "2025-11-11T10:30:01.128798"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_menu.scss": {
+    "hash": "54e0cc03457dc3d039b2a6b857cbf90b",
+    "last_checked": "2025-11-11T10:30:19.782397",
+    "last_changed": "2025-11-11T10:30:01.128868"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_card.scss": {
+    "hash": "0d0033f965e7c1fe513f0b6fdc1b3801",
+    "last_checked": "2025-11-11T10:30:19.782434",
+    "last_changed": "2025-11-11T10:30:01.128945"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_breadcrumb-item.scss": {
+    "hash": "519e4c4676311a675b98ed8f97de3c43",
+    "last_checked": "2025-11-11T10:30:19.782469",
+    "last_changed": "2025-11-11T10:30:01.129008"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tab.scss": {
+    "hash": "23ae4047385670e6c61ec9ab228cd365",
+    "last_checked": "2025-11-11T10:30:19.782504",
+    "last_changed": "2025-11-11T10:30:01.129076"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_icon.scss": {
+    "hash": "c64719ac66001e8cef62b0d5a11fc60c",
+    "last_checked": "2025-11-11T10:30:19.782543",
+    "last_changed": "2025-11-11T10:30:01.129146"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_slider.scss": {
+    "hash": "f8ee409b630eeda9d5d35274ad002abe",
+    "last_checked": "2025-11-11T10:30:19.782586",
+    "last_changed": "2025-11-11T10:30:01.129221"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_expansion-panel.scss": {
+    "hash": "ce57d4c8b8a3f7601ae57afe6468d9cf",
+    "last_checked": "2025-11-11T10:30:19.782629",
+    "last_changed": "2025-11-11T10:30:01.129305"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_icon-button.scss": {
+    "hash": "efb9821872be20f7dc3236b601353569",
+    "last_checked": "2025-11-11T10:30:19.782666",
+    "last_changed": "2025-11-11T10:30:01.129382"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_radio-button.scss": {
+    "hash": "c500d72e8e8f1191f4c269b87ce47889",
+    "last_checked": "2025-11-11T10:30:19.782704",
+    "last_changed": "2025-11-11T10:30:01.129449"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_tooltip.scss": {
+    "hash": "c8c8d9fec3febdadd07af6fd3664fc2e",
+    "last_checked": "2025-11-11T10:30:19.782738",
+    "last_changed": "2025-11-11T10:30:01.129510"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_application.scss": {
+    "hash": "36de5f51743a9d2caf4eba622ff2f00e",
+    "last_checked": "2025-11-11T10:30:19.782771",
+    "last_changed": "2025-11-11T10:30:01.129574"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_scrollbar.scss": {
+    "hash": "446fbe905b7777e222dd2d724e54bbcb",
+    "last_checked": "2025-11-11T10:30:19.782804",
+    "last_changed": "2025-11-11T10:30:01.129633"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_drawer.scss": {
+    "hash": "137ee591039e549ab0871395c621bcb3",
+    "last_checked": "2025-11-11T10:30:19.782839",
+    "last_changed": "2025-11-11T10:30:01.129700"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_field.scss": {
+    "hash": "d372832afe61648b3d35fb666f4d1c2a",
+    "last_checked": "2025-11-11T10:30:19.782876",
+    "last_changed": "2025-11-11T10:30:01.129769"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_link.scss": {
+    "hash": "4864bff3e13e98c4bba547af7d82825c",
+    "last_checked": "2025-11-11T10:30:19.782911",
+    "last_changed": "2025-11-11T10:30:01.129843"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_toolbar.scss": {
+    "hash": "0b3b9e6ec456472104023a16cc4f325a",
+    "last_checked": "2025-11-11T10:30:19.782946",
+    "last_changed": "2025-11-11T10:30:01.129910"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_menu-item.scss": {
+    "hash": "7991c67b04edc399d3cb3e3cb683464f",
+    "last_checked": "2025-11-11T10:30:19.782983",
+    "last_changed": "2025-11-11T10:30:01.129978"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dropdown.scss": {
+    "hash": "2821a95b73080e1c38d21f5ae4c373bd",
+    "last_checked": "2025-11-11T10:30:19.783017",
+    "last_changed": "2025-11-11T10:30:01.130042"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_switch.scss": {
+    "hash": "e645008e17490b94184c76c12f18c503",
+    "last_checked": "2025-11-11T10:30:19.783058",
+    "last_changed": "2025-11-11T10:30:01.130111"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_divider.scss": {
+    "hash": "6c732faa90e22872f2c4cb5f35e48ccd",
+    "last_checked": "2025-11-11T10:30:19.783093",
+    "last_changed": "2025-11-11T10:30:01.130171"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-src/Elevate-2025-11-04/elevate-design-tokens-main/src/scss/tokens/component/_dropzone.scss": {
+    "hash": "5c2b48e2c5c6163216a883b9b4cc9129",
+    "last_checked": "2025-11-11T10:30:19.783133",
+    "last_changed": "2025-11-11T10:30:01.130235"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/primitives.css": {
+    "hash": "f4c1879cb46f78bd21296bbc8f6bd4b0",
+    "last_checked": "2025-11-11T10:30:19.783174",
+    "last_changed": "2025-11-11T10:30:01.130528"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/extend.css": {
+    "hash": "6dd1fbfbb98b1b6928cebc2ec4294d61",
+    "last_checked": "2025-11-11T10:30:19.783216",
+    "last_changed": "2025-11-11T10:30:01.130744"
+  },
+  "/Users/wrede/Documents/GitHub/elevate-ios/.elevate-themes/ios/overrides.css": {
+    "hash": "80638768036ade64a46c6866c6966592",
+    "last_checked": "2025-11-11T10:30:19.783247",
+    "last_changed": "2025-11-11T10:30:01.131560"
   }
 }

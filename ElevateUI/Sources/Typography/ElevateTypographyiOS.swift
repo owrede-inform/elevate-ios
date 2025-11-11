@@ -47,17 +47,17 @@ public struct ElevateTypographyiOS {
     /// Display heading (largest)
     /// Web: 57pt (ElevateTypography.Sizes.displayLarge) → iOS: 71.25pt (×iosScaleFactor)
     public static let displayLarge = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.displayLarge * iosScaleFactor)
-        .weight(FontWeight.bold.swiftUIWeight)
+        .weight(FontWeight.bold)
 
     /// Medium display heading
     /// Web: 45pt (ElevateTypography.Sizes.displayMedium) → iOS: 56.25pt (×iosScaleFactor)
     public static let displayMedium = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.displayMedium * iosScaleFactor)
-        .weight(FontWeight.bold.swiftUIWeight)
+        .weight(FontWeight.bold)
 
     /// Small display heading
     /// Web: 36pt (ElevateTypography.Sizes.displaySmall) → iOS: 45.00pt (×iosScaleFactor)
     public static let displaySmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.displaySmall * iosScaleFactor)
-        .weight(FontWeight.bold.swiftUIWeight)
+        .weight(FontWeight.bold)
 
 
     // MARK: - Heading Styles
@@ -65,22 +65,22 @@ public struct ElevateTypographyiOS {
     /// Large heading
     /// Web: 32pt (ElevateTypography.Sizes.headingLarge) → iOS: 40.00pt (×iosScaleFactor)
     public static let headingLarge = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.headingLarge * iosScaleFactor)
-        .weight(FontWeight.bold.swiftUIWeight)
+        .weight(FontWeight.bold)
 
     /// Medium heading
     /// Web: 28pt (ElevateTypography.Sizes.headingMedium) → iOS: 35.00pt (×iosScaleFactor)
     public static let headingMedium = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.headingMedium * iosScaleFactor)
-        .weight(FontWeight.bold.swiftUIWeight)
+        .weight(FontWeight.bold)
 
     /// Small heading
     /// Web: 24pt (ElevateTypography.Sizes.headingSmall) → iOS: 30.00pt (×iosScaleFactor)
     public static let headingSmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.headingSmall * iosScaleFactor)
-        .weight(FontWeight.semibold.swiftUIWeight)
+        .weight(FontWeight.semibold)
 
     /// Extra small heading
     /// Web: 20pt (ElevateTypography.Sizes.headingXSmall) → iOS: 25.00pt (×iosScaleFactor)
     public static let headingXSmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.headingXSmall * iosScaleFactor)
-        .weight(FontWeight.semibold.swiftUIWeight)
+        .weight(FontWeight.semibold)
 
 
     // MARK: - Title Styles
@@ -88,17 +88,17 @@ public struct ElevateTypographyiOS {
     /// Large title
     /// Web: 22pt (ElevateTypography.Sizes.titleLarge) → iOS: 27.50pt (×iosScaleFactor)
     public static let titleLarge = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.titleLarge * iosScaleFactor)
-        .weight(FontWeight.semibold.swiftUIWeight)
+        .weight(FontWeight.semibold)
 
     /// Medium title
     /// Web: 16pt (ElevateTypography.Sizes.titleMedium) → iOS: 20.00pt (×iosScaleFactor)
     public static let titleMedium = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.titleMedium * iosScaleFactor)
-        .weight(FontWeight.semibold.swiftUIWeight)
+        .weight(FontWeight.semibold)
 
     /// Small title
     /// Web: 14pt (ElevateTypography.Sizes.titleSmall) → iOS: 17.50pt (×iosScaleFactor)
     public static let titleSmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.titleSmall * iosScaleFactor)
-        .weight(FontWeight.semibold.swiftUIWeight)
+        .weight(FontWeight.semibold)
 
 
     // MARK: - Body Text Styles
@@ -106,17 +106,17 @@ public struct ElevateTypographyiOS {
     /// Large body text
     /// Web: 16pt (ElevateTypography.Sizes.bodyLarge) → iOS: 20.00pt (×iosScaleFactor)
     public static let bodyLarge = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.bodyLarge * iosScaleFactor)
-        .weight(FontWeight.regular.swiftUIWeight)
+        .weight(FontWeight.regular)
 
     /// Medium body text (default) - Apple HIG compliant
     /// Web: 14pt (ElevateTypography.Sizes.bodyMedium) → iOS: 17.50pt (×iosScaleFactor)
     public static let bodyMedium = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.bodyMedium * iosScaleFactor)
-        .weight(FontWeight.regular.swiftUIWeight)
+        .weight(FontWeight.regular)
 
     /// Small body text
     /// Web: 12pt (ElevateTypography.Sizes.bodySmall) → iOS: 15.00pt (×iosScaleFactor)
     public static let bodySmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.bodySmall * iosScaleFactor)
-        .weight(FontWeight.regular.swiftUIWeight)
+        .weight(FontWeight.regular)
 
 
     // MARK: - Label Styles
@@ -124,22 +124,22 @@ public struct ElevateTypographyiOS {
     /// Large label (emphasized)
     /// Web: 16pt (ElevateTypography.Sizes.labelLarge) → iOS: 20.00pt (×iosScaleFactor)
     public static let labelLarge = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.labelLarge * iosScaleFactor)
-        .weight(FontWeight.medium.swiftUIWeight)
+        .weight(FontWeight.medium)
 
     /// Medium label (emphasized)
     /// Web: 14pt (ElevateTypography.Sizes.labelMedium) → iOS: 17.50pt (×iosScaleFactor)
     public static let labelMedium = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.labelMedium * iosScaleFactor)
-        .weight(FontWeight.medium.swiftUIWeight)
+        .weight(FontWeight.medium)
 
     /// Small label (emphasized)
     /// Web: 12pt (ElevateTypography.Sizes.labelSmall) → iOS: 15.00pt (×iosScaleFactor)
     public static let labelSmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.labelSmall * iosScaleFactor)
-        .weight(FontWeight.medium.swiftUIWeight)
+        .weight(FontWeight.medium)
 
     /// Extra small label - Exceeds Apple 11pt min
     /// Web: 11pt (ElevateTypography.Sizes.labelXSmall) → iOS: 13.75pt (×iosScaleFactor)
     public static let labelXSmall = Font.custom(fontFamilyPrimary, size: ElevateTypography.Sizes.labelXSmall * iosScaleFactor)
-        .weight(FontWeight.medium.swiftUIWeight)
+        .weight(FontWeight.medium)
 
 
     // MARK: - Monospace Styles
@@ -147,12 +147,12 @@ public struct ElevateTypographyiOS {
     /// Code/monospace text
     /// Web: 14pt (ElevateTypography.Sizes.code) → iOS: 17.50pt (×iosScaleFactor)
     public static let code = Font.custom(fontFamilyMono, size: ElevateTypography.Sizes.code * iosScaleFactor)
-        .weight(FontWeight.regular.swiftUIWeight)
+        .weight(FontWeight.regular)
 
     /// Small code/monospace text
     /// Web: 12pt (ElevateTypography.Sizes.codeSmall) → iOS: 15.00pt (×iosScaleFactor)
     public static let codeSmall = Font.custom(fontFamilyMono, size: ElevateTypography.Sizes.codeSmall * iosScaleFactor)
-        .weight(FontWeight.regular.swiftUIWeight)
+        .weight(FontWeight.regular)
 
 }
 #endif

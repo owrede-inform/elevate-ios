@@ -101,7 +101,7 @@ public struct ElevateMenuItem: View {
 
             // Label
             Text(label)
-                .font(.system(size: sizeConfig.fontSize))
+                .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                 .foregroundColor(textColor)
                 .lineLimit(1)
 

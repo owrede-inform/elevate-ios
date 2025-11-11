@@ -1,0 +1,179 @@
+name: Design Token Tests
+
+on:
+  pull_request:
+    paths:
+      - 'ElevateUI/Sources/DesignTokens/**'
+      - 'scripts/update-design-tokens-v4.py'
+      - 'scripts/generate-typography-tokens.py'
+      - '.elevate-themes/**'
+      - 'ElevateUITests/**'
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  test-tokens:
+    name: Token System Tests
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: List Available Simulators
+        run: xcrun simctl list devices available
+
+      - name: Build ElevateUI
+        run: |
+          xcodebuild build \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+      - name: Run All Token Tests
+        run: |
+          xcodebuild test \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            | tee xcodebuild.log \
+            | xcbeautify || true
+
+      - name: Check Test Results
+        run: |
+          if grep -q "TEST SUCCEEDED" xcodebuild.log; then
+            echo "✅ All token tests passed!"
+            exit 0
+          else
+            echo "❌ Token tests failed"
+            exit 1
+          fi
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            xcodebuild.log
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
+          retention-days: 7
+
+      - name: Post Test Summary
+        if: always()
+        run: |
+          echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if grep -q "TEST SUCCEEDED" xcodebuild.log; then
+            echo "✅ **All tests passed!**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Tests failed**" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Test Suites Executed" >> $GITHUB_STEP_SUMMARY
+          grep "Test Suite.*passed\|failed" xcodebuild.log | tail -5 >> $GITHUB_STEP_SUMMARY || true
+
+  test-token-consistency:
+    name: Token Consistency Tests
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Run Token Consistency Tests
+        run: |
+          xcodebuild test \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -only-testing:ElevateUITests/TokenConsistencyTests \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+  test-dark-mode:
+    name: Dark Mode Tests
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Run Dark Mode Tests
+        run: |
+          xcodebuild test \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -only-testing:ElevateUITests/DarkModeTests \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+  test-accessibility:
+    name: Accessibility Tests
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Run Accessibility Tests
+        run: |
+          xcodebuild test \
+            -scheme ElevateUI \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -only-testing:ElevateUITests/AccessibilityContrastTests \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+  validate-token-generation:
+    name: Validate Token Generation Scripts
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test Typography Token Generator
+        run: |
+          python3 scripts/generate-typography-tokens.py
+          echo "✅ Typography token generation successful"
+
+      - name: Test Design Token Generator (Dry Run)
+        run: |
+          # Test that the script runs without errors
+          python3 -c "import sys; sys.path.append('scripts'); from update_design_tokens_v4 import main; print('✅ Token generator imports successfully')" || exit 1
+
+      - name: Validate Generated Files
+        run: |
+          # Check that key token files exist
+          test -f ElevateUI/Sources/DesignTokens/Typography/ElevateTypography.swift || exit 1
+          test -f ElevateUI/Sources/DesignTokens/Generated/ColorAdaptive.swift || exit 1
+          echo "✅ All generated files present"

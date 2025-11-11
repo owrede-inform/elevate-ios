@@ -178,7 +178,7 @@ public struct ChipTokens {
             height: ChipComponentTokens.height_s,
             horizontalPadding: ChipComponentTokens.padding_inline_s,
             verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_s,
-            fontSize: 12.0,
+            fontSize: ElevateTypography.Sizes.labelSmall,  // Already iOS-scaled: 15pt
             fontWeight: .medium,
             iconSize: ChipComponentTokens.elvt_component_chip_icon_size_s,
             gap: ChipComponentTokens.gap_s,
@@ -189,7 +189,7 @@ public struct ChipTokens {
             height: ChipComponentTokens.height_m,
             horizontalPadding: ChipComponentTokens.padding_inline_m,
             verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_m,
-            fontSize: 14.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
             fontWeight: .medium,
             iconSize: ChipComponentTokens.elvt_component_chip_icon_size_m,
             gap: ChipComponentTokens.gap_m,
@@ -200,7 +200,7 @@ public struct ChipTokens {
             height: ChipComponentTokens.height_l,
             horizontalPadding: ChipComponentTokens.padding_inline_l,
             verticalPadding: ChipComponentTokens.elvt_component_chip_padding_block_l,
-            fontSize: 16.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt
             fontWeight: .medium,
             iconSize: ChipComponentTokens.elvt_component_chip_icon_size_l,
             gap: ChipComponentTokens.gap_l,

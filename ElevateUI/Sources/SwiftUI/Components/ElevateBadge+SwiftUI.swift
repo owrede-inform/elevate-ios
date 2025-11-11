@@ -114,7 +114,7 @@ public struct ElevateBadge<Prefix: View, Suffix: View>: View {
     }
 
     private var tokenFont: Font {
-        .system(size: rank.config.fontSize, weight: rank.config.fontWeight)
+        Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: rank.config.fontSize).weight(rank.config.fontWeight)
     }
 
     private var tokenGap: CGFloat {

@@ -144,7 +144,7 @@ public struct ElevateTab: View {
         VStack(spacing: 0) {
             HStack(spacing: sizeConfig.gap) {
                 Text(label)
-                    .font(.system(size: sizeConfig.fontSize, weight: isSelected ? .semibold : .regular))
+                    .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize).weight(isSelected ? .semibold : .regular))
                     .foregroundColor(textColor)
                     .lineLimit(1)
 

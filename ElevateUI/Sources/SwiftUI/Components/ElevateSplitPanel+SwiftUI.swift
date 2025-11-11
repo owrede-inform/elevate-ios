@@ -3,12 +3,13 @@ import SwiftUI
 
 /// Split panel component with resizable divider
 ///
-/// **iOS Adaptation Note**: Unlike ELEVATE web's mouse-driven resize, this uses:
-/// - Touch-optimized drag gesture for resizing
-/// - Larger touch target for divider handle (44pt minimum)
+/// **iOS Adaptation Note**: Redesigned to match iPad split view divider:
+/// - Thin 1pt divider line (not wide bar)
+/// - iOS-style vertical pill grab indicator (3 capsules, like iPad)
+/// - Compact 44pt touch target (perpendicular to divider)
+/// - Automatic rotation for vertical orientation
 /// - Haptic feedback on drag start/end
 /// - Support for both horizontal and vertical splits
-/// - Collapsible panels with animation
 /// See docs/DIVERSIONS.md for full adaptation details.
 ///
 /// Example:
@@ -78,7 +79,7 @@ public struct ElevateSplitPanel<Primary: View, Secondary: View>: View {
 
             // Trailing panel
             secondary()
-                .frame(width: size.width * (1 - splitRatio) - dividerWidth)
+                .frame(width: size.width * (1 - splitRatio) - touchTargetSize)
         }
     }
 
@@ -95,7 +96,7 @@ public struct ElevateSplitPanel<Primary: View, Secondary: View>: View {
 
             // Bottom panel
             secondary()
-                .frame(height: size.height * (1 - splitRatio) - dividerWidth)
+                .frame(height: size.height * (1 - splitRatio) - touchTargetSize)
         }
     }
 
@@ -103,24 +104,24 @@ public struct ElevateSplitPanel<Primary: View, Secondary: View>: View {
 
     private func divider(size: CGSize) -> some View {
         ZStack {
-            // Divider line
+            // Divider line (thin 1pt separator)
             Rectangle()
                 .fill(dividerColor)
                 .frame(
-                    width: orientation == .horizontal ? dividerWidth : nil,
-                    height: orientation == .vertical ? dividerWidth : nil
+                    width: orientation == .horizontal ? 1 : nil,
+                    height: orientation == .vertical ? 1 : nil
                 )
 
-            // Touch target (larger for easy dragging)
+            // Touch target (44pt perpendicular to divider)
             Rectangle()
                 .fill(Color.clear)
                 .frame(
-                    width: orientation == .horizontal ? 44 : nil,
-                    height: orientation == .vertical ? 44 : nil
+                    width: orientation == .horizontal ? touchTargetSize : nil,
+                    height: orientation == .vertical ? touchTargetSize : nil
                 )
                 .contentShape(Rectangle())
 
-            // Handle dots (visual indicator)
+            // Handle grab indicator (iOS-style vertical bar)
             handle
         }
         .gesture(
@@ -151,29 +152,29 @@ public struct ElevateSplitPanel<Primary: View, Secondary: View>: View {
     // MARK: - Handle
 
     private var handle: some View {
-        HStack(spacing: SplitPanelComponentTokens.handle_dot_gap_m) {
+        // iOS-style grab indicator: vertical pill shape (like iPad split view)
+        VStack(spacing: 2) {
             ForEach(0..<3) { _ in
-                Circle()
+                Capsule()
                     .fill(handleDotColor)
-                    .frame(
-                        width: SplitPanelComponentTokens.handle_dot_size_m,
-                        height: SplitPanelComponentTokens.handle_dot_size_m
-                    )
+                    .frame(width: 3, height: 12)
             }
         }
-        .padding(SplitPanelComponentTokens.handle_padding_block_m)
+        .padding(.horizontal, 6)
+        .padding(.vertical, 8)
         .background(handleFillColor)
-        .cornerRadius(SplitPanelComponentTokens.handle_border_radius_m)
+        .cornerRadius(8)
         .overlay(
-            RoundedRectangle(cornerRadius: SplitPanelComponentTokens.handle_border_radius_m)
+            RoundedRectangle(cornerRadius: 8)
                 .stroke(handleBorderColor, lineWidth: SplitPanelComponentTokens.handle_border_weight_m)
         )
+        .rotationEffect(orientation == .vertical ? .degrees(90) : .degrees(0))
     }
 
     // MARK: - Computed Properties
 
-    private var dividerWidth: CGFloat {
-        // iOS Adaptation: Larger touch target (44pt) for touch devices
+    private var touchTargetSize: CGFloat {
+        // iOS Adaptation: 44pt touch target perpendicular to divider
         return 44
     }
 

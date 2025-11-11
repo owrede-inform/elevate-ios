@@ -41,9 +41,9 @@ public struct TextFieldTokens {
             height: 36.0,  // 2rem web = 32pt, increased to 36pt
             horizontalPadding: 8.0,  // 0.5rem
             verticalPadding: 8.0,
-            fontSize: 14.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
             iconSize: 16.0,  // 1rem
-            borderRadius: 4.0,  // 0.25rem
+            borderRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (iOS scaled)
             borderWidth: 1.0,
             minTouchTarget: 44.0
         )
@@ -52,9 +52,9 @@ public struct TextFieldTokens {
             height: 44.0,  // 2.5rem web = 40pt, meets 44pt minimum
             horizontalPadding: 12.0,  // 0.75rem
             verticalPadding: 10.0,
-            fontSize: 16.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt
             iconSize: 20.0,  // 1.25rem
-            borderRadius: 4.0,
+            borderRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (iOS scaled)
             borderWidth: 1.0,
             minTouchTarget: 44.0
         )
@@ -63,9 +63,9 @@ public struct TextFieldTokens {
             height: 52.0,  // 3rem web = 48pt, increased to 52pt
             horizontalPadding: 16.0,  // 1rem
             verticalPadding: 12.0,
-            fontSize: 18.0,
+            fontSize: ElevateTypography.Sizes.titleMedium,  // Already iOS-scaled: 20pt (titleMedium base)
             iconSize: 24.0,  // 1.5rem
-            borderRadius: 4.0,
+            borderRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (iOS scaled)
             borderWidth: 1.0,
             minTouchTarget: 44.0
         )

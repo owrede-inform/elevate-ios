@@ -1002,11 +1002,28 @@ public struct ElevateTypographyiOS {
         return result.lower()
 
 
+def should_regenerate_file(filename: str, selective_set: Optional[set]) -> bool:
+    """
+    Check if a file should be regenerated during selective mode.
+
+    Args:
+        filename: Swift filename (e.g., "ButtonComponentTokens.swift")
+        selective_set: Set of files to regenerate, or None for full regeneration
+
+    Returns:
+        True if file should be regenerated
+    """
+    if selective_set is None:
+        return True  # Full regeneration mode
+    return filename in selective_set
+
+
 def main():
     import argparse
 
     parser = argparse.ArgumentParser(description='Extract ELEVATE design tokens to Swift')
     parser.add_argument('--force', action='store_true', help='Force regeneration (ignore cache)')
+    parser.add_argument('--selective', action='store_true', help='Selective regeneration (only changed files)')
     parser.add_argument('--theme', type=str, help='Custom theme overlay file')
     args = parser.parse_args()
 
@@ -1014,6 +1031,51 @@ def main():
     print(f"Source: {ELEVATE_TOKENS_PATH}")
     print(f"Output: {GENERATED_DIR}")
     print()
+
+    # Selective regeneration setup
+    files_to_regenerate = None  # None = regenerate all
+    if args.selective and not args.force:
+        print("🔍 Analyzing changes for selective regeneration...")
+        try:
+            # Import selective regeneration modules
+            sys.path.insert(0, str(SCRIPT_DIR))
+            from scss_change_detector import SCSSChangeDetector
+            from token_dependency_graph import TokenDependencyGraph
+
+            detector = SCSSChangeDetector()
+            graph = TokenDependencyGraph()
+
+            # Get changed Swift files
+            changed_swift_files = detector.get_changed_swift_files()
+
+            if not changed_swift_files:
+                print("✅ No changes detected - regeneration not needed!")
+                detector.update_cache()  # Still update cache
+                return 0
+
+            # Apply dependency graph to get complete regeneration set
+            files_to_regenerate = graph.build_regeneration_set(list(changed_swift_files))
+
+            print(f"📊 Selective regeneration analysis:")
+            print(f"  Changed SCSS files → {len(changed_swift_files)} Swift files")
+            print(f"  With dependencies → {len(files_to_regenerate)} files to regenerate")
+            print(f"  Savings: {(1 - len(files_to_regenerate) / len(graph.get_all_files())) * 100:.1f}%")
+            print()
+
+            # Show which files will be regenerated
+            print("Files to regenerate:")
+            for f in sorted(files_to_regenerate):
+                print(f"  → {f}")
+            print()
+
+        except ImportError as e:
+            print(f"⚠️  Selective regeneration modules not available: {e}")
+            print("   Falling back to full regeneration")
+            files_to_regenerate = None
+        except Exception as e:
+            print(f"⚠️  Error during change detection: {e}")
+            print("   Falling back to full regeneration")
+            files_to_regenerate = None
 
     # Validate paths
     if not ELEVATE_TOKENS_PATH.exists():
@@ -1120,50 +1182,56 @@ def main():
     # Generate Primitives
     primitives_file = GENERATED_DIR / "ElevatePrimitives.swift"
 
-    if args.force or cache_manager.needs_regeneration(all_source_files, primitives_file):
-        print("\nExtracting Primitive tokens from ELEVATE SCSS...")
-        primitives_gen = PrimitivesGenerator(light_tokens, dark_tokens)
-        primitives_code = primitives_gen.generate()
+    if should_regenerate_file("ElevatePrimitives.swift", files_to_regenerate):
+        if args.force or cache_manager.needs_regeneration(all_source_files, primitives_file):
+            print("\nExtracting Primitive tokens from ELEVATE SCSS...")
+            primitives_gen = PrimitivesGenerator(light_tokens, dark_tokens)
+            primitives_code = primitives_gen.generate()
 
-        if primitives_code:
-            with open(primitives_file, 'w') as f:
-                f.write(primitives_code)
-            print(f"  ✅ {primitives_file.name}")
-            print(f"  📊 {len(primitives_code)} bytes")
+            if primitives_code:
+                with open(primitives_file, 'w') as f:
+                    f.write(primitives_code)
+                print(f"  ✅ {primitives_file.name}")
+                print(f"  📊 {len(primitives_code)} bytes")
 
-            # Count primitive families
-            primitive_count = len(primitives_gen._get_primitive_tokens())
-            print(f"  📊 {primitive_count} primitive tokens")
+                # Count primitive families
+                primitive_count = len(primitives_gen._get_primitive_tokens())
+                print(f"  📊 {primitive_count} primitive tokens")
 
-            cache_manager.update_cache(all_source_files, primitives_file)
+                cache_manager.update_cache(all_source_files, primitives_file)
+            else:
+                print("  ⚠️  No primitive tokens found")
         else:
-            print("  ⚠️  No primitive tokens found")
+            print(f"  ⏭️  ElevatePrimitives.swift (cached)")
     else:
-        print(f"  ⏭️  ElevatePrimitives.swift (cached)")
+        print(f"  ⏭️  ElevatePrimitives.swift (selective skip)")
 
     # Generate Aliases
     aliases_file = GENERATED_DIR / "ElevateAliases.swift"
 
-    if args.force or cache_manager.needs_regeneration(all_source_files, aliases_file):
-        print("\nExtracting Alias tokens from ELEVATE SCSS...")
-        aliases_gen = AliasesGenerator(light_tokens, dark_tokens)
-        aliases_code = aliases_gen.generate()
+    if should_regenerate_file("ElevateAliases.swift", files_to_regenerate):
+        if args.force or cache_manager.needs_regeneration(all_source_files, aliases_file):
+            print("\nExtracting Alias tokens from ELEVATE SCSS...")
+            aliases_gen = AliasesGenerator(light_tokens, dark_tokens)
+            aliases_code = aliases_gen.generate()
 
-        if aliases_code:
-            with open(aliases_file, 'w') as f:
-                f.write(aliases_code)
-            print(f"  ✅ {aliases_file.name}")
-            print(f"  📊 {len(aliases_code)} bytes")
+            if aliases_code:
+                with open(aliases_file, 'w') as f:
+                    f.write(aliases_code)
+                print(f"  ✅ {aliases_file.name}")
+                print(f"  📊 {len(aliases_code)} bytes")
 
-            # Count aliases
-            alias_count = len(aliases_gen._get_alias_tokens())
-            print(f"  📊 {alias_count} alias tokens")
+                # Count aliases
+                alias_count = len(aliases_gen._get_alias_tokens())
+                print(f"  📊 {alias_count} alias tokens")
 
-            cache_manager.update_cache(all_source_files, aliases_file)
+                cache_manager.update_cache(all_source_files, aliases_file)
+            else:
+                print("  ⚠️  No alias tokens found")
         else:
-            print("  ⚠️  No alias tokens found")
+            print(f"  ⏭️  ElevateAliases.swift (cached)")
     else:
-        print(f"  ⏭️  ElevateAliases.swift (cached)")
+        print(f"  ⏭️  ElevateAliases.swift (selective skip)")
 
     # Generate component tokens
     print("\nScanning component token files...")
@@ -1173,6 +1241,12 @@ def main():
     for component_file in component_files:
         component_name = component_file.stem.replace('_', '')  # Remove leading underscore
         output_file = GENERATED_DIR / f"{component_name.capitalize()}ComponentTokens.swift"
+        output_filename = output_file.name
+
+        # Check selective regeneration
+        if not should_regenerate_file(output_filename, files_to_regenerate):
+            print(f"  ⏭️  {component_name} (selective skip)")
+            continue
 
         # Check cache (include theme files so changes trigger regeneration)
         component_source_files = all_source_files + [component_file]
@@ -1200,27 +1274,39 @@ def main():
     # Generate iOS-optimized typography
     typography_file = GENERATED_DIR.parent.parent / "Typography" / "ElevateTypographyiOS.swift"
 
-    if args.force or cache_manager.needs_regeneration(all_source_files, typography_file):
-        print("\nGenerating iOS-optimized typography...")
-        typography_gen = TypographyGenerator(light_tokens)  # Use merged tokens (ELEVATE + iOS)
-        typography_code = typography_gen.generate()
+    if should_regenerate_file("ElevateTypographyiOS.swift", files_to_regenerate):
+        if args.force or cache_manager.needs_regeneration(all_source_files, typography_file):
+            print("\nGenerating iOS-optimized typography...")
+            typography_gen = TypographyGenerator(light_tokens)  # Use merged tokens (ELEVATE + iOS)
+            typography_code = typography_gen.generate()
 
-        if typography_code:
-            typography_file.parent.mkdir(exist_ok=True, parents=True)
-            with open(typography_file, 'w') as f:
-                f.write(typography_code)
-            print(f"  ✅ {typography_file.name}")
-            print(f"  📊 {len(typography_code)} bytes")
+            if typography_code:
+                typography_file.parent.mkdir(exist_ok=True, parents=True)
+                with open(typography_file, 'w') as f:
+                    f.write(typography_code)
+                print(f"  ✅ {typography_file.name}")
+                print(f"  📊 {len(typography_code)} bytes")
 
-            # Count typography styles
-            style_count = typography_code.count('public static let')
-            print(f"  📊 {style_count} typography styles (1.25x iOS scale)")
+                # Count typography styles
+                style_count = typography_code.count('public static let')
+                print(f"  📊 {style_count} typography styles (1.25x iOS scale)")
 
-            cache_manager.update_cache(all_source_files, typography_file)
+                cache_manager.update_cache(all_source_files, typography_file)
+            else:
+                print("  ⚠️  No typography tokens found")
         else:
-            print("  ⚠️  No typography tokens found")
+            print(f"  ⏭️  ElevateTypographyiOS.swift (cached)")
     else:
-        print(f"  ⏭️  ElevateTypographyiOS.swift (cached)")
+        print(f"  ⏭️  ElevateTypographyiOS.swift (selective skip)")
+
+    # Update SCSS change detector cache after successful generation
+    if args.selective and files_to_regenerate is not None:
+        try:
+            print("\n🔄 Updating change detection cache...")
+            detector.update_cache()
+            print("  ✅ Cache updated")
+        except Exception as e:
+            print(f"  ⚠️  Failed to update cache: {e}")
 
     print("\n✅ Token extraction complete!")
     print(f"\nGenerated files: {GENERATED_DIR}")
@@ -1230,6 +1316,12 @@ def main():
                       if not cache_manager.needs_regeneration([LIGHT_MODE_FILE], f)])
     total_files = len(list(GENERATED_DIR.glob("*.swift")))
     print(f"Cache efficiency: {cache_hits}/{total_files} files cached")
+
+    # Show selective regeneration stats if applicable
+    if args.selective and files_to_regenerate is not None:
+        regenerated = len([f for f in GENERATED_DIR.glob("*.swift")
+                          if should_regenerate_file(f.name, files_to_regenerate)])
+        print(f"Selective regeneration: {regenerated}/{total_files} files regenerated")
 
     return 0
 

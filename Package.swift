@@ -16,7 +16,8 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // Add any package dependencies here
+        // Snapshot testing for visual regression tests
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.0")
     ],
     targets: [
         // The main framework target
@@ -24,6 +25,9 @@ let package = Package(
             name: "ElevateUI",
             dependencies: [],
             path: "ElevateUI/Sources",
+            exclude: [
+                "DesignTokens/USAGE_GUIDE.md"
+            ],
             resources: [
                 .process("Resources")
             ]
@@ -32,7 +36,10 @@ let package = Package(
         // Test target
         .testTarget(
             name: "ElevateUITests",
-            dependencies: ["ElevateUI"],
+            dependencies: [
+                "ElevateUI",
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
+            ],
             path: "ElevateUITests"
         ),
     ]

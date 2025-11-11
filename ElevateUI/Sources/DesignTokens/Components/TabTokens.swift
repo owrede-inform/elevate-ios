@@ -31,7 +31,7 @@ public struct TabTokens {
         static let small = SizeConfig(
             height: 36.0,
             horizontalPadding: 12.0,
-            fontSize: 14.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt
             closeIconSize: 16.0,
             gap: 6.0,
             minTouchTarget: 44.0
@@ -40,7 +40,7 @@ public struct TabTokens {
         static let medium = SizeConfig(
             height: 44.0,
             horizontalPadding: 16.0,
-            fontSize: 16.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt
             closeIconSize: 18.0,
             gap: 8.0,
             minTouchTarget: 44.0
@@ -49,7 +49,7 @@ public struct TabTokens {
         static let large = SizeConfig(
             height: 52.0,
             horizontalPadding: 20.0,
-            fontSize: 18.0,
+            fontSize: ElevateTypography.Sizes.titleMedium,  // Already iOS-scaled: 20pt (was 18, using closest)
             closeIconSize: 20.0,
             gap: 10.0,
             minTouchTarget: 52.0

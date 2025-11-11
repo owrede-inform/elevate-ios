@@ -84,7 +84,7 @@ public struct ElevateBreadcrumbItem: View {
         if isCurrentPage || action == nil {
             // Non-clickable current page
             Text(label)
-                .font(.system(size: sizeConfig.fontSize, weight: .medium))
+                .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize).weight(.medium))
                 .foregroundColor(textColor)
                 .lineLimit(1)
                 .accessibilityAddTraits([.isStaticText, .isHeader])
@@ -92,7 +92,7 @@ public struct ElevateBreadcrumbItem: View {
         } else {
             // Clickable link
             Text(label)
-                .font(.system(size: sizeConfig.fontSize))
+                .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                 .foregroundColor(textColor)
                 .lineLimit(1)
                 .padding(.horizontal, sizeConfig.horizontalPadding)

@@ -152,7 +152,8 @@ public struct ElevateTextField: View {
             // Label
             if let label = label {
                 Text(label)
-                    .font(.system(size: labelFontSize, weight: .medium))
+                    .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: labelFontSize)
+                        .weight(.medium))
                     .foregroundColor(labelColor)
             }
 
@@ -168,13 +169,13 @@ public struct ElevateTextField: View {
                 // Text input
                 if isSecure {
                     SecureField(placeholder, text: $text)
-                        .font(.system(size: sizeConfig.fontSize))
+                        .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                         .foregroundColor(textColor)
                         .disabled(isDisabled)
                         .focused($isFocused)
                 } else {
                     TextField(placeholder, text: $text)
-                        .font(.system(size: sizeConfig.fontSize))
+                        .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.fontSize))
                         .foregroundColor(textColor)
                         .disabled(isDisabled)
                         .focused($isFocused)
@@ -189,7 +190,7 @@ public struct ElevateTextField: View {
                 if showClearButton {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundColor(ElevateAliases.Content.General.text_muted)
-                        .font(.system(size: sizeConfig.iconSize))
+                        .font(.system(size: sizeConfig.iconSize))  // Icon size is acceptable
                         .scrollFriendlyTap(action: clearText)
                         .accessibilityLabel("Clear text")
                 }
@@ -218,7 +219,7 @@ public struct ElevateTextField: View {
                     // Help text
                     if let helpText = helpText {
                         Text(helpText)
-                            .font(.system(size: helpTextFontSize))
+                            .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: helpTextFontSize))
                             .foregroundColor(helpTextColor)
                     }
 
@@ -227,7 +228,7 @@ public struct ElevateTextField: View {
                     // Character count
                     if showCharacterCount {
                         Text("\(text.count)\(maxLength.map { "/\($0)" } ?? "")")
-                            .font(.system(size: helpTextFontSize))
+                            .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: helpTextFontSize))
                             .foregroundColor(characterCountColor)
                             .monospacedDigit()
                     }
@@ -250,19 +251,21 @@ public struct ElevateTextField: View {
 
     // MARK: - Helper Properties
 
+    /// Label font size based on iOS-scaled typography
     private var labelFontSize: CGFloat {
         switch size {
-        case .small: return 13.0
-        case .medium: return 14.0
-        case .large: return 16.0
+        case .small: return ElevateTypography.Sizes.labelSmall  // Already iOS-scaled: 15pt
+        case .medium: return ElevateTypography.Sizes.labelMedium  // Already iOS-scaled: 17.5pt
+        case .large: return ElevateTypography.Sizes.labelLarge  // Already iOS-scaled: 20pt
         }
     }
 
+    /// Help text font size based on iOS-scaled typography
     private var helpTextFontSize: CGFloat {
         switch size {
-        case .small: return 11.0
-        case .medium: return 12.0
-        case .large: return 13.0
+        case .small: return ElevateTypography.Sizes.labelXSmall  // Already iOS-scaled: 13.75pt
+        case .medium: return ElevateTypography.Sizes.labelSmall  // Already iOS-scaled: 15pt
+        case .large: return ElevateTypography.Sizes.labelMedium  // Already iOS-scaled: 17.5pt
         }
     }
 }

@@ -35,30 +35,30 @@ public struct BreadcrumbTokens {
 
         static let small = SizeConfig(
             height: 28.0,          // ~1.75rem
-            fontSize: 13.0,
+            fontSize: ElevateTypography.Sizes.labelMedium,  // Already iOS-scaled: 17.5pt (was 13, using closest)
             gap: 8.0,              // ~0.5rem
             separatorSize: 12.0,
-            cornerRadius: 3.0,
+            cornerRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt (was 3, using closest)
             horizontalPadding: 8.0,
             minTouchTarget: 44.0
         )
 
         static let medium = SizeConfig(
             height: 36.0,          // 1.5rem = 24pt, adjusted for iOS
-            fontSize: 15.0,
+            fontSize: ElevateTypography.Sizes.bodyMedium,  // Already iOS-scaled: 17.5pt (was 15, using closest)
             gap: 12.0,             // 0.75rem = 12pt
             separatorSize: 14.0,
-            cornerRadius: 4.0,     // 0.25rem = 4pt
+            cornerRadius: ElevateCornerRadius.xs,  // 4pt × 1.25 = 5pt
             horizontalPadding: 10.0,
             minTouchTarget: 44.0
         )
 
         static let large = SizeConfig(
             height: 44.0,
-            fontSize: 17.0,
+            fontSize: ElevateTypography.Sizes.bodyLarge,  // Already iOS-scaled: 20pt (was 17, using closest)
             gap: 16.0,
             separatorSize: 16.0,
-            cornerRadius: 6.0,
+            cornerRadius: ElevateCornerRadius.s,  // 8pt × 1.25 = 10pt (was 6, using closest)
             horizontalPadding: 12.0,
             minTouchTarget: 44.0
         )

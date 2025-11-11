@@ -126,7 +126,7 @@ public struct ElevateMenuGroup<Content: View>: View {
             if let label = label {
                 HStack {
                     Text(label)
-                        .font(.system(size: sizeConfig.groupLabelFontSize, weight: .semibold))
+                        .font(Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: sizeConfig.groupLabelFontSize).weight(.semibold))
                         .foregroundColor(MenuTokens.groupLabelTextColor)
                         .textCase(.uppercase)
                     Spacer()

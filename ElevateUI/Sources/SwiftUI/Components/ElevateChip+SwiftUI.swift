@@ -188,7 +188,7 @@ public struct ElevateChip<Prefix: View, Suffix: View>: View {
     }
 
     private var tokenFont: Font {
-        .system(size: size.config.fontSize, weight: size.config.fontWeight)
+        Font.custom(ElevateTypographyiOS.fontFamilyPrimary, size: size.config.fontSize).weight(size.config.fontWeight)
     }
 
     private var tokenGap: CGFloat {
